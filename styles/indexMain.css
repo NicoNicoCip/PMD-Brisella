@@ -1,0 +1,23 @@
+/*
+rgb(255, 255, 255);
+rgb(255, 0, 0);
+rgb(133, 133, 133);
+rgb(0, 0, 0);
+*/
+
+/* parte principal de la pagina */
+#mainBgImage {
+    display: block;
+    background-image: url(../img/imagenFundal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    top: -1px;
+    height: 110vh;
+    z-index: -10;
+}
+
+#mainNews {
+    padding-left: 30px;
+    padding-right: 30px;
+}
