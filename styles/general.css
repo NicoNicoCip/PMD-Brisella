@@ -64,6 +64,8 @@ a:hover {
 #searchIcon {
     width: 169px;
     height: 29.5px;
+    background-image: url("/img/barraBusqueda.png");
+    background-size:169px 29.5px;
 }
 
 #normalIcon {
