@@ -1,0 +1,67 @@
+#mainProducts {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: -100px; /* Para superponer sobre la imagen de fondo */
+}
+
+.productCard {
+    position: relative;
+    margin: 30px; /* Aumenta el espacio entre las fotos */
+    padding: 10px;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; /* Elimina el fondo blanco */
+}
+
+.productCard img {
+    width: 80%;
+    height: 70%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.productCard p {
+    font-size: 14px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para el texto */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#mainProducts, #mainNews, #mainOffers, #mainAbout {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: -100px; /* Para superponer sobre la imagen de fondo */
+    width: 80%; /* Ajusta el ancho para que no ocupe toda la pantalla */
+    margin: auto; /* Centra horizontalmente */
+}
+
+/* Si prefieres centrar verticalmente con position absolute */
+#mainProducts, #mainNews, #mainOffers, #mainAbout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Resto de estilos */
+}
+
+body {
+    font-family: 'Lora', serif;
+}

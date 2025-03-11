@@ -64,8 +64,6 @@ a:hover {
 #searchIcon {
     width: 169px;
     height: 29.5px;
-    background-image: url("../img/barraBusqueda.png");
-    background-size:169px 29.5px;
 }
 
 #normalIcon {
@@ -148,4 +146,53 @@ a:hover {
 
 #footbar > a {
     margin-top: 50px;
+}
+
+
+#mainBgImage {
+    display: block;
+    background-image: url(../img/imagenFundal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    top: -1px;
+    height: 110vh;
+    z-index: -10;
+}
+
+#mainNews {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#mainNews {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(199, 199, 199, 0.582); /* Sombra similar a la barra de navegación */
+    margin-top: 20px; /* Espacio desde la imagen de fondo */
+    padding-top: 20px; /* Espacio interno superior */
+    padding-bottom: 20px; /* Espacio interno inferior */
+}
+
+#mainNews article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainNews p {
+    margin-bottom: 10px; /* Espacio entre párrafos */
+    font-size: 18px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: rgb(0, 0, 0); /* Color de texto negro */
+}
+
+#mainNews p:first-child {
+    font-size: 24px; /* Tamaño de fuente para el título */
+    margin-bottom: 20px; /* Espacio después del título */
 }
