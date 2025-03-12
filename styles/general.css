@@ -265,7 +265,7 @@ section h2 {
 }
 
 main {
-  padding: 0px 5%;
+  padding: 0px 2%;
   padding-top: 100px;
   min-height: 100vh;
 }
@@ -367,9 +367,10 @@ main > h2 {
 }
 
 .productCard {
-    flex: 0 0 250px;
+    flex: 0 0 300px;
     display: flex;
     justify-content: center;
+
 }
 
 .productCard img {
