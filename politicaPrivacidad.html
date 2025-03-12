@@ -3,9 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politica Privacidad</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/quienesSomos.css">
+    <link rel="shortcut icon" href="img/brisellaLogo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>términos y condiciones - Brisella</title>
 </head>
 <body>
-    
+    <!-- Header -->
+    <div id="navbar">
+        <p id="navName"><a href="index.html"><b>BRISELLA</b></a></p>
+        <div id="navPages">
+            <a href="productos.html">Productos</a>
+            <a href="novedades.html">Novedades</a>
+            <a href="specialPrices.html" id="ofertas">Special Prices</a>
+            <a href="quienesSomos.html">¿Quiénes somos?</a>
+        </div>
+        <div class="horizontalize" id="navOpts">
+            <a href="" id="searchIcon"></a>
+            <a href="favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+
+            <form action="" id="langChange">
+                <div class="dropdown">
+                    <input type="checkbox" id="toggleLang" hidden>
+            
+                    <label for="toggleLang" class="dropdown-label">
+                        <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
+                        <span id="selectedLang">Español</span>
+                    </label>
+            
+                    <ul class="dropdown-menu">
+                        <li data-lang="Español">Español</li>
+                        <li data-lang="English">English</li>
+                        <li data-lang="Français">Français</li>
+                        <li data-lang="عربي">عربي</li>
+                        <li data-lang="阿拉伯">阿拉伯</li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <article>
+            <div id="bgImage"></div> <!-- Imagen de fondo -->
+            <section id="mainAbout">
+                <h2>Política de privacidad</h2>
+                <p>En Brisella, nos comprometemos a proteger y respetar tu privacidad. Esta política de privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que nos proporcionas al visitar nuestro sitio web.</p>
+
+               <p><b>Información que Recopilamos</b></p> 
+                
+                <p><b>Datos Personales</b>: Recopilamos información personal como tu nombre, dirección de correo electrónico y cualquier otra información que nos proporciones al registrarte o contactarnos.</p>
+                
+                <p><b>Datos de Navegación</b>: Recopilamos información sobre cómo interactúas con nuestro sitio web, incluyendo tu dirección IP, tipo de navegador y sistema operativo.</p> 
+                
+                <p><b>Cómo Utilizamos la Información</b></p>
+                
+                <p><b>Propósitos Legítimos</b>: Utilizamos la información personal para mejorar tu experiencia en nuestro sitio web, responder a tus consultas y enviar comunicaciones relevantes.</p>
+                
+                <p><b>Seguridad</b>: Tomamos medidas de seguridad adecuadas para proteger tu información contra el acceso no autorizado o la pérdida.</p>
+                
+                <p><b> Derechos del Usuario</b></p>
+                
+                <p><b>Acceso y Rectificación</b> : Tienes derecho a acceder y corregir cualquier información personal que tengamos sobre ti.</p>
+                
+                <p><b> Cancelación</b>: Puedes cancelar tu cuenta en cualquier momento.</p>
+                
+              
+                
+                
+                
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="horizontalize" id="footbar">
+            <a href="devoluciones.html">Devoluciones</a>
+            <a href="politicaPrivacidad.html">Política de privacidad</a>
+            <a href="terminosYCondiciones.html">Términos y condiciones</a>
+            <a href="registrarse.html">Registrarse</a>
+           <img src="img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
+        </div>
+    </footer>
 </body>
 </html>

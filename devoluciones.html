@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devolucciones</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>Devoluciones</title>
 </head>
 <body>
-    
+    <div id="navbar">
+        <p id="navName"><a href="index.html"><b>BRISELLA</b></p></a>
+        <div id="navPages">
+            <a href="productos.html">Productos</a>
+            <a href="novedades.html">Novedades</a>
+            <a href="specialPrices.html" id="ofertas">Special Prices</a>
+            <a href="quienesSomos.html">¿Quiénes somos?</a>
+        </div>
+        <div class="horizontalize" id="navOpts">
+            <a href="" id="searchIcon"></a>
+            <a href="favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+
+            <form action="" id="langChange">
+                <div class="dropdown">
+                    <input type="checkbox" id="toggleLang" hidden>
+            
+                    <label for="toggleLang" class="dropdown-label">
+                        <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
+                        <span id="selectedLang">Español</span>
+                    </label>
+            
+                    <ul class="dropdown-menu">
+                        <li data-lang="Español">Español</li>
+                        <li data-lang="English">English</li>
+                        <li data-lang="Français">Français</li>
+                        <li data-lang="عربي">عربي</li>
+                        <li data-lang="阿拉伯">阿拉伯</li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    <main>
+        <section id="devoluciones">
+            
+            <form id="formDevoluciones">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="motivo">Motivo de la devolución:</label>
+                <textarea id="motivo" name="motivo" required></textarea><br><br>
+                <button type="submit">Enviar solicitud de devolución</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="horizontalize" id="footbar">
+            <a href="devoluciones.html">Devoluciones</a>
+            <a href="politicaPrivacidad.html">Politica de privacidad</a>
+            <a href="terminosYCondiciones.html">Terminos y condiciones</a>
+            <a href="registrarse.html">Registrarse</a>
+            <img src="img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
+        </div>
+    </footer>
 </body>
 </html>
