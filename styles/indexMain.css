@@ -53,3 +53,55 @@ rgb(0, 0, 0);
     font-size: 24px; /* Tamaño de fuente para el título */
     margin-bottom: 20px; /* Espacio después del título */
 }
+
+h2 {
+
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    
+}
+
+.productCard img {
+    width: 100%; /* Amplía la imagen al ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 0; /* Elimina el borde redondeado */
+    margin-bottom: 0; /* Elimina el margen inferior */
+    margin: auto;
+}
+
+.productCard {
+    position: relative;
+    margin: 20px; /* Ajusta el espacio entre las tarjetas */
+    padding: 0; /* Elimina el padding */
+    width: calc(33% - 40px); /* Ajusta el ancho para que quepan dos en una fila */
+    height: auto; /* Ajusta la altura automáticamente */
+    border-radius: 0; /* Elimina el borde redondeado */
+    box-shadow: none; /* Elimina la sombra */
+    overflow: visible; /* Cambia a visible para que las imágenes no se corten */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; /* Elimina el fondo blanco */
+}
+
+#mainProducts {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 200px; /* Ajusta según el tamaño del navbar */
+    width: 80%; /* Ajusta el ancho para que no ocupe toda la pantalla */
+    margin: auto; /* Centra horizontalmente */
+}
+
+#bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegúrate de que esté detrás */
+}

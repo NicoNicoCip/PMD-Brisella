@@ -6,38 +6,37 @@
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/indexMain.css">
     <link rel="shortcut icon" href="img/brisellaLogo.png" type="image/x-icon">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <title>Brisella</title>
 </head>
 <body>
+    <!--ele elemento contiene un nombre, elnaces a productos, noevdades, ofertas(en rojo), una paggina de informacion (quienes ssomos?),
+        un buscador(no funccional), favoritos, contactarnos, idioma, y cajita de compras -->
     <div id="navbar">
-        <div id="burgerMenu">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <p id="navName"><b>BRISELLA</b></p>
-
+        <p id="navName"><a href="index.html"><b>BRISELLA</b></p></a>
         <div id="navPages">
             <a href="productos.html">Productos</a>
             <a href="novedades.html">Novedades</a>
-            <a href="ofertas.html" id="ofertas">Ofertas</a>
+            <a href="specialPrices.html" id="ofertas">Special Prices</a>
             <a href="quienesSomos.html">¿Quiénes somos?</a>
         </div>
-
-        <div id="navOpts">
+        <div class="horizontalize" id="navOpts">
             <a href="" id="searchIcon"></a>
-            <a href="favoritos.html"><img src="img/favoritos.png" alt="favoritos" class="normalIcon"></a>
-            <a href="pages/header/contactarnos.html"><img src="img/contactarnos.png" alt="contactarnos" class="normalIcon"></a>
-            <a href="pages/header/carrito.html"><img src="img/carrito.png" alt="carrito" class="normalIcon"></a>
+            <a href="favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
 
             <form action="" id="langChange">
                 <div class="dropdown">
                     <input type="checkbox" id="toggleLang" hidden>
+            
                     <label for="toggleLang" class="dropdown-label">
                         <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
                         <span id="selectedLang">Español</span>
                     </label>
+            
                     <ul class="dropdown-menu">
                         <li data-lang="Español">Español</li>
                         <li data-lang="English">English</li>
@@ -48,77 +47,71 @@
                 </div>
             </form>
         </div>
-
-        <div id="sidePanel">
-            <div id="sidePanelContent">
-                <div id="mobileNavOpts">
-                    <a href="" id="searchIcon"></a>
-                    <a href="favoritos.html"><img src="img/favoritos.png" alt="favoritos" class="normalIcon"></a>
-                    <a href="pages/header/contactarnos.html"><img src="img/contactarnos.png" alt="contactarnos" class="normalIcon"></a>
-                    <a href="pages/header/carrito.html"><img src="img/carrito.png" alt="carrito" class="normalIcon"></a>
-                </div>
-                
-                <div id="mobileNavPages">
-                    <a href="productos.html">Productos</a>
-                    <a href="novedades.html">Novedades</a>
-                    <a href="ofertas.html" id="ofertas">Ofertas</a>
-                    <a href="quienesSomos.html">¿Quiénes somos?</a>
-                </div>
-
-                <div id="mobileLangChange">
-                    <form action="" id="langChange">
-                        <div class="dropdown">
-                            <input type="checkbox" id="toggleLangMobile" hidden>
-                            <label for="toggleLangMobile" class="dropdown-label">
-                                <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
-                                <span id="selectedLangMobile">Español</span>
-                            </label>
-                            <ul class="dropdown-menu">
-                                <li data-lang="Español">Español</li>
-                                <li data-lang="English">English</li>
-                                <li data-lang="Français">Français</li>
-                                <li data-lang="عربي">عربي</li>
-                                <li data-lang="阿拉伯">阿拉伯</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 
     <main>
         <article>
-            <div id="mainBgImage"></div>
+            <div id="mainBgImage"></div> <!-- en ese apartado aparece una foto grande y supongo ango de informacion extremendamente basica -->
+
+         <!--   <section id="mainNews">  aqui aparecen nomvedades
+                <article>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                    <p>Novedades</p>
+                </article>
+            </section>    -->
         </article> 
     </main>
 
+
+    <div id="bgImage"> </div>
+        <h2>Visita nuestros productos más vendidos</h2>
+        <section id="mainProducts">
+             <div class="productCard">
+                <a href="novedades.html">
+                 <img src="img/pañuelo kyoto.png"alt="Producto 1"> 
+                 </a>             
+                </div>            
+                    <div class="productCard">
+                       <a href="productos.html">
+                         <img src="img/pañuelo bangladesh.png" alt="Producto 2">
+                         </a>
+                    </div>
+                   <div class="productCard">
+                    <a href="specialPrices.html">
+                        <img src="img/pañuelo dubai rebajado.png" alt="Producto 1">
+                        </a>
+                    </div>
+            </section>  
+               
+
+
+    </div>
+
+
+
+    <!--aqui entra de izuierda a la derecha los devolucciones, politica privacidad, terminos y condiciones, registrarse y un logo. todos enlaces.
+        el boton de registrarse se cambia a un boton de cerrar session -->
     <footer>
         <div class="horizontalize" id="footbar">
-            <img id="miniLogo" src="img/brisellaLogo.png" alt="Logo" width="128px" height="128px">  
-            <a href="pages/footer/devoluciones.html">Devoluciones</a>
-            <a href="pages/footer/politicaPrivacidad.html">Politica de privacidad</a>
-            <a href="pages/footer/terminosYCondiciones.html">Terminos y condiciones</a>
-            <a href="">Registrarse</a>
+            <a href="devoluciones.html">Devoluciones</a>
+            <a href="politicaPrivacidad.html">Politica de privacidad</a>
+            <a href="terminosYCondiciones.html">Terminos y condiciones</a>
+            <a href="registrarse.html">Registrarse</a>
+            <img src="img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
         </div>
     </footer>
 
     <script>
         document.querySelectorAll('.dropdown-menu li').forEach(item => {
             item.addEventListener('click', function() {
-                const selectedLang = this.getAttribute('data-lang');
-                document.getElementById('selectedLang').textContent = selectedLang;
-                document.getElementById('selectedLangMobile').textContent = selectedLang;
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const burgerMenu = document.getElementById("burgerMenu");
-            const sidePanel = document.getElementById("sidePanel");
-
-            burgerMenu.addEventListener("click", function () {
-                sidePanel.classList.toggle("open");
-                burgerMenu.classList.toggle("open");
+                document.getElementById('selectedLang').textContent = this.getAttribute('data-lang');
             });
         });
     </script>

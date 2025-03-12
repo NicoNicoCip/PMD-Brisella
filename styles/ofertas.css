@@ -1,39 +1,33 @@
-#mainOffers {
+#mainProducts {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Centra horizontalmente */
     align-items: center;
     padding: 20px;
-    margin-top: -100px; /* Para superponer sobre la imagen de fondo */
+    margin-top: 80px; /* Ajusta según el tamaño del navbar */
+    width: 80%; /* Ajusta el ancho para que no ocupe toda la pantalla */
+    margin: auto; /* Centra horizontalmente */
 }
 
-.offerCard {
+.productCard {
     position: relative;
-    margin: 30px; /* Aumenta el espacio entre las fotos */
-    padding: 10px;
-    width: 250px;
-    height: 350px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    margin: 20px; /* Ajusta el espacio entre las tarjetas */
+    padding: 0; /* Elimina el padding */
+    width: calc(45% - 40px); /* Ajusta el ancho para que quepan dos en una fila */
+    height: auto; /* Ajusta la altura automáticamente */
+    border-radius: 0; /* Elimina el borde redondeado */
+    box-shadow: none; /* Elimina la sombra */
+    overflow: visible; /* Cambia a visible para que las imágenes no se corten */
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: transparent; /* Elimina el fondo blanco */
 }
 
-.offerCard img {
-    width: 80%;
-    height: 70%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.offerCard p {
-    font-size: 14px;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para el texto */
-    padding: 5px;
-    border-radius: 5px;
+.productCard img {
+    width: 100%; /* Amplía la imagen al ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 0; /* Elimina el borde redondeado */
+    margin-bottom: 0; /* Elimina el margen inferior */
 }
