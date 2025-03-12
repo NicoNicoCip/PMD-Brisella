@@ -49,6 +49,7 @@ a:hover {
 #navPages {
     display: inline-flex;
     font-size: 22px;
+    margin-left: 67px;
 }
 
 #navPages > * {
@@ -259,17 +260,19 @@ section h2 {
     font-family: 'Lora', serif;
     color: rgb(0, 0, 0);
     text-decoration: none;
-}
-
-h2 {
     text-align: center;
-    padding-bottom: 5%;
-    padding-top: 5%;
-    
+    padding-bottom: 3%;
 }
 
 main {
   padding: 0px 5%;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+main > h2 {
+    text-align: center;
+    padding-bottom: 5%;
 }
 
 .burger-menu {
@@ -393,7 +396,7 @@ main {
     background-size: cover;
 }
 
-@media screen and (max-width: 1111px) {
+@media screen and (max-width: 1115px) {
   .burger-menu {
     display: block;
     margin-left: 100px;
@@ -405,10 +408,9 @@ main {
   
   #navName {
     float: none;
-    margin: 0 auto;
     text-align: center;
-    width: calc(100% - 100px); /* Subtracting space for burger menu */
-    padding-left: 50px; /* Push content right to make space for burger */
+    width: 100%; /* Subtracting space for burger menu */
+    padding-left: 110px; /* Push content right to make space for burger */
   }
   
   #navbar {
