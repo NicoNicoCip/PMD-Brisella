@@ -9,6 +9,8 @@ rgb(0, 0, 0);
 * {
     margin: 0px;
     padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
     font-family: 'Lora', serif;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -29,19 +31,16 @@ a:hover {
 
 /* barra de navigacion */
 #navbar {
-    position: fixed;
-    width: 99.8vw;
-    padding: 20px;
+    position: absolute;
+    width: 100%;
     text-align: center;
-    background-color: rgba(199, 199, 199, 0.288);
-    box-shadow: 0px 0px 10px rgba(199, 199, 199, 0.582);
-    
-    
+    background-color: rgba(199, 199, 199, 0.65);
+    box-shadow: 0px 0px 10px rgba(199, 199, 199, 0.65);
+    padding: 20px 10px;
 }
 
 #navName {
     float: left;
-    margin-right: 5%;
     font-size: 25px;
 }
 
@@ -59,24 +58,18 @@ a:hover {
     color: rgb(224, 89, 89);
 }
 
-#navOpts {
-    float: right;
+#langChange {
+  float: right;
+  transform: scale(0.9);
 }
 
-#searchIcon {
-    width: 169px;
-    height: 29.5px;
+#navOpts {
+    float: right;
 }
 
 #normalIcon {
     width: 32px;
     height: 32px;
-}
-
-#langChange {
-    margin-left: 10px;
-    margin-right: 50px;
-    transform: scale(0.9);
 }
 
 .dropdown {
@@ -89,17 +82,17 @@ a:hover {
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 0px 10px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0);
     user-select: none;
     z-index: 30;
+    min-width: 100px;
 }
 
 .dropdown-label img {
     width: 32px;
     height: 32px;
-    z-index: 30;
+    z-index: 31;
 }
 
 #selectedLang {
@@ -122,6 +115,7 @@ a:hover {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    min-width: 100px;
     transition: background 0.2s;
 }
 
@@ -135,21 +129,29 @@ a:hover {
 }
 
 #footbar {
-    font-size: 20px; /* Reducir tamaño */
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     background-color: #efebe7;
-    padding: 10px 15px; /* Ajustar espacio interno */
-}
-
-#footbar > *{
+    padding: 10px 15px;
+    gap: 20px;
     position: relative;
-    margin-right: 20px; /* Aumentar separación */
-    color: black;
-}
-#footbar > a {
-    margin-top: 50px;
 }
 
+#footbar > a {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#footbar > img {
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+}
 
 #mainBgImage {
     display: block;
@@ -240,7 +242,6 @@ button[type="submit"]:hover {
     background-color: #3e8e41;
 }
 
-
 section {
     padding: 20px;
     margin-bottom: 20px;
@@ -256,5 +257,159 @@ section h2 {
     text-decoration: none;
 }
 
+h2 {
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    
+}
 
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin-left: 10px;
+}
 
+.burger-icon {
+  cursor: pointer;
+  padding: 15px;
+  position: fixed;
+  top: 10px;
+  left: 15px;
+  z-index: 1001;
+}
+
+.burger-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.menu-items {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(199, 199, 199, 0.95);
+  padding-top: 60px;
+  transition: 0.4s;
+}
+
+.menu-items a {
+  display: block;
+  padding: 15px 25px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.menu-items a:hover {
+  background-color: rgba(197, 59, 59, 0.2);
+}
+
+.burger-menu.active .menu-items {
+  left: 0;
+}
+
+.burger-menu.active .burger-icon span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active .burger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .burger-icon span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* parte principal de la pagina */
+#mainBgImage {
+    display: block;
+    background-image: url(../img/imagenFundal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    top: -1px;
+    height: 110vh;
+    z-index: -10;
+}
+
+#mainProducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(199, 199, 199, 0.582);
+}
+
+.productCard {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.productCard img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegúrate de que esté detrás */
+}
+
+@media screen and (max-width: 1111px) {
+  .burger-menu {
+    display: block;
+    margin-left: 100px;
+  }
+  
+  #navPages {
+    display: none;
+  }
+  
+  #navName {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    width: calc(100% - 100px); /* Subtracting space for burger menu */
+    padding-left: 50px; /* Push content right to make space for burger */
+  }
+  
+  #navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #navOpts {
+    display: none; /* Hide original navOpts */
+  }
+
+  .menu-nav-opts {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-nav-opts #langChange {
+    margin: 0;
+  }
+}

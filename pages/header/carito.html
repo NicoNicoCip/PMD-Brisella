@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+</head>
+<body>
+    
+  <div class="burger-menu">
+    <div class="burger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-nav-opts">
+        <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+        <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+        <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+      </div>
+      <a href="index.html"><b>Vuelve Arriba</b></a>
+      <a href="./pages/header/productos.html">Productos</a>
+      <a href="./pages/header/novedades.html">Novedades</a>
+      <a href="./pages/header/specialPrices.html">Special Prices</a>
+      <a href="./pages/header/quienesSomos.html">¿Quiénes somos?</a>
+    </div>
+  </div>
+
+  <div id="navbar">
+    <p id="navName"><b>BRISELLA</b></p>
+    <div id="navPages">
+      <a href="./pages/header/productos.html">Productos</a>
+      <a href="./pages/header/novedades.html">Novedades</a>
+      <a href="./pages/header/specialPrices.html" id="ofertas">Special Prices</a>
+      <a href="./pages/header/quienesSomos.html">¿Quiénes somos?</a>
+    </div>
+    <div class="horizontalize" id="navOpts">
+      <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+      <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+      <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+    </div>
+    <form action="" id="langChange">
+      <div class="dropdown">
+        <input type="checkbox" id="toggleLang" hidden>
+
+        <label for="toggleLang" class="dropdown-label">
+          <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
+          <span id="selectedLang">Español</span>
+        </label>
+
+        <ul class="dropdown-menu">
+          <li data-lang="Español">Español</li>
+          <li data-lang="English">English</li>
+          <li data-lang="Français">Français</li>
+          <li data-lang="عربي">عربي</li>
+          <li data-lang="阿拉伯">阿拉伯</li>
+        </ul>
+      </div>
+    </form>
+  </div>
+
+  <!-- content -->
+  <footer>
+    <div class="horizontalize" id="footbar">
+      <a href="./pages/footer/devoluciones.html">Devoluciones</a>
+      <a href="./pages/footer/politicaPrivacidad.html">Politica de privacidad</a>
+      <a href="./pages/footer/terminosYCondiciones.html">Terminos y condiciones</a>
+      <a href="./pages/footer/registrarse.html">Registrarse</a>
+      <img src="img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.dropdown-menu li').forEach(item => {
+      item.addEventListener('click', function () {
+        document.getElementById('selectedLang').textContent = this.getAttribute('data-lang');
+      });
+    });
+
+    const burgerMenu = document.querySelector('.burger-menu');
+    const burgerIcon = document.querySelector('.burger-icon');
+
+    burgerIcon.addEventListener('click', () => {
+      burgerMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!burgerMenu.contains(e.target) && burgerMenu.classList.contains('active')) {
+        burgerMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

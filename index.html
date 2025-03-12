@@ -1,119 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/general.css">
-    <link rel="stylesheet" href="styles/indexMain.css">
-    <link rel="shortcut icon" href="img/brisellaLogo.png" type="image/x-icon">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <title>Brisella</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="shortcut icon" href="img/brisellaLogo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <title>Brisella</title>
 </head>
+
 <body>
-    <!--ele elemento contiene un nombre, elnaces a productos, noevdades, ofertas(en rojo), una paggina de informacion (quienes ssomos?),
+  <!--ele elemento contiene un nombre, elnaces a productos, noevdades, ofertas(en rojo), una paggina de informacion (quienes ssomos?),
         un buscador(no funccional), favoritos, contactarnos, idioma, y cajita de compras -->
-    <div id="navbar">
-        <p id="navName"><a href="index.html"><b>BRISELLA</b></p></a>
-        <div id="navPages">
-            <a href="productos.html">Productos</a>
-            <a href="novedades.html">Novedades</a>
-            <a href="specialPrices.html" id="ofertas">Special Prices</a>
-            <a href="quienesSomos.html">¿Quiénes somos?</a>
-        </div>
-        <div class="horizontalize" id="navOpts">
-            <a href="" id="searchIcon"></a>
-            <a href="favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
-            <a href="pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
-            <a href="pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
 
-            <form action="" id="langChange">
-                <div class="dropdown">
-                    <input type="checkbox" id="toggleLang" hidden>
-            
-                    <label for="toggleLang" class="dropdown-label">
-                        <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
-                        <span id="selectedLang">Español</span>
-                    </label>
-            
-                    <ul class="dropdown-menu">
-                        <li data-lang="Español">Español</li>
-                        <li data-lang="English">English</li>
-                        <li data-lang="Français">Français</li>
-                        <li data-lang="عربي">عربي</li>
-                        <li data-lang="阿拉伯">阿拉伯</li>
-                    </ul>
-                </div>
-            </form>
-        </div>
+  <div class="burger-menu">
+    <div class="burger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <main>
-        <article>
-            <div id="mainBgImage"></div> <!-- en ese apartado aparece una foto grande y supongo ango de informacion extremendamente basica -->
-
-         <!--   <section id="mainNews">  aqui aparecen nomvedades
-                <article>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                    <p>Novedades</p>
-                </article>
-            </section>    -->
-        </article> 
-    </main>
-
-
-    <div id="bgImage"> </div>
-        <h2>Visita nuestros productos más vendidos</h2>
-        <section id="mainProducts">
-             <div class="productCard">
-                <a href="novedades.html">
-                 <img src="img/pañuelo kyoto.png"alt="Producto 1"> 
-                 </a>             
-                </div>            
-                    <div class="productCard">
-                       <a href="productos.html">
-                         <img src="img/pañuelo bangladesh.png" alt="Producto 2">
-                         </a>
-                    </div>
-                   <div class="productCard">
-                    <a href="specialPrices.html">
-                        <img src="img/pañuelo dubai rebajado.png" alt="Producto 1">
-                        </a>
-                    </div>
-            </section>  
-               
-
-
+    <div class="menu-items">
+      <div class="menu-nav-opts">
+        <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+        <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+        <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+      </div>
+      <a href="index.html"><b>Vuelve Arriba</b></a>
+      <a href="./pages/header/productos.html">Productos</a>
+      <a href="./pages/header/novedades.html">Novedades</a>
+      <a href="./pages/header/specialPrices.html">Special Prices</a>
+      <a href="./pages/header/quienesSomos.html">¿Quiénes somos?</a>
     </div>
+  </div>
 
+  <div id="navbar">
+    <p id="navName"><b>BRISELLA</b></p>
+    <div id="navPages">
+      <a href="./pages/header/productos.html">Productos</a>
+      <a href="./pages/header/novedades.html">Novedades</a>
+      <a href="./pages/header/specialPrices.html" id="ofertas">Special Prices</a>
+      <a href="./pages/header/quienesSomos.html">¿Quiénes somos?</a>
+    </div>
+    <div class="horizontalize" id="navOpts">
+      <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+      <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+      <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+    </div>
+    <form action="" id="langChange">
+      <div class="dropdown">
+        <input type="checkbox" id="toggleLang" hidden>
 
+        <label for="toggleLang" class="dropdown-label">
+          <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
+          <span id="selectedLang">Español</span>
+        </label>
 
-    <!--aqui entra de izuierda a la derecha los devolucciones, politica privacidad, terminos y condiciones, registrarse y un logo. todos enlaces.
-        el boton de registrarse se cambia a un boton de cerrar session -->
-    <footer>
-        <div class="horizontalize" id="footbar">
-            <a href="devoluciones.html">Devoluciones</a>
-            <a href="politicaPrivacidad.html">Politica de privacidad</a>
-            <a href="terminosYCondiciones.html">Terminos y condiciones</a>
-            <a href="registrarse.html">Registrarse</a>
-            <img src="img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
-        </div>
-    </footer>
+        <ul class="dropdown-menu">
+          <li data-lang="Español">Español</li>
+          <li data-lang="English">English</li>
+          <li data-lang="Français">Français</li>
+          <li data-lang="عربي">عربي</li>
+          <li data-lang="阿拉伯">阿拉伯</li>
+        </ul>
+      </div>
+    </form>
+  </div>
+  
+  <div id="mainBgImage"></div>
 
-    <script>
-        document.querySelectorAll('.dropdown-menu li').forEach(item => {
-            item.addEventListener('click', function() {
-                document.getElementById('selectedLang').textContent = this.getAttribute('data-lang');
-            });
-        });
-    </script>
+  <div id="bgImage"> </div>
+  <h2>Visita nuestros productos más vendidos</h2>
+  <section id="mainProducts">
+    <div class="productCard">
+      <a href="./pages/header/novedades.html">
+        <img src="img/pañuelo kyoto.png" alt="Producto 1">
+      </a>
+    </div>
+    <div class="productCard">
+      <a href="./pages/header/productos.html">
+        <img src="img/pañuelo bangladesh.png" alt="Producto 2">
+      </a>
+    </div>
+    <div class="productCard">
+      <a href="./pages/header/specialPrices.html">
+        <img src="img/pañuelo dubai rebajado.png" alt="Producto 1">
+      </a>
+    </div>
+  </section>
+  </div>
+
+  <footer>
+    <div class="horizontalize" id="footbar">
+      <a href="./pages/footer/devoluciones.html">Devoluciones</a>
+      <a href="./pages/footer/politicaPrivacidad.html">Politica de privacidad</a>
+      <a href="./pages/footer/terminosYCondiciones.html">Terminos y condiciones</a>
+      <a href="./pages/footer/registrarse.html">Registrarse</a>
+      <img src="img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.dropdown-menu li').forEach(item => {
+      item.addEventListener('click', function () {
+        document.getElementById('selectedLang').textContent = this.getAttribute('data-lang');
+      });
+    });
+
+    const burgerMenu = document.querySelector('.burger-menu');
+    const burgerIcon = document.querySelector('.burger-icon');
+
+    burgerIcon.addEventListener('click', () => {
+      burgerMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!burgerMenu.contains(e.target) && burgerMenu.classList.contains('active')) {
+        burgerMenu.classList.remove('active');
+      }
+    });
+  </script>
 </body>
+
 </html>
