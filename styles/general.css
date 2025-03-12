@@ -367,7 +367,7 @@ main > h2 {
 }
 
 .productCard {
-    flex: 0 0 300px;
+    flex: 0 0 250px;
     display: flex;
     justify-content: center;
 }
