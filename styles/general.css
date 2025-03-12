@@ -35,8 +35,6 @@ a:hover {
     text-align: center;
     background-color: rgba(199, 199, 199, 0.288);
     box-shadow: 0px 0px 10px rgba(199, 199, 199, 0.582);
-    
-    
 }
 
 #navName {
@@ -255,6 +253,3 @@ section h2 {
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
-
-
-
