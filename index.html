@@ -14,15 +14,41 @@
 </head>
 
 <body>
-  <!--ele elemento contiene un nombre, elnaces a productos, noevdades, ofertas(en rojo), una paggina de informacion (quienes ssomos?),
+    <!--ele elemento contiene un nombre, elnaces a productos, noevdades, ofertas(en rojo), una paggina de informacion (quienes ssomos?),
         un buscador(no funccional), favoritos, contactarnos, idioma, y cajita de compras -->
-  <div id="navbar">
-    <p id="navName"><a href="index.html"><b>BRISELLA</b></p></a>
-    <div id="navPages">
-      <a href="productos.html">Productos</a>
-      <a href="novedades.html">Novedades</a>
-      <a href="specialPrices.html" id="ofertas">Special Prices</a>
-      <a href="quienesSomos.html">¿Quiénes somos?</a>
+    <div id="navbar">
+        <p id="navName"><a href="index.html"><b>BRISELLA</b></p></a>
+        <div id="navPages">
+            <a href="productos.html">Productos</a>
+            <a href="novedades.html">Novedades</a>
+            <a href="specialPrices.html" id="ofertas">Special Prices</a>
+            <a href="quienesSomos.html">¿Quiénes somos?</a>
+        </div>
+        <div class="horizontalize" id="navOpts">
+            <a href="" id="searchIcon"></a>
+            <a href="favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
+            <a href="pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+
+            <form action="" id="langChange">
+                <div class="dropdown">
+                    <input type="checkbox" id="toggleLang" hidden>
+            
+                    <label for="toggleLang" class="dropdown-label">
+                        <img src="img/idioma.png" alt="idioma" width="32px" height="32px">
+                        <span id="selectedLang">Español</span>
+                    </label>
+            
+                    <ul class="dropdown-menu">
+                        <li data-lang="Español">Español</li>
+                        <li data-lang="English">English</li>
+                        <li data-lang="Français">Français</li>
+                        <li data-lang="عربي">عربي</li>
+                        <li data-lang="阿拉伯">阿拉伯</li>
+                    </ul>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="horizontalize" id="navOpts">
       <a href="" id="searchIcon"></a>

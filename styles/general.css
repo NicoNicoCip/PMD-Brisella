@@ -253,3 +253,46 @@ section h2 {
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
+
+label {
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(199, 199, 199, 0.582);
+}
+
+section h2 {
+    margin-top: 0;
+    font-family: 'Lora', serif;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
