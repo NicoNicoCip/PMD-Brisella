@@ -24,9 +24,25 @@
     </div>
     <div class="menu-items">
       <div class="menu-nav-opts">
-        <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
-        <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
-        <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+        <div class="container">
+          <div class="image-wrapper">
+            <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+            <div class="hover-text">Favoritos</div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="image-wrapper">
+            <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos"
+                id="normalIcon"></a>
+            <div class="hover-text">Contactoarnos</div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="image-wrapper">
+            <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+            <div class="hover-text">Compras</div>
+          </div>
+        </div>
       </div>
       <a href="./pages/header/productos.html">Productos</a>
       <a href="./pages/header/novedades.html">Novedades</a>
@@ -44,9 +60,25 @@
       <a href="./pages/header/quienesSomos.html">¿Quiénes somos?</a>
     </div>
     <div class="horizontalize" id="navOpts">
-      <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
-      <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
-      <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+      <div class="container">
+        <div class="image-wrapper">
+          <a href="./pages/header/favoritos.html"><img src="img/favoritos.png" alt="favoritos" id="normalIcon"></a>
+          <div class="hover-text">Favoritos</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="image-wrapper">
+          <a href="./pages/header/copntactarnos.html"><img src="img/contactoarnos.png" alt="favoritos"
+              id="normalIcon"></a>
+          <div class="hover-text">Contactoarnos</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="image-wrapper">
+          <a href="./pages/header/carito.html"><img src="img/carito.png" alt="carrito" id="normalIcon"></a>
+          <div class="hover-text">Compras</div>
+        </div>
+      </div>
     </div>
     <form action="" id="langChange">
       <div class="dropdown">
@@ -68,7 +100,7 @@
     </form>
   </div>
   <div id="mainBgImage"></div>
-  <main>  
+  <main>
     <div id="bgImage"> </div>
     <h2>Visita nuestros productos más vendidos</h2>
     <section id="mainProducts">
@@ -122,7 +154,18 @@
         burgerMenu.classList.remove('active');
       }
     });
+
+    document.addEventListener('mousemove', function (e) {
+      const hoverText = document.querySelector('.hover-text');
+      hoverText.style.left = e.clientX + 'px';
+      hoverText.style.top = e.clientY + 'px';
+    });
   </script>
+</body>
+
+</html>
+});
+</script>
 </body>
 
 </html>

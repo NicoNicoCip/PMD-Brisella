@@ -217,6 +217,37 @@ a:hover {
     margin-bottom: 20px; /* Espacio después del título */
 }
 
+.image-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.hover-text {
+  position: fixed;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0s;
+  background-color: black;
+  color: white;
+  border: 3px;
+  border-radius: 3px;
+  border-color: white;
+  padding: 0;
+  /* This will position relative to cursor */
+  transform: translate(-50%, 20px);
+  pointer-events: none; /* Prevents text from interfering with hover */
+  z-index: 1000;
+}
+
+.image-wrapper:hover .hover-text {
+  opacity: 1;
+  height: auto;
+  padding: 10px;
+  margin-top: 10px;
+  transition-delay: 1s;
+}
+
 form {
     display: flex;
     flex-direction: column;
