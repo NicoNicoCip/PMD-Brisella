@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   burgerMenu();
   iconTooltips();
-
-  // Load products from JSON and then shrink-wrap
-  loadProductsFromJSON('/scripts/products.json', '#productRack', waitForProductImagesThenShrinkWrap);
-
   window.addEventListener('resize', shrinkWrapMainProducts);
 });
 
