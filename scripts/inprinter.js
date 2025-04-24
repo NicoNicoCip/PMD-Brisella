@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   burgerMenu();
   iconTooltips();
   autoInjectProductLists();
+  shrinkWrapMainProducts();
   window.addEventListener('resize', shrinkWrapMainProducts);
 });
 
