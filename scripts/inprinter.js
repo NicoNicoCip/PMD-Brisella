@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   burgerMenu();
   iconTooltips();
+  autoInjectProductLists();
   window.addEventListener('resize', shrinkWrapMainProducts);
 });
 
@@ -187,7 +188,7 @@ function waitForProductImagesThenShrinkWrap() {
   });
 }
 
-function loadProductsFromJSON(jsonPath, containerSelector, callback) {
+function loadProductsFromJSON(jsonPath, containerSelector) {
   fetch(jsonPath)
     .then(res => {
       if (!res.ok) throw new Error(`Failed to load ${jsonPath}`);
@@ -203,7 +204,6 @@ function loadProductsFromJSON(jsonPath, containerSelector, callback) {
           </a>
         </div>
       `).join('');
-      if (typeof callback === "function") callback();
     })
     .catch(err => {
       console.error(err);
@@ -223,7 +223,7 @@ function autoInjectProductLists() {
       })
       .then(products => {
         // Load products from JSON and then shrink-wrap
-        loadProductsFromJSON(jsonFile, '#productRack', waitForProductImagesThenShrinkWrap);
+        loadProductsFromJSON(jsonFile, '#productRack');
       })
       .catch(err => {
         console.error(err);
