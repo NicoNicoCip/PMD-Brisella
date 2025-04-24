@@ -10,116 +10,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <title>Productos - Brisella</title>
+  <script src="/scripts/inprinter.js" defer></script>
 </head>
 
 <body>
-  <!-- Header --> 
-  <div class="burger-menu">
-    <div class="burger-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="menu-items">
-      <div class="menu-nav-opts">
-        <a href="./favoritos.html"><img src="../../img/favoritos.png" alt="favoritos" id="normalIcon"></a>
-        <a href="./copntactarnos.html"><img src="../../img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
-        <a href="./carito.html"><img src="../../img/carito.png" alt="carrito" id="normalIcon"></a>
+  <div id="loadingScreen">
+    <div id="loadingContent">
+      <div class="dot-loader">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
-      <a href="./productos.html">Productos</a>
-      <a href="./novedades.html">Novedades</a>
-      <a href="./specialPrices.html">Special Prices</a>
-      <a href="./quienesSomos.html">¿Quiénes somos?</a>
     </div>
   </div>
 
-  <div id="navbar">
-    <a href="../../index.html" id="navName"><b>BRISELLA</b></a>
-    <div id="navPages">
-      <a href="./productos.html">Productos</a>
-      <a href="./novedades.html">Novedades</a>
-      <a href="./specialPrices.html" id="ofertas">Special Prices</a>
-      <a href="./quienesSomos.html">¿Quiénes somos?</a>
-    </div>
-    <div class="horizontalize" id="navOpts">
-      <a href="./favoritos.html"><img src="../../img/favoritos.png" alt="favoritos" id="normalIcon"></a>
-      <a href="./copntactarnos.html"><img src="../../img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
-      <a href="./carito.html"><img src="../../img/carito.png" alt="carrito" id="normalIcon"></a>
-    </div>
-    <form action="" id="langChange">
-      <div class="dropdown">
-        <input type="checkbox" id="toggleLang" hidden>
-
-        <label for="toggleLang" class="dropdown-label">
-          <img src="../../img/idioma.png" alt="idioma" width="32px" height="32px">
-          <span id="selectedLang">Español</span>
-        </label>
-
-        <ul class="dropdown-menu">
-          <li data-lang="Español">Español</li>
-          <li data-lang="English">English</li>
-          <li data-lang="Français">Français</li>
-          <li data-lang="عربي">عربي</li>
-          <li data-lang="阿拉伯">阿拉伯</li>
-        </ul>
-      </div>
-    </form>
-  </div>
+  <div id="/inprints/burger.html"></div>
+  <div id="/inprints/navBar.html"></div>
 
   <main>
     <article>
       <div id="bgImage"></div> <!-- Imagen de fondo -->
-      <center><h2>Productos</h2></center><br><br>
+      <center>
+        <h2>Productos</h2>
+      </center><br><br>
       <section id="mainProducts">
-          <div class="productCard">
-            <img src="../../img/pañuelo milan.png" alt="Producto 1">
-          </div>
-          <div class="productCard">
-            <img src="../../img/pañuelo nepal.png" alt="Producto 2">
-          </div>
-          <div class="productCard">
-            <img src="../../img/pañuelo bangladesh.png" alt="Producto 3">
-          </div>
-          <div class="productCard">
-            <img src="../../img/pañuelo mali.png" alt="Producto 4">
-          </div>
+        <div class="productCard">
+          <img src="../../img/pañuelo milan.png" alt="Producto 1">
+        </div>
+        <div class="productCard">
+          <img src="../../img/pañuelo nepal.png" alt="Producto 2">
+        </div>
+        <div class="productCard">
+          <img src="../../img/pañuelo bangladesh.png" alt="Producto 3">
+        </div>
+        <div class="productCard">
+          <img src="../../img/pañuelo mali.png" alt="Producto 4">
+        </div>
         </div>
       </section>
     </article>
     <br><br><br>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="horizontalize" id="footbar">
-      <a href="../../pages/footer/devoluciones.html">Devoluciones</a>
-      <a href="../../pages/footer/politicaPrivacidad.html">Politica de privacidad</a>
-      <a href="../../pages/footer/terminosYCondiciones.html">Terminos y condiciones</a>
-      <a href="../../pages/footer/registrarse.html">Registrarse</a>
-      <img src="../../img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
-    </div>
-  </footer>
+  <div id="/inprints/footer.html"></div>
 
-  <script>
-    document.querySelectorAll('.dropdown-menu li').forEach(item => {
-      item.addEventListener('click', function () {
-        document.getElementById('selectedLang').textContent = this.getAttribute('data-lang');
-      });
-    });
-
-    const burgerMenu = document.querySelector('.burger-menu');
-    const burgerIcon = document.querySelector('.burger-icon');
-
-    burgerIcon.addEventListener('click', () => {
-      burgerMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!burgerMenu.contains(e.target) && burgerMenu.classList.contains('active')) {
-        burgerMenu.classList.remove('active');
-      }
-    });
-  </script>
 </body>
+
 </html>

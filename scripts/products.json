@@ -1,0 +1,17 @@
+[
+  {
+    "href": "./pages/header/novedades.html",
+    "img": "img/pañuelo kyoto.png",
+    "alt": "Producto 1"
+  },
+  {
+    "href": "./pages/header/productos.html",
+    "img": "img/pañuelo bangladesh.png",
+    "alt": "Producto 2"
+  },
+  {
+    "href": "./pages/header/specialPrices.html",
+    "img": "img/pañuelo dubai rebajado.png",
+    "alt": "Producto 3"
+  }
+]

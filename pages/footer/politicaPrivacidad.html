@@ -1,123 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/general.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <title>Devoluciones</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/general.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <title>Devoluciones</title>
+  <script src="/scripts/inprinter.js" defer></script>
 </head>
+
 <body>
-  <div class="burger-menu">
-    <div class="burger-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="menu-items">
-      <div class="menu-nav-opts">
-        <a href="../../pages/header/favoritos.html"><img src="../../img/favoritos.png" alt="favoritos" id="normalIcon"></a>
-        <a href="../../pages/header/copntactarnos.html"><img src="../../img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
-        <a href="../../pages/header/carito.html"><img src="../../img/carito.png" alt="carrito" id="normalIcon"></a>
+  <div id="loadingScreen">
+    <div id="loadingContent">
+      <div class="dot-loader">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
-      <a href="../../pages/header/productos.html">Productos</a>
-      <a href="../../pages/header/novedades.html">Novedades</a>
-      <a href="../../pages/header/specialPrices.html">Special Prices</a>
-      <a href="../../pages/header/quienesSomos.html">¿Quiénes somos?</a>
     </div>
   </div>
 
-  <div id="navbar">
-    <a href="../../index.html" id="navName"><b>BRISELLA</b></a>
-    <div id="navPages">
-      <a href="../../pages/header/productos.html">Productos</a>
-      <a href="../../pages/header/novedades.html">Novedades</a>
-      <a href="../../pages/header/specialPrices.html" id="ofertas">Special Prices</a>
-      <a href="../../pages/header/quienesSomos.html">¿Quiénes somos?</a>
-    </div>
-    <div class="horizontalize" id="navOpts">
-      <a href="../../pages/header/favoritos.html"><img src="../../img/favoritos.png" alt="favoritos" id="normalIcon"></a>
-      <a href="../../pages/header/copntactarnos.html"><img src="../../img/contactoarnos.png" alt="favoritos" id="normalIcon"></a>
-      <a href="../../pages/header/carito.html"><img src="../../img/carito.png" alt="carrito" id="normalIcon"></a>
-    </div>
-    <form action="" id="langChange">
-      <div class="dropdown">
-        <input type="checkbox" id="toggleLang" hidden>
-
-        <label for="toggleLang" class="dropdown-label">
-          <img src="../../img/idioma.png" alt="idioma" width="32px" height="32px">
-          <span id="selectedLang">Español</span>
-        </label>
-
-        <ul class="dropdown-menu">
-          <li data-lang="Español">Español</li>
-          <li data-lang="English">English</li>
-          <li data-lang="Français">Français</li>
-          <li data-lang="عربي">عربي</li>
-          <li data-lang="阿拉伯">阿拉伯</li>
-        </ul>
-      </div>
-    </form>
-  </div>
-    <main>
-      <div id="bgImage"></div>
-      <article>
-        <div id="bgImage"></div> <!-- Imagen de fondo -->
-        <section id="mainAbout">
-          <h2>Política de privacidad</h2>
-          <p>En Brisella, nos comprometemos a proteger y respetar tu privacidad. Esta política de privacidad describe cómo recopilamos,
+  <div id="/inprints/burger.html"></div>
+  <div id="/inprints/navBar.html"></div>
+  <main>
+    <div id="bgImage"></div>
+    <article>
+      <div id="bgImage"></div> <!-- Imagen de fondo -->
+      <section id="mainAbout">
+        <h2>Política de privacidad</h2>
+        <p>En Brisella, nos comprometemos a proteger y respetar tu privacidad. Esta política de privacidad describe cómo
+          recopilamos,
           utilizamos y protegemos la información personal que nos proporcionas al visitar nuestro sitio web.</p><br>
 
-          <p><b>Información que Recopilamos</b></p>
-          <p><b>Datos Personales</b>: Recopilamos información personal como tu nombre, dirección de correo electrónico y cualquier otra
+        <p><b>Información que Recopilamos</b></p>
+        <p><b>Datos Personales</b>: Recopilamos información personal como tu nombre, dirección de correo electrónico y
+          cualquier otra
           información que nos proporciones al registrarte o contactarnos.</p><br>
 
-          <p><b>Datos de Navegación</b>: Recopilamos información sobre cómo interactúas con nuestro sitio web, incluyendo tu dirección IP,
+        <p><b>Datos de Navegación</b>: Recopilamos información sobre cómo interactúas con nuestro sitio web, incluyendo
+          tu dirección IP,
           tipo de navegador y sistema operativo.</p><br>
-          
-          <p><b>Cómo Utilizamos la Información</b></p>
-          <p><b>Propósitos Legítimos</b>: Utilizamos la información personal para mejorar tu experiencia en nuestro sitio web, responder
+
+        <p><b>Cómo Utilizamos la Información</b></p>
+        <p><b>Propósitos Legítimos</b>: Utilizamos la información personal para mejorar tu experiencia en nuestro sitio
+          web, responder
           a tus consultas y enviar comunicaciones relevantes.</p><br>
-          
-          <p><b>Seguridad</b>: Tomamos medidas de seguridad adecuadas para proteger tu información contra el acceso no autorizado o la pérdida.</p><br>
-          <p><b> Derechos del Usuario</b></p>
-          <p><b>Acceso y Rectificación</b> : Tienes derecho a acceder y corregir cualquier información personal que tengamos sobre ti.</p>
-          <p><b> Cancelación</b>: Puedes cancelar tu cuenta en cualquier momento.</p>
-        </section>
-      </article>
-    </main>
-    <footer>
-    <div class="horizontalize" id="footbar">
-      <a href="./devoluciones.html">Devoluciones</a>
-      <a href="./politicaPrivacidad.html">Politica de privacidad</a>
-      <a href="./terminosYCondiciones.html">Terminos y condiciones</a>
-      <a href="./registrarse.html">Registrarse</a>
-      <img src="../../img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
-    </div>
-  </footer>
 
-  <script>
-    document.querySelectorAll('.dropdown-menu li').forEach(item => {
-      item.addEventListener('click', function () {
-        document.getElementById('selectedLang').textContent = this.getAttribute('data-lang');
-      });
-    });
+        <p><b>Seguridad</b>: Tomamos medidas de seguridad adecuadas para proteger tu información contra el acceso no
+          autorizado o la pérdida.</p><br>
+        <p><b> Derechos del Usuario</b></p>
+        <p><b>Acceso y Rectificación</b> : Tienes derecho a acceder y corregir cualquier información personal que
+          tengamos sobre ti.</p>
+        <p><b> Cancelación</b>: Puedes cancelar tu cuenta en cualquier momento.</p>
+      </section>
+    </article>
+  </main>
+  <div id="/inprints/footer.html"></div>
 
-    const burgerMenu = document.querySelector('.burger-menu');
-    const burgerIcon = document.querySelector('.burger-icon');
-
-    burgerIcon.addEventListener('click', () => {
-      burgerMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!burgerMenu.contains(e.target) && burgerMenu.classList.contains('active')) {
-        burgerMenu.classList.remove('active');
-      }
-    });
-  </script>
 </body>
+
 </html>
