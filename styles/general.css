@@ -59,7 +59,7 @@ html {
   width: 12px;
   height: 12px;
   margin-top: -6px;
-  background-color: rgb(230, 152, 152);
+  background-color: #e69898;
   border-radius: 50%;
   animation: moveDots 4s infinite ease-in-out;
 }
@@ -97,8 +97,8 @@ html {
 #navbar {
   position: absolute;
   text-align: center;
-  background-color: rgba(199, 199, 199, 0.65);
-  box-shadow: 0px 0px 10px rgba(199, 199, 199, 0.65);
+  background-color: #c7c7c7a6;
+  box-shadow: 0px 0px 10px #c7c7c7a6;
   padding: 0px 20px;
   padding-top: 20px;
   padding-bottom: 15px;
@@ -135,11 +135,11 @@ html {
 }
 
 #navPages > *:hover {
-  color: rgb(224, 89, 89);
+  color: #e05959;
 }
 
 #ofertas {
-  color: rgb(224, 89, 89);
+  color: #e05959;
 }
 
 #navOpts {
@@ -161,8 +161,8 @@ html {
   flex-direction: column;
   position: relative;
 
-  background-color: rgba(199, 199, 199, 0.65);
-  box-shadow: 0px 0px 10px rgba(199, 199, 199, 0.65);
+  background-color: #c7c7c7a6;
+  box-shadow: 0px 0px 10px #c7c7c7a6;
 }
 
 #footbar>a {
@@ -213,9 +213,9 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #ffffffcc;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(199, 199, 199, 0.582);
+  box-shadow: 0 0 10px #c7c7c794;
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -254,8 +254,8 @@ html {
   bottom: -36px;
   /* adjust based on height */
   left: -10000px;
-  background: black;
-  color: white;
+  background: #c7c7c7a6;
+  color: #000000;
   padding: 5px 10px;
   font-size: 14px;
   border-radius: 6px;
@@ -285,7 +285,7 @@ input,
 textarea {
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 5px;
 }
 
@@ -307,13 +307,13 @@ section {
   margin-bottom: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(199, 199, 199, 0.582);
+  box-shadow: 0 0 10px #c7c7c794;
 }
 
 section h2 {
   margin-top: 0;
   font-family: 'Lora', serif;
-  color: rgb(0, 0, 0);
+  color: #000000;
   text-decoration: none;
   text-align: center;
   padding-bottom: 3%;
@@ -363,7 +363,7 @@ main>h2 {
   left: -250px;
   width: 250px;
   height: 100vh;
-  background-color: rgba(199, 199, 199, 0.95);
+  background-color: #c7c7c7f2;
   padding-top: 60px;
   transition: 0.4s;
 }
@@ -376,8 +376,8 @@ main>h2 {
 }
 
 .menu-items a:hover {
-  color: rgb(224, 89, 89);
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #e05959;
+  background-color: #ffffff33;
 }
 
 .burger-menu.active .menu-items {
@@ -414,7 +414,7 @@ main>h2 {
   gap: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(199, 199, 199, 0.582);
+  box-shadow: 0 0 10px #c7c7c794;
   position: relative;
   margin: 0 auto;
   width: auto;
@@ -442,10 +442,6 @@ main>h2 {
   width: 100%;
   height: 100%;
   z-index: -1;
-  /* Asegúrate de que esté detrás */
-
-  /* Full height */
-  height: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

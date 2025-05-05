@@ -6,19 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/PMD-Brisella/styles/general.css">
   <link rel="shortcut icon" href="img/brisellaLogo.png" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <title>Brisella</title>
 
-  <script src="/PMD-Brisella/scripts/inprinter.js" defer></script>
+  <script src="/PMD-Brisella/scripts/DOMLoader.js" defer></script>
 </head>
 
 <body>
-  <!--ele elemento contiene un nombre, elnaces a productos, noevdades, ofertas(en rojo), una paggina de informacion (quienes ssomos?),
-          un buscador(no funccional), favoritos, contactarnos, idioma, y cajita de compras 
-    -->
-
   <div id="loadingScreen">
     <div id="loadingContent">
       <div class="dot-loader">
@@ -34,13 +27,14 @@
   <div id="mainBgImage"></div>
 
   <main>
+    
     <div id="bgImage"> </div>
     <h2>Visita nuestros productos más vendidos</h2>
+
     <section id="productRack">
       <div id="/PMD-Brisella/scripts/products.json"></div>
     </section>
 
-    </div>
     <br><br><br><br>
   </main>
 
