@@ -1,7 +1,10 @@
-function burgerMenu() {
+export function burgerMenu() {
   const burgerMenu = document.querySelector('.burger-menu');
   const burgerIcon = document.querySelector('.burger-icon');
-  if (!burgerMenu || !burgerIcon) return;
+  if (!burgerMenu || !burgerIcon) {
+    alert("The burger menu is null")
+    return;
+  }
 
   burgerIcon.addEventListener('click', () => {
     burgerMenu.classList.toggle('active');

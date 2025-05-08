@@ -27,7 +27,7 @@ function loadFromJSON(jsonPath, containerSelector) {
     });
 }
 
-function autoInjectProducts() {
+export function autoInjectProducts() {
   // Find all elements with id ending in .json
   document.querySelectorAll('[id$=".json"]').forEach(el => {
     const jsonFile = el.id;
@@ -47,7 +47,7 @@ function autoInjectProducts() {
   });
 }
 
-function shrinkWrapMainProducts() {
+export function shrinkWrapMainProducts() {
   let container = document.getElementById('productRack')
   if(!container) return
 

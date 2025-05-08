@@ -4,15 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/PMD-Brisella/styles/general.css">
-  <link rel="shortcut icon" href="img/brisellaLogo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="shortcut icon" href="/PMD-Brisella/img/brisellaLogo.png" type="image/x-icon">
   <title>Brisella</title>
 
-  <script src="/PMD-Brisella/scripts/DOMLoader.js" defer></script>
+  <script type="module" src="/PMD-Brisella/scripts/DOMLoader.js" defer></script>
+
+  <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
 </head>
 
 <body>
-  <div id="loadingScreen">
+  <!-- <div id="loadingScreen">
     <div id="loadingContent">
       <div class="dot-loader">
         <span class="dot"></span>
@@ -38,7 +40,10 @@
     <br><br><br><br>
   </main>
 
-  <div id="/PMD-Brisella/inprints/footer.html"></div>
+  <div id="/PMD-Brisella/inprints/footer.html"></div> -->
+  <app-mainpage>
+    <p>HELLO WORLD</p>
+  </app-mainpage>
 </body>
 
 </html>

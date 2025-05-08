@@ -1,9 +1,8 @@
 //@ts-check
 
-function inprint() {
+export function inprint() {
   const htmlLoaders = document.querySelectorAll('[id$=".html"]')
   let loaded = 0
-
 
   htmlLoaders.forEach((el) => {
     const file = el.id
@@ -14,9 +13,6 @@ function inprint() {
       })
       .then(html => {
         el.innerHTML = html;
-        if (typeof reinitializeDynamicUI === "function") {
-          reinitializeDynamicUI();
-        }
       })
       .catch((err) => {
         console.error(err);
@@ -24,11 +20,6 @@ function inprint() {
       })
       .finally(() => {
         loaded++
-      });
-  });
-}
-
-function reinitializeDynamicUI() {
-  burgerMenu();
-  iconTooltips();
+      })
+  })
 }
