@@ -1,0 +1,20 @@
+#mainBgImage {
+  position:absolute;
+  background-image: url("/PMD-Brisella/img/imagenFundal.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: -300px;
+  background-position-x: 93px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0px;
+}
+
+.mainTextArea {
+  margin: 0px auto;
+  background-color: #9898986a;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}

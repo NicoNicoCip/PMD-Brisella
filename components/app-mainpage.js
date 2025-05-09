@@ -1,3 +1,4 @@
+//@ts-check
 class MainPage extends HTMLElement {
   constructor() {
     super()
@@ -39,8 +40,9 @@ class MainPage extends HTMLElement {
           </div>
         </div>
 
-        <div id="burgerMenu">
-          <div id="burgerIcon">
+        <div class="burgerMenu">
+
+          <div class="burgerIcon">
             <span></span>
             <span></span>
             <span></span>
@@ -75,13 +77,9 @@ class MainPage extends HTMLElement {
 
         <script scr="/PMD-Brisella/components/app-tooltip.js"></script>
       </header>
-      <main>
-        <div id="mainBody">
     `+ 
       this.innerHTML
     + /*html*/`
-        </div>
-      </main>
       <footer>
         <div id="footbar">
           <div id=secion1>
@@ -105,5 +103,28 @@ class MainPage extends HTMLElement {
     `
   }
 }
+
+function makeBurgerListeners() {
+  const burgerMenu = document.querySelector('.burgerMenu');
+  const burgerIcon = document.querySelector('.burgerIcon');
+  if (!burgerMenu || !burgerIcon) {
+    alert("The burger menu is null")
+    return;
+  }
+
+  burgerIcon.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!burgerMenu.contains(e.target) && burgerMenu.classList.contains('active')) {
+      burgerMenu.classList.remove('active');
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  makeBurgerListeners()
+})
 
 customElements.define("app-mainpage", MainPage)

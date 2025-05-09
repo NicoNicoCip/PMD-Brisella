@@ -8,28 +8,34 @@
 }
 
 :root {
-  --content-width: 100%;
-  --content-side-separation: 12rem;
+  --g-width: 100%;
+  --g-side-separation: 8%;
+  --g-iconsize: 32px;
   
-  --color-grey: rgba(175, 175, 175, 0.501);
+  --c-barsColor: #bfbfbf6a;
+  --c-sidelines: #a0a0a06a;
 }
 
 body {
   min-height: 100dvh;
 
-  background-image: url(../img/fondo\ blanco\ brisella.png);
+  background-image: url("/PMD-Brisella/img/fondo\ blanco\ brisella.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
+  z-index: 0;
+  font-family: 'Lora', serif;
 }
 
 header {
-  max-width: var(--content-width);
+  max-width: var(--g-width);
   width: 100%;
-  padding: 0 var(--content-side-separation);
+  padding: 0 var(--g-side-separation);
   margin: 0 auto;
-  background-color: var(--color-grey);
+  background-color: var(--c-barsColor);
+  box-shadow: 10px 0px 10px var(--c-barsColor);
+  z-index: 1;
 }
 
 main {
@@ -37,18 +43,18 @@ main {
   width: 100%;
   /* background-color: red; */
   margin: 0 auto;
-  padding: 0 var(--content-side-separation);
+  padding: 0 var(--g-side-separation);
 }
 
 #navbar {
   height: 100%;
   display: inline-flex;
   align-self: center;
-  width: 100%;
 }
 
-#mainBody {
-  height: 100%;
+.mainBody {
+  min-height: 100dvb;
+  padding: 16px 10px;
 }
 
 #navbar #navName {
@@ -60,12 +66,10 @@ main {
 #navbar .navPages {
   display: flex;
   justify-content: center;
-  gap: 13rem;
   padding: 0px 3rem;
   align-items: center;
   flex-direction: row;
   font-size: 20px;
-  width: 100%;
 }
 
 #navbar .navOpts {
@@ -78,36 +82,44 @@ app-mainpage #mainBody {
 }
 
 app-mainpage img {
-  width: 48px;
-  height: 48px;
+  width: var(--g-iconsize);
+  height: var(--g-iconsize);
 }
 
-#burgerMenu {
+.navOpts a {
+  display: inline-block;
+  width: var(--g-iconsize);
+  height: var(--g-iconsize);
+}
+
+.burgerMenu {
   padding: 20px;
   position: fixed;
-  left: 0;
+  left: -220px;
   top: 0;
   height: 100%;
-  min-width: 15%;
 
-  /* display: flex; */
+  padding-top: 61px;
   display: none;
 
   flex-direction: column;
   align-items: center;
   box-sizing: inherit;
 
-  background-color: rgb(207, 207, 207)
+  background-color: #bfbfbf;
+  z-index: 2;
+
+  transition: 0.4s;
 }
 
-#burgerMenu .navOpts {
+.burgerMenu .navOpts {
   padding: 10px;
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
 
-#burgerMenu .navPages {
+.burgerMenu .navPages {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,12 +130,49 @@ app-mainpage img {
   font-size: 20px;
 }
 
+.burgerIcon {
+  cursor: pointer;
+  padding: 15px;
+  position:fixed;
+  top: 10px;
+  left: 15px;
+  z-index: 3;
+}
+
+.burgerIcon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.burgerMenu.active {
+  left: 0;
+}
+
+.burgerMenu.active .burgerIcon span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burgerMenu.active .burgerIcon span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerMenu.active .burgerIcon span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* TODO: Responsive */
+
 footer {
-  max-width: var(--content-width);
+  max-width: var(--g-width);
   width: 100%;
-  padding: 0 var(--content-side-separation);
-  margin: 0 auto;
-  background-color: var(--color-grey);
+  padding: 0 var(--g-side-separation);
+  background-color: var(--c-barsColor);
+  box-shadow: -10px 0px 10px var(--c-barsColor);
+  z-index: 1;
 }
 
 #footbar {
@@ -131,16 +180,29 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px 50px;
+  padding: 50px;
 }
 
 #footbar > * {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 10%;
+  align-items: start;
   margin: 0px 20px;
-  gap: 15px;
+  padding: 0px 20px;
+  gap: 1rem;
+
+  border-right: 2px;
+  border-right-style: solid;
+  border-right-color: var(--c-sidelines);
+
+  border-left: 2px;
+  border-left-style: solid;
+  border-left-color: var(--c-sidelines);
+}
+
+#footbar > *:nth-child(4) {
+  border-style: none;
 }
 
 #footbar p {
@@ -148,11 +210,55 @@ footer {
 }
 
 #footbar img {
-  position: relative;
-  bottom: 10px;
-  right: 10px;
-  z-index: 100;
-  float: right;
-  width: 120px;
-  height: 120px;
+  position:absolute;
+  display: flexbox;
+  z-index: -10;
+  bottom: -300px;
+  right: 30px;
+  width: 220px;
+  height: 180px;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.gold {
+  color: gold;
+}
+
+@media screen and (max-width: 1045px) {
+  .burgerMenu {
+    display: flex;
+  }
+
+  #navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #navbar .navPages  {
+    display: none;
+  }
+
+  #navName {
+    text-align: center;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  #navbar .navOpts  {
+    display: none;
+  }
 }

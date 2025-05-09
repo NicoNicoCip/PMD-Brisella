@@ -338,24 +338,6 @@ main>h2 {
   margin-left: 10px;
 }
 
-.burger-icon {
-  cursor: pointer;
-  padding: 15px;
-  position: fixed;
-  top: 10px;
-  left: 15px;
-  z-index: 1001;
-}
-
-.burger-icon span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: black;
-  margin: 5px 0;
-  transition: 0.4s;
-}
-
 .menu-items {
   position: fixed;
   top: 0;
@@ -447,44 +429,4 @@ main>h2 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-
-@media screen and (max-width: 1045px) {
-  .burger-menu {
-    display: block;
-    margin-left: 100px;
-  }
-
-  #navPages {
-    display: none;
-  }
-
-  #navName {
-    text-align: center;
-    width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-  }
-
-  #navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #navOpts {
-    display: none;
-    /* Hide original navOpts */
-  }
-
-  .menu-nav-opts {
-    display: flex;
-    align-items: center;
-  }
 }
