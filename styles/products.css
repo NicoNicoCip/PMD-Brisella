@@ -134,13 +134,28 @@ app-productos[type='page'] app-producto h2 {
   font-size: 30px;
 }
 
-app-productos[type='page'] app-producto p {
+app-productos[type='page'] app-producto .paragraph {
   text-wrap-mode: wrap;
   padding: 10px;
+  max-height: 91px;
+  overflow: hidden;
+  cursor: pointer;
+  pointer-events:all;
+
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #a0a0a06a;
+
+  transition: max-height 0.3s ease-in;
+}
+
+app-productos[type='page'] app-producto .paragraph.expanded {
+  max-height: 380px;
 }
 
 app-productos[type='page'] app-producto img {
   display: flex;
+  width: var(--s-megaImageSize)
 }
 
 app-productos[type='page'] app-producto button {
@@ -169,9 +184,9 @@ app-productos[type='page'] app-colorwheel {
 
 /* responsive */
 @media screen and (max-width: 960px) {
-  app-productos[type='page'] app-producto img {
+  app-productos[type='page'] app-producto > img {
     display: flex;
     justify-self: center;
-    width: 80%;
+    width: 70%;
   }
 }

@@ -11,6 +11,19 @@ class AppProductos extends HTMLElement {
   render() {
   }
 }
+// /\ Easy-er
+// | to
+//\/ HARD
+// TODO: add a button that lets you switch from list to page mode
+// TODO: The rest of the buttons and their styles
+// TODO: Footer elements
+// TODO: src atribute funccionalaty and loading from json
+// TODO: html to json parser
+// TODO: cookies
+// TODO: cart area
+// TODO: favourites area
+// TODO: cookies popup
+// TODO: registering
 
 class AppProducto extends HTMLElement {
   constructor() {
@@ -23,7 +36,11 @@ class AppProducto extends HTMLElement {
 
   render() {
     let image = this.getElementsByTagName("img")[0]
+    let paragraph = this.getElementsByTagName("p")[0]
+    paragraph.setAttribute("onclick", "this.classList.toggle('expanded')")
+    paragraph.classList.add("paragraph")
     this.getElementsByTagName("img")[0].remove()
+
     let rest = this.innerHTML
     let buttons = /*html*/`
       <div id="fragrancias">
@@ -43,7 +60,7 @@ class AppProducto extends HTMLElement {
   }
 
   setInner(image, rest, buttons) {
-    if(this.getAttribute("type") === "page") {
+    if(this.parentElement?.getAttribute("type") == "page") {
       this.innerHTML = ''
 
       if(window.innerWidth >= 960) {
