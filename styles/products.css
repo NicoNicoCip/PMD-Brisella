@@ -89,8 +89,6 @@ app-productos[type='page'] app-producto button img {
   height: 16px;
 }
 
-
-
 #fragrancias {
  padding: 10px;
 }
@@ -105,3 +103,10 @@ app-productos[type='page'] app-colorwheel {
 
 
 /* responsive */
+@media screen and (max-width: 960px) {
+  app-productos[type='page'] app-producto img {
+    display: flex;
+    justify-self: center;
+    width: 80%;
+  }
+}

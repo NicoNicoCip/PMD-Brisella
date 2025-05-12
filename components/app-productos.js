@@ -24,26 +24,68 @@ class AppProducto extends HTMLElement {
   render() {
     let image = this.getElementsByTagName("img")[0]
     this.getElementsByTagName("img")[0].remove()
-
-    this.innerHTML = /*html*/`
-    <table>
-      <td>`+ image.outerHTML + /*html*/`</td>
-      <td>
-        `+ this.innerHTML + /*html*/`
-        
-        <div id="fragrancias">
-          <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-          <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-          <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-          <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-        </div>
-        <div id="compras">
-          <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/favoritos.png"></button>
-          <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-        </div>
-      </td>
-    </table>
+    let rest = this.innerHTML
+    let buttons = /*html*/`
+      <div id="fragrancias">
+        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+      </div>
+      <div id="compras">
+        <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/favoritos.png"></button>
+        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+      </div>
     `
+    window.addEventListener("load", () => {
+      this.innerHTML = ''
+
+      if(window.innerWidth >= 960) {
+        this.innerHTML = /*html*/`
+        <table>
+          <td>`+ image.outerHTML + /*html*/`</td>
+          <td></td>
+          <td>
+            `+ rest + buttons + /*html*/`
+          </td>
+        </table>
+        `
+      } else {
+        this.innerHTML = /*html*/`
+        <table>
+          <tr>`+ image.outerHTML + /*html*/`</tr>
+          <tr>
+            `+ rest + buttons + /*html*/`
+          </tr>
+        </table>
+        `
+      }
+    })
+
+    window.addEventListener("resize", () => {
+      this.innerHTML = ''
+
+      if(window.innerWidth >= 960) {
+        this.innerHTML = /*html*/`
+        <table>
+          <td>`+ image.outerHTML + /*html*/`</td>
+          <td></td>
+          <td>
+            `+ rest + buttons + /*html*/`
+          </td>
+        </table>
+        `
+      } else {
+        this.innerHTML = /*html*/`
+        <table>
+          <tr>`+ image.outerHTML + /*html*/`</tr>
+          <tr>
+            `+ rest + buttons + /*html*/`
+          </tr>
+        </table>
+        `
+      }
+    })
   }
 }
 
