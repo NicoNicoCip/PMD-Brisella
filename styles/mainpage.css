@@ -20,10 +20,10 @@ body {
   min-height: 100dvh;
 
   background-image: url("/PMD-Brisella/img/fondo.jpg");
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top center;
-  background-attachment: fixed;
   z-index: 0;
   font-family: 'Lora', serif;
 }
@@ -211,6 +211,9 @@ footer {
   border-left: 2px;
   border-left-style: solid;
   border-left-color: var(--c-sidelines);
+
+  border-top: 0px;
+  border-bottom: 0px;
 }
 
 #footbar > *:nth-child(4) {
@@ -278,7 +281,25 @@ footer {
     display: none;
   }
 
+  #footbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #footbar > * {
+    border-top: 2px;
+    border-top-style: solid;
+    border-top-color: var(--c-sidelines);
+
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--c-sidelines);
+
+    border-left: 0px;
+    border-right: 0px;
+  }
+
   #footbar img {
-    display: none;
+    top: 0px;
   }
 }
