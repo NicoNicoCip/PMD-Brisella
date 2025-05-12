@@ -18,23 +18,23 @@ class MainPage extends HTMLElement {
           <div class="navPages">
             <a href="/PMD-Brisella/pages/header/productos.html">Productos</a>
             <a href="/PMD-Brisella/pages/header/novedades.html">Novedades</a>
-            <a href="/PMD-Brisella/pages/header/specialPrices.html" id="ofertas">Special Prices</a>
+            <a href="/PMD-Brisella/pages/header/specialPrices.html" class="velvet">Special Prices</a>
           </div>
         
           <div class="navOpts">
             <app-tootlip data="Favoritos">
               <a href="/PMD-Brisella/pages/header/favoritos.html">
-                <img src="/PMD-Brisella/img/favoritos.png" alt="fav" id="normalIcon">
+                <img src="/PMD-Brisella/img/favoritos.png" alt="fav">
               </a>
             </app-tootlip>
             <app-tootlip data="Contactarnos">
               <a href="/PMD-Brisella/pages/header/copntactarnos.html">
-                <img src="/PMD-Brisella/img/contactoarnos.png" alt="con" id="normalIcon">
+                <img src="/PMD-Brisella/img/contactoarnos.png" alt="con">
               </a>
             </app-tootlip>
             <app-tootlip data="Carrito">
               <a href="/PMD-Brisella/pages/header/carito.html">
-                <img src="/PMD-Brisella/img/carito.png" alt="car" id="normalIcon">
+                <img src="/PMD-Brisella/img/carito.png" alt="car">
               </a>
             </app-tootlip>
           </div>
@@ -52,17 +52,17 @@ class MainPage extends HTMLElement {
             <div class="navOpts">
               <app-tootlip data="Favoritos">
                 <a href="/PMD-Brisella/pages/header/favoritos.html">
-                  <img src="/PMD-Brisella/img/favoritos.png" alt="fav" id="normalIcon">
+                  <img src="/PMD-Brisella/img/favoritos.png" alt="fav">
                 </a>
               </app-tootlip>
               <app-tootlip data="Contactarnos">
                 <a href="/PMD-Brisella/pages/header/copntactarnos.html">
-                  <img src="/PMD-Brisella/img/contactoarnos.png" alt="con" id="normalIcon">
+                  <img src="/PMD-Brisella/img/contactoarnos.png" alt="con">
                 </a>
               </app-tootlip>
               <app-tootlip data="Carrito">
                 <a href="/PMD-Brisella/pages/header/carito.html">
-                  <img src="/PMD-Brisella/img/carito.png" alt="car" id="normalIcon">
+                  <img src="/PMD-Brisella/img/carito.png" alt="car">
                 </a>
               </app-tootlip>
             </div>
@@ -70,12 +70,12 @@ class MainPage extends HTMLElement {
               <a href="/PMD-Brisella/index.html">Inicio</a>
               <a href="/PMD-Brisella/pages/header/productos.html">Productos</a>
               <a href="/PMD-Brisella/pages/header/novedades.html">Novedades</a>
-              <a href="/PMD-Brisella/pages/header/specialPrices.html">Special Prices</a>
+              <a href="/PMD-Brisella/pages/header/specialPrices.html" class="velvet">Special Prices</a>
             </div>
           </div>
         </div>
 
-        <script scr="/PMD-Brisella/components/app-tooltip.js"></script>
+        <script src="/PMD-Brisella/components/app-tooltip.js"></script>
       </header>
     `+ 
       this.innerHTML
@@ -97,7 +97,7 @@ class MainPage extends HTMLElement {
             <p>Title</p>
           </div>
 
-          <img src="/PMD-Brisella/img/brisellaLogo.png" alt="Logo" width="128px" height="128px">
+          <img src="/PMD-Brisella/img/brisellaLogo.png" width="128px" height="128px">
         </div>
       </footer>
     `
@@ -117,6 +117,7 @@ function makeBurgerListeners() {
   });
 
   document.addEventListener('click', (e) => {
+    //@ts-ignore
     if (!burgerMenu.contains(e.target) && burgerMenu.classList.contains('active')) {
       burgerMenu.classList.remove('active');
     }

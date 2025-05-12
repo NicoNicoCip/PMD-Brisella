@@ -1,4 +1,4 @@
-class BrisellaHelloWorld extends HTMLElement {
+class AppLoading extends HTMLElement {
   constructor() {
     super();
   }
@@ -22,6 +22,6 @@ class BrisellaHelloWorld extends HTMLElement {
   }
 }
 
-customElements.define("brisella-hello-world", BrisellaHelloWorld);
+customElements.define("app-loading", AppLoading);
 
 

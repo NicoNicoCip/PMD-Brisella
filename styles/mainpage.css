@@ -19,7 +19,7 @@
 body {
   min-height: 100dvh;
 
-  background-image: url("/PMD-Brisella/img/fondo\ blanco\ brisella.jpg");
+  background-image: url("/PMD-Brisella/img/fondo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -48,6 +48,7 @@ main {
 
 #navbar {
   height: 100%;
+  width: 100%;
   display: inline-flex;
   align-self: center;
 }
@@ -70,6 +71,8 @@ main {
   align-items: center;
   flex-direction: row;
   font-size: 20px;
+  width: 100%;
+  gap: 5rem;
 }
 
 #navbar .navOpts {
@@ -81,7 +84,7 @@ app-mainpage #mainBody {
   padding: 20px;
 }
 
-app-mainpage img {
+#navbar img {
   width: var(--g-iconsize);
   height: var(--g-iconsize);
 }
@@ -119,6 +122,11 @@ app-mainpage img {
   gap: 2rem;
 }
 
+.burgerMenu img {
+  width: var(--g-iconsize);
+  height: var(--g-iconsize);
+}
+
 .burgerMenu .navPages {
   display: flex;
   flex-direction: column;
@@ -132,11 +140,15 @@ app-mainpage img {
 
 .burgerIcon {
   cursor: pointer;
-  padding: 15px;
+  padding: 8px;
+  margin: 0px;
   position:fixed;
-  top: 10px;
+  top: 8px;
   left: 15px;
   z-index: 3;
+
+  background-color: #d7d7d785;
+  border-radius: 3px;
 }
 
 .burgerIcon span {
@@ -231,7 +243,11 @@ footer {
   color: gold;
 }
 
-@media screen and (max-width: 1045px) {
+.velvet {
+  color: rgb(255, 0, 38);
+}
+
+@media screen and (max-width: 960px) {
   .burgerMenu {
     display: flex;
   }

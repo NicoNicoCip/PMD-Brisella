@@ -4,37 +4,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/PMD-Brisella/styles/general.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/index.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
   <link rel="shortcut icon" href="/PMD-Brisella/img/brisellaLogo.png" type="image/x-icon">
   <title>Brisella</title>
 
-  <script src="/PMD-Brisella/scripts/DOMLoader.js" defer></script>
+  <script type="module" src="/PMD-Brisella/scripts/DOMLoader.js" defer></script>
+
+  <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
+  <script defer src="/PMD-Brisella/components/app-loading.js"></script>
+  <script defer src="/PMD-Brisella/components/app-productos.js"></script>
+
 </head>
 
 <body>
-  <div id="loadingScreen">
-    <div id="loadingContent">
-      <div class="dot-loader">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
+  <app-loading></app-loading>
+  <app-mainpage>
+    <div id="mainBgImage">
     </div>
-  </div>
+    <main>
+      <div class="mainBody mainTextArea">
+        <section>
+          <p class="black">HELLO WORLD</p>
+        </section>
+        <!-- 
+          The products work in the followinf way.
+          Since i dont want to have two different elements for the one product and for many products,
+          i am going to use the same tag with different attributes to change how it gets displayed.
+          the attributes in question are as follows:
 
-  <div id="/PMD-Brisella/inprints/burger.html"></div>
-  <div id="/PMD-Brisella/inprints/navBar.html"></div>
-
-  <main>
-    <div id="bgImage"></div>
-    <div id="producto"></div>
-    <p id="descripcion">DESCRIPCION</p>
-    <!-- 4 botones que cambian el color del borde de la imagen -->
-    <!-- 2 botones que anaden cosas a la cesta.-->
-  </main>
-
-  <div id="/PMD-Brisella/inprints/footer.html"></div>
-
+          type -> represents the type of the produtcs list. by default if not specified it displays as list
+            options > list (displays the elements as a list with no description or fragrance selectors or color wheel)
+                    > page (displays the elements as the full size page products with all the blows and whistles it has)
+          
+          src -> specifies the source of the products. if none is specified none is loaded. the spurce of the 
+            products list is in json format, and the path to it must be specified as /PMF-Brisella/route/to/json.
+            the products will be loaded at the bottom of whatever is in the products list.
+          
+          each product will have the following:
+            <h1> title
+            (optional) <h2> subtitle
+            (optional) <p> description
+            <img> product image
+            <app-colorwheel> a colorwheel that changes the color of whatever is inside it, or another element
+              searched by id with the atribute dst for destination.
+            -->
+        <section>
+          <h1 class="velvet">Productos</h1>
+          <app-productos type="page">
+            <app-producto>
+              <img src="/PMD-Brisella/img/Panuelos/PanueloBambu.jpg" alt="Test">
+              <h1>Title</h1>
+              <h2>Subtitle</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet cursus semper.
+                Vivamus dictum dui sit amet justo pretium imperdiet. Aliquam gravida lacinia orci, eget sodales velit
+                volutpat eget. Praesent sit amet convallis diam, eget pulvinar dui. Donec turpis ipsum, tincidunt dictum
+                ipsum nec, pharetra volutpat urna. Aenean sit amet rhoncus nibh. Duis ipsum lectus, ullamcorper id
+                imperdiet vel, convallis convallis neque. Nullam nec ante ac libero vulputate commodo. Phasellus ac nisl
+                scelerisque, eleifend risus vel, condimentum ante. Fusce ultrices nunc nec nunc aliquet pretium vel et
+                tellus. Maecenas sit amet felis libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                posuere cubilia curae; Duis erat elit, varius quis iaculis et, laoreet non libero. Phasellus dictum nisl
+                et lectus faucibus mattis. Aliquam id nibh a est bibendum sollicitudin. Mauris sodales magna nec neque
+                consectetur, quis mollis massa suscipit.
+              </p>
+            </app-producto>
+            <app-producto>
+              <img src="/PMD-Brisella/img/Panuelos/PanueloAurora.jpg" alt="Test">
+              <h1>Title</h1>
+              <h2>Subtitle</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet cursus semper.
+                Vivamus dictum dui sit amet justo pretium imperdiet. Aliquam gravida lacinia orci, eget sodales velit
+                volutpat eget. Praesent sit amet convallis diam, eget pulvinar dui. Donec turpis ipsum, tincidunt dictum
+                ipsum nec, pharetra volutpat urna. Aenean sit amet rhoncus nibh. Duis ipsum lectus, ullamcorper id
+                imperdiet vel, convallis convallis neque. Nullam nec ante ac libero vulputate commodo. Phasellus ac nisl
+                scelerisque, eleifend risus vel, condimentum ante. Fusce ultrices nunc nec nunc aliquet pretium vel et
+                tellus. Maecenas sit amet felis libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                posuere cubilia curae; Duis erat elit, varius quis iaculis et, laoreet non libero. Phasellus dictum nisl
+                et lectus faucibus mattis. Aliquam id nibh a est bibendum sollicitudin. Mauris sodales magna nec neque
+                consectetur, quis mollis massa suscipit.
+              </p>
+            </app-producto>
+            <app-producto>
+              <img src="/PMD-Brisella/img/Panuelos/PanueloMandala.jpg" alt="Test">
+              <h1>Title</h1>
+              <h2>Subtitle</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet cursus semper.
+                Vivamus dictum dui sit amet justo pretium imperdiet. Aliquam gravida lacinia orci, eget sodales velit
+                volutpat eget. Praesent sit amet convallis diam, eget pulvinar dui. Donec turpis ipsum, tincidunt dictum
+                ipsum nec, pharetra volutpat urna. Aenean sit amet rhoncus nibh. Duis ipsum lectus, ullamcorper id
+                imperdiet vel, convallis convallis neque. Nullam nec ante ac libero vulputate commodo. Phasellus ac nisl
+                scelerisque, eleifend risus vel, condimentum ante. Fusce ultrices nunc nec nunc aliquet pretium vel et
+                tellus. Maecenas sit amet felis libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                posuere cubilia curae; Duis erat elit, varius quis iaculis et, laoreet non libero. Phasellus dictum nisl
+                et lectus faucibus mattis. Aliquam id nibh a est bibendum sollicitudin. Mauris sodales magna nec neque
+                consectetur, quis mollis massa suscipit.
+              </p>
+            </app-producto>
+          </app-productos>
+        </section>
+      </div>
+    </main>
+  </app-mainpage>
 </body>
 
 </html>

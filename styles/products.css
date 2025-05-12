@@ -1,0 +1,107 @@
+:root {
+  --s-miniImageSize: 256px;
+  --s-megaImageSize: 360px;
+}
+
+/* list mode */
+app-productos[type='list'] {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+app-productos[type='list'] app-producto {
+  display: inline;
+  background-color: rgba(236, 236, 236, 0.9);
+  padding: 50px 10px;
+}
+
+app-productos[type='list'] app-producto h1 {
+  display: none;
+}
+
+app-productos[type='list'] app-producto h2 {
+  display: none;
+}
+
+app-productos[type='list'] app-producto p {
+  display: none;
+}
+
+app-productos[type='list'] app-producto img {
+  display: block;
+  width: var(--s-miniImageSize);
+  height: var(--s-miniImageSize);
+}
+
+app-productos[type='list'] app-producto button {
+  display: none;
+}
+
+app-productos[type='list'] app-colorwheel {
+  display: none;
+}
+
+/* page mode */
+
+app-productos[type='page'] {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+app-productos[type='page'] app-producto {
+  background-color: rgba(236, 236, 236, 0.9);
+  padding: 10px;
+  display: grid;
+}
+
+app-productos[type='page'] app-producto h1 {
+  padding: 10px;
+  font-size: 45px;
+}
+
+app-productos[type='page'] app-producto h2 {
+  padding: 10px;
+  font-size: 30px;
+}
+
+app-productos[type='page'] app-producto p {
+  text-wrap-mode: wrap;
+  padding: 10px;
+}
+
+app-productos[type='page'] app-producto img {
+  display: flex;
+}
+
+app-productos[type='page'] app-producto button {
+  display: inline-flex;
+  padding: 5px;
+}
+
+app-productos[type='page'] app-producto button img {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+
+
+#fragrancias {
+ padding: 10px;
+}
+
+#compras {
+  padding: 10px;
+}
+
+app-productos[type='page'] app-colorwheel {
+  display: flex;
+}
+
+
+/* responsive */
