@@ -82,7 +82,7 @@ class MainPage extends HTMLElement {
     + /*html*/`
       <footer>
         <div id="footbar">
-          <div id=secion1>
+          <div class="section">
             <p>Title</p>
             <a href="/PMD-Brisella/index.html">Inicio</a>
             <a href="/PMD-Brisella/pages/footer/devoluciones.html">Devoluciones</a>
@@ -90,10 +90,10 @@ class MainPage extends HTMLElement {
             <a href="/PMD-Brisella/pages/footer/terminosYCondiciones.html">Terminos y condiciones</a>
             <a href="/PMD-Brisella/pages/footer/registrarse.html">Registrarse</a>
           </div>
-          <div id=section2>
+          <div class="section">
             <p>Title</p>
           </div>
-          <div id=section3>
+          <div class="section">
             <p>Title</p>
           </div>
 

@@ -10,13 +10,24 @@ app-productos[type='list'] {
   gap: 1rem;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 app-productos[type='list'] app-producto {
-  display: inline;
+  display:block;
   background-color: rgba(236, 236, 236, 0.9);
+  box-shadow: inset 50px 30px 80px #e8ebeb;
+  border-radius: 4px;
+  border-color: #ffffff;
   padding: 50px 10px;
+  transition: 0.3s ease-in-out;
+  max-width: fit-content;
 }
+
+app-productos[type='list'] app-producto:hover {
+  scale: 1.02;
+}
+
 
 app-productos[type='list'] app-producto h1 {
   display: none;
@@ -32,16 +43,70 @@ app-productos[type='list'] app-producto p {
 
 app-productos[type='list'] app-producto img {
   display: block;
-  width: var(--s-miniImageSize);
-  height: var(--s-miniImageSize);
+  max-width: var(--s-miniImageSize);
+  max-height: var(--s-miniImageSize);
 }
 
 app-productos[type='list'] app-producto button {
-  display: none;
+  display: inline-flex;
+}
+
+app-productos[type='list'] app-producto button img{
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
 }
 
 app-productos[type='list'] app-colorwheel {
   display: none;
+}
+
+app-productos[type='list'] #fragrancias {
+  display: none;
+}
+
+app-productos[type='list'] #compras{
+  display: flex;
+  float: right;
+  gap: 3px;
+  margin-top: 10px;
+}
+
+app-productos[type='list'] #compras button{
+  display: inline-flex;
+  padding: 5px;
+  background-color: #e8ebeb;
+  border: 2px;
+  border-style: solid;
+  border-color: #e8ebeb;
+  transition: 0.3s ease-in-out;
+}
+
+app-productos[type='list'] #compras button:hover{
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+app-productos[type='list'] #compras button:first-child{
+  background-color: black;
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+app-productos[type='list'] #compras button:first-child:hover{
+  background-color: rgb(80, 80, 80);
+  border-color:rgb(80, 80, 80);
+}
+
+app-productos[type='list'] #compras p{
+  display: inline-flex;
+  padding-right: 54px;
+  color: rgb(243, 243, 243);
+  float: left;
 }
 
 /* page mode */
@@ -89,11 +154,11 @@ app-productos[type='page'] app-producto button img {
   height: 16px;
 }
 
-#fragrancias {
+app-productos[type='page'] #fragrancias {
  padding: 10px;
 }
 
-#compras {
+app-productos[type='page'] #compras {
   padding: 10px;
 }
 

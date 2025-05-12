@@ -11,14 +11,14 @@
   --g-width: 100%;
   --g-side-separation: 8%;
   --g-iconsize: 32px;
+  --g-easeTime: 0.1s;
   
   --c-barsColor: #bfbfbf6a;
   --c-sidelines: #a0a0a06a;
+  --c-crimson: #d21f28;
 }
 
 body {
-  min-height: 100dvh;
-
   background-image: url("/PMD-Brisella/img/fondo.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -26,6 +26,13 @@ body {
   background-size: cover;
   z-index: 0;
   font-family: 'Lora', serif;
+
+  -webkit-user-drag: none;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE10+ */
+  user-select: none;         /* Standard */
 }
 
 header {
@@ -39,11 +46,13 @@ header {
 }
 
 main {
+  min-height: 1000px;
   max-width: var(--content-width);
   width: 100%;
   /* background-color: red; */
   margin: 0 auto;
   padding: 0 var(--g-side-separation);
+  
 }
 
 #navbar {
@@ -54,7 +63,7 @@ main {
 }
 
 .mainBody {
-  min-height: 100dvb;
+  min-height: 1000px;
   padding: 16px 10px;
 }
 
@@ -75,6 +84,14 @@ main {
   gap: 5rem;
 }
 
+#navbar .navPages a {
+  transition: var(--g-easeTime) ease-in-out;
+}
+
+#navbar .navPages a:hover {
+  color: var(--c-crimson);
+}
+
 #navbar .navOpts {
   padding: 10px;
 }
@@ -89,16 +106,22 @@ app-mainpage #mainBody {
   height: var(--g-iconsize);
 }
 
-.navOpts a {
+#navbar .navOpts a {
   display: inline-block;
   width: var(--g-iconsize);
   height: var(--g-iconsize);
+  transition: var(--g-easeTime) ease-in-out;
 }
+
+#navbar .navOpts a:hover {
+  background-color: rgba(255, 255, 255, 0.668);
+}
+
 
 .burgerMenu {
   padding: 20px;
   position: fixed;
-  left: -220px;
+  left: -226px;
   top: 0;
   height: 100%;
 
@@ -116,10 +139,25 @@ app-mainpage #mainBody {
 }
 
 .burgerMenu .navOpts {
-  padding: 10px;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  width: 100%;
+
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #a0a0a06a;
+}
+
+.burgerMenu .navOpts a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  transition: var(--g-easeTime) ease-in-out;
+}
+
+.burgerMenu .navOpts a:hover {
+  background-color: rgba(255, 255, 255, 0.373);
 }
 
 .burgerMenu img {
@@ -133,9 +171,19 @@ app-mainpage #mainBody {
   justify-content: center;
   align-items: center;
   box-sizing: inherit;
-  gap: 2rem;
-  margin-top: 10px;
   font-size: 20px;
+}
+
+.burgerMenu .navPages a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  transition: var(--g-easeTime) ease-in-out;
+}
+
+.burgerMenu .navPages a:hover {
+  background-color: rgba(255, 255, 255, 0.373);
 }
 
 .burgerIcon {
@@ -176,6 +224,11 @@ app-mainpage #mainBody {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+app-tooltip {
+  width: 100%;
+  height: 100%;
+}
+
 /* TODO: Responsive */
 
 footer {
@@ -195,20 +248,20 @@ footer {
   padding: 50px;
 }
 
-#footbar > * {
+.section  {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  margin: 0px 20px;
-  padding: 0px 20px;
+  margin: 10px;
+  padding: 10px;
   gap: 1rem;
 
-  border-right: 2px;
+  border-right: 1px;
   border-right-style: solid;
   border-right-color: var(--c-sidelines);
 
-  border-left: 2px;
+  border-left: 1px;
   border-left-style: solid;
   border-left-color: var(--c-sidelines);
 
@@ -222,16 +275,29 @@ footer {
 
 #footbar p {
   font-weight: bold;
+  width: 100%;
+  padding: 0px 10px;
+  border-bottom: 0.8px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--c-sidelines);
 }
 
 #footbar img {
   position:relative;
   display:unset;
-  z-index: -10;
+  z-index: 5;
   bottom: -60px;
   right: 0px;
   width: 220px;
-  height: 180px;
+  height: 220px;
+}
+
+.section a {
+  transition: var(--g-easeTime) ease-in-out;
+}
+
+.section a:hover {
+  color: var(--c-crimson);
 }
 
 .white {
@@ -247,7 +313,7 @@ footer {
 }
 
 .velvet {
-  color: rgb(255, 0, 38);
+  color: rgb(150, 0, 23);
 }
 
 @media screen and (max-width: 960px) {
@@ -283,15 +349,16 @@ footer {
 
   #footbar {
     flex-direction: column;
+    font-size: 14px;
     gap: 1rem;
   }
 
   #footbar > * {
-    border-top: 2px;
+    border-top: 1px;
     border-top-style: solid;
     border-top-color: var(--c-sidelines);
 
-    border-bottom: 2px;
+    border-bottom: 1px;
     border-bottom-style: solid;
     border-bottom-color: var(--c-sidelines);
 

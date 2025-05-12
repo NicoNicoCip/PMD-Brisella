@@ -33,11 +33,17 @@ class AppProducto extends HTMLElement {
         <button><img src="/PMD-Brisella/img/favoritos.png"></button>
       </div>
       <div id="compras">
-        <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/favoritos.png"></button>
+        <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carito_white.png"></button>
         <button><img src="/PMD-Brisella/img/favoritos.png"></button>
       </div>
     `
-    window.addEventListener("load", () => {
+
+    window.addEventListener("load", () => {this.setInner(image,rest,buttons)})
+    window.addEventListener("resize", () => {this.setInner(image,rest,buttons)})
+  }
+
+  setInner(image, rest, buttons) {
+    if(this.getAttribute("type") === "page") {
       this.innerHTML = ''
 
       if(window.innerWidth >= 960) {
@@ -60,32 +66,14 @@ class AppProducto extends HTMLElement {
         </table>
         `
       }
-    })
-
-    window.addEventListener("resize", () => {
-      this.innerHTML = ''
-
-      if(window.innerWidth >= 960) {
-        this.innerHTML = /*html*/`
-        <table>
-          <td>`+ image.outerHTML + /*html*/`</td>
-          <td></td>
-          <td>
-            `+ rest + buttons + /*html*/`
-          </td>
-        </table>
-        `
-      } else {
-        this.innerHTML = /*html*/`
-        <table>
-          <tr>`+ image.outerHTML + /*html*/`</tr>
-          <tr>
-            `+ rest + buttons + /*html*/`
-          </tr>
-        </table>
-        `
-      }
-    })
+    } else {
+      this.innerHTML = image.outerHTML + /*html*/`
+        <div id="compras">
+          <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carito_white.png"></button>
+          <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+        </div>
+      `
+    }
   }
 }
 
