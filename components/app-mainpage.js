@@ -75,27 +75,30 @@ class MainPage extends HTMLElement {
           </div>
         </div>
       </header>
-    `+
-      this.innerHTML
-      + /*html*/`
+      ${this.innerHTML}
       <footer>
         <div id="footbar">
           <div class="section">
-            <p>Title</p>
-            <a href="/PMD-Brisella/index.html">Inicio</a>
-            <a href="/PMD-Brisella/pages/footer/devoluciones.html">Devoluciones</a>
+            <p>Ayuda</p>
+            <a href="#">Aviso legal</a>
             <a href="/PMD-Brisella/pages/footer/politicaPrivacidad.html">Politica de privacidad</a>
-            <a href="/PMD-Brisella/pages/footer/terminosYCondiciones.html">Terminos y condiciones</a>
-            <a href="/PMD-Brisella/pages/footer/registrarse.html">Registrarse</a>
+            <a href="#">Politica de cookies</a>
+            <a href="#">Terminos y condiciones</a>
           </div>
           <div class="section">
-            <p>Title</p>
+            <p>Empresa</p>
+            <a href="#">Blog</a>
+            <a href="#">Contactarnos</a>
           </div>
           <div class="section">
-            <p>Title</p>
+            <p>Redes Sociales</p>
+            <a href="#"><img src="/PMD-Brisella/img/instagram.png" alt="instagram"></a>
+            <a href="#"><img src="/PMD-Brisella/img/tiktok.png" alt="tiktok"></a>
+            <a href="#"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></a>
           </div>
           <div class="section">
-            <p>Title</p>
+            <p>Registrarse</p>
+            <a href="#">Iniciar Sesion</a>
           </div>
           <img src="/PMD-Brisella/img/Brisella_logo_blanco.png">
         </div>

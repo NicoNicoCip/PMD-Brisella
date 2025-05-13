@@ -2,12 +2,13 @@
   position: absolute;
   background-image: url("/PMD-Brisella/img/imagenFundal.png");
   background-repeat: no-repeat;
-  background-position: center 200px;
+  background-position: center;
   background-attachment: scroll;
+  background-size:cover;
   width: 100%;
-  height: 1500px;
+  height: 1750px;
   z-index: -1;
-  top: -500px;
+  top: -700px;
 }
 
 .mediumText {
@@ -16,13 +17,14 @@
   text-wrap-mode: wrap;
   text-align: center;
   width: 100%;
-  height: 100dvh;
+  height: 90dvh;
 }
 
 .miniText {
   position: relative;
   font-size: 200%;
   text-wrap-mode: wrap;
+  text-align: center;
   width: 100%;
   height: 15dvh;
 }

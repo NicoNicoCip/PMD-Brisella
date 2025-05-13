@@ -1,6 +1,20 @@
 :root {
+  --g-width: 100%;
+  --g-side-separation: 0px;
+  --g-iconsize: 32px;
+  --g-easeTime: 0.1s;
   --s-miniImageSize: 256px;
   --s-megaImageSize: 360px;
+  
+  --c-barsColor: #e3aaaa;
+  --c-undershadow: #c282bf56;
+  --c-sidelines: #e6e6e6c9;
+  --c-crimson: #ef536a;
+  --c-velvelt: #f41d3d;
+  --c-white: #FFFFFF;
+  --c-black: #000000;
+  --c-lightPink: #ffd3d3;
+  --c-linkHover: #ffd7fc5f;
 }
 
 /* list mode */
@@ -71,9 +85,8 @@ app-productos[type='list'] #compras {
   display: flex;
   float: right;
   margin-top: 10px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   width: var(--s-miniImageSize);
 }
 

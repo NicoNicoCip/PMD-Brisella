@@ -11,11 +11,10 @@ class AppProductos extends HTMLElement {
   render() {
   }
 }
+
 // /\ Easy-er
 // | to
 //\/ HARD
-// TODO: add a button that lets you switch from list to page mode
-// TODO: The rest of the buttons and their styles
 // TODO: Footer elements
 // TODO: src atribute funccionalaty and loading from json
 // TODO: html to json parser
