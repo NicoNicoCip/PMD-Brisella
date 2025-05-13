@@ -9,7 +9,7 @@ class MainPage extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = 
+    this.innerHTML =
     /*html*/`
       <header>
         <div id="navbar">
@@ -24,17 +24,17 @@ class MainPage extends HTMLElement {
           <div class="navOpts">
             <app-tootlip data="Favoritos">
               <a href="/PMD-Brisella/pages/header/favoritos.html">
-                <img src="/PMD-Brisella/img/favoritos.png" alt="fav">
+                <img src="/PMD-Brisella/img/favoritos_white.png" alt="fav">
               </a>
             </app-tootlip>
             <app-tootlip data="Contactarnos">
               <a href="/PMD-Brisella/pages/header/copntactarnos.html">
-                <img src="/PMD-Brisella/img/contactoarnos.png" alt="con">
+                <img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con">
               </a>
             </app-tootlip>
             <app-tootlip data="Carrito">
               <a href="/PMD-Brisella/pages/header/carito.html">
-                <img src="/PMD-Brisella/img/carito.png" alt="car">
+                <img src="/PMD-Brisella/img/carrito_white.png" alt="car">
               </a>
             </app-tootlip>
           </div>
@@ -52,17 +52,17 @@ class MainPage extends HTMLElement {
             <div class="navOpts">
               <app-tootlip data="Favoritos">
                 <a href="/PMD-Brisella/pages/header/favoritos.html">
-                  <img src="/PMD-Brisella/img/favoritos.png" alt="fav">
+                  <img src="/PMD-Brisella/img/favoritos_white.png" alt="fav">
                 </a>
               </app-tootlip>
               <app-tootlip data="Contactarnos">
                 <a href="/PMD-Brisella/pages/header/copntactarnos.html">
-                  <img src="/PMD-Brisella/img/contactoarnos.png" alt="con">
+                  <img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con">
                 </a>
               </app-tootlip>
               <app-tootlip data="Carrito">
                 <a href="/PMD-Brisella/pages/header/carito.html">
-                  <img src="/PMD-Brisella/img/carito.png" alt="car">
+                  <img src="/PMD-Brisella/img/carrito_white.png" alt="car">
                 </a>
               </app-tootlip>
             </div>
@@ -74,12 +74,10 @@ class MainPage extends HTMLElement {
             </div>
           </div>
         </div>
-
-        <script src="/PMD-Brisella/components/app-tooltip.js"></script>
       </header>
-    `+ 
+    `+
       this.innerHTML
-    + /*html*/`
+      + /*html*/`
       <footer>
         <div id="footbar">
           <div class="section">
@@ -96,8 +94,10 @@ class MainPage extends HTMLElement {
           <div class="section">
             <p>Title</p>
           </div>
-
-          <img src="/PMD-Brisella/img/brisellaLogo.png" width="128px" height="128px">
+          <div class="section">
+            <p>Title</p>
+          </div>
+          <img src="/PMD-Brisella/img/Brisella_logo_blanco.png">
         </div>
       </footer>
     `

@@ -7,14 +7,14 @@
 app-productos[type='list'] {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 4rem;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
 
 app-productos[type='list'] app-producto {
-  display:block;
+  display: block;
   background-color: rgba(236, 236, 236, 0.9);
   box-shadow: inset 50px 30px 80px #e8ebeb;
   border-radius: 4px;
@@ -43,15 +43,15 @@ app-productos[type='list'] app-producto p {
 
 app-productos[type='list'] app-producto img {
   display: block;
-  max-width: var(--s-miniImageSize);
-  max-height: var(--s-miniImageSize);
+  width: var(--s-miniImageSize);
+  height: var(--s-miniImageSize);
 }
 
 app-productos[type='list'] app-producto button {
   display: inline-flex;
 }
 
-app-productos[type='list'] app-producto button img{
+app-productos[type='list'] app-producto button img {
   display: inline-flex;
   width: 28px;
   height: 28px;
@@ -66,14 +66,17 @@ app-productos[type='list'] #fragrancias {
   display: none;
 }
 
-app-productos[type='list'] #compras{
+app-productos[type='list'] #compras {
   display: flex;
   float: right;
-  gap: 3px;
   margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: var(--s-miniImageSize);
 }
 
-app-productos[type='list'] #compras button{
+app-productos[type='list'] #compras button {
   display: inline-flex;
   padding: 5px;
   background-color: #e8ebeb;
@@ -83,12 +86,12 @@ app-productos[type='list'] #compras button{
   transition: 0.3s ease-in-out;
 }
 
-app-productos[type='list'] #compras button:hover{
+app-productos[type='list'] #compras button:hover {
   background-color: #ffffff;
   border-color: #ffffff;
 }
 
-app-productos[type='list'] #compras button:first-child{
+app-productos[type='list'] #compras button:first-child {
   background-color: black;
   border: 2px;
   border-style: solid;
@@ -97,12 +100,12 @@ app-productos[type='list'] #compras button:first-child{
   align-items: center;
 }
 
-app-productos[type='list'] #compras button:first-child:hover{
+app-productos[type='list'] #compras button:first-child:hover {
   background-color: rgb(80, 80, 80);
-  border-color:rgb(80, 80, 80);
+  border-color: rgb(80, 80, 80);
 }
 
-app-productos[type='list'] #compras p{
+app-productos[type='list'] #compras p {
   display: inline-flex;
   padding-right: 54px;
   color: rgb(243, 243, 243);
@@ -119,7 +122,7 @@ app-productos[type='page'] {
 }
 
 app-productos[type='page'] app-producto {
-  background-color: rgba(236, 236, 236, 0.9);
+  background-color: rgb(236, 236, 236);
   padding: 10px;
   display: grid;
 }
@@ -140,7 +143,7 @@ app-productos[type='page'] app-producto .paragraph {
   max-height: 91px;
   overflow: hidden;
   cursor: pointer;
-  pointer-events:all;
+  pointer-events: all;
 
   border-bottom: 1px;
   border-bottom-style: solid;
@@ -160,21 +163,75 @@ app-productos[type='page'] app-producto img {
 
 app-productos[type='page'] app-producto button {
   display: inline-flex;
-  padding: 5px;
+  background-color: #e8ebeb;
+  border: 1px;
+  border-color: #9ea3a3ba;
+  border-style: solid;
+  padding: 10px;
 }
 
 app-productos[type='page'] app-producto button img {
   display: inline-flex;
-  width: 16px;
-  height: 16px;
+  width: 28px;
+  height: 28px;
 }
 
 app-productos[type='page'] #fragrancias {
- padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 10px;
+}
+
+app-productos[type='page'] #fragrancias button{
+  display: flex;
+  padding: 5px 20px;
+  background-color: #e8e8e7;
+  transition: 0.3s ease-in-out;
+}
+
+app-productos[type='page'] #fragrancias button:hover{
+  display: flex;
+  background-color: white;
 }
 
 app-productos[type='page'] #compras {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   padding: 10px;
+  margin: auto;
+}
+
+app-productos[type='page'] #compras button{
+  display: inline-flex;
+  gap: 10rem;
+  background-color: #e8e8e7;
+  transition: 0.3s ease-in-out;
+}
+
+app-productos[type='page'] #compras button:hover{
+  display: inline-flex;
+  gap: 10rem;
+  background-color: white;
+}
+
+
+app-productos[type='page'] #compras button:first-child{
+  background-color: #000000;
+}
+app-productos[type='page'] #compras button:first-child:hover{
+  background-color: #494949;
+}
+
+app-productos[type='page'] #compras button:first-child p{
+  color: white;
+}
+
+app-productos[type='page'] #compras p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 app-productos[type='page'] app-colorwheel {
@@ -184,7 +241,7 @@ app-productos[type='page'] app-colorwheel {
 
 /* responsive */
 @media screen and (max-width: 960px) {
-  app-productos[type='page'] app-producto > img {
+  app-productos[type='page'] app-producto>img {
     display: flex;
     justify-self: center;
     width: 70%;

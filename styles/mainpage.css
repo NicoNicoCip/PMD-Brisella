@@ -9,13 +9,20 @@
 
 :root {
   --g-width: 100%;
-  --g-side-separation: 8%;
+  --g-side-separation: 0%;
   --g-iconsize: 32px;
   --g-easeTime: 0.1s;
   
-  --c-barsColor: #bfbfbf6a;
-  --c-sidelines: #a0a0a06a;
-  --c-crimson: #d21f28;
+  --c-barsColor: #bebebe;
+  --c-sidelines: #e6e6e6c9;
+  --c-crimson: #ff0026;
+}
+
+.centerd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 body {
@@ -37,12 +44,15 @@ body {
 
 header {
   max-width: var(--g-width);
+  height: 70px;
   width: 100%;
   padding: 0 var(--g-side-separation);
-  margin: 0 auto;
   background-color: var(--c-barsColor);
-  box-shadow: 10px 0px 10px var(--c-barsColor);
+  box-shadow: inset 20px 50px 1000px #ffd3d33a;
   z-index: 1;
+  display: block;
+  position:fixed;
+  top: 0px;
 }
 
 main {
@@ -50,27 +60,32 @@ main {
   max-width: var(--content-width);
   width: 100%;
   /* background-color: red; */
-  margin: 0 auto;
   padding: 0 var(--g-side-separation);
-  
+  margin-top: 70px;
 }
 
 #navbar {
   height: 100%;
   width: 100%;
   display: inline-flex;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainBody {
   min-height: 1000px;
   padding: 16px 10px;
+  box-shadow: inset 20px -50px 1000px #ffefef;
 }
 
 #navbar #navName {
-  align-self: center;
   padding: 16px 10px;
   font-size: 25px;
+}
+
+#navbar #navName a{
+  color: white;
+  letter-spacing: 5px;
 }
 
 #navbar .navPages {
@@ -85,6 +100,12 @@ main {
 }
 
 #navbar .navPages a {
+  color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  letter-spacing: 2px;
   transition: var(--g-easeTime) ease-in-out;
 }
 
@@ -92,13 +113,16 @@ main {
   color: var(--c-crimson);
 }
 
-#navbar .navOpts {
-  padding: 10px;
+#navbar .navPages a:nth-child(3) {
+  color: #ffd3d3;
 }
 
-app-mainpage #mainBody {
-  min-height: 46.4rem;
-  padding: 20px;
+#navbar .navPages a:nth-child(3):hover {
+  color: var(--c-crimson);
+}
+
+#navbar .navOpts {
+  padding: 10px;
 }
 
 #navbar img {
@@ -114,26 +138,25 @@ app-mainpage #mainBody {
 }
 
 #navbar .navOpts a:hover {
-  background-color: rgba(255, 255, 255, 0.668);
+  background-color: rgba(153, 153, 153, 0.668);
 }
 
-
 .burgerMenu {
-  padding: 20px;
+  padding: 64px 8px;
   position: fixed;
   left: -226px;
-  top: 0;
+  top: 0px;
   height: 100%;
 
-  padding-top: 61px;
   display: none;
 
   flex-direction: column;
   align-items: center;
   box-sizing: inherit;
 
-  background-color: #bfbfbf;
-  z-index: 2;
+  background-color: var(--c-barsColor);
+  box-shadow: inset 20px -50px 1000px #ffd3d33a;
+  z-index: -1;
 
   transition: 0.4s;
 }
@@ -157,7 +180,7 @@ app-mainpage #mainBody {
 }
 
 .burgerMenu .navOpts a:hover {
-  background-color: rgba(255, 255, 255, 0.373);
+  background-color: rgba(132, 132, 132, 0.373);
 }
 
 .burgerMenu img {
@@ -175,15 +198,16 @@ app-mainpage #mainBody {
 }
 
 .burgerMenu .navPages a {
+  color: white;
   display: block;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 10px 16px;
   transition: var(--g-easeTime) ease-in-out;
 }
 
 .burgerMenu .navPages a:hover {
-  background-color: rgba(255, 255, 255, 0.373);
+  background-color: rgba(132, 132, 132, 0.373);
 }
 
 .burgerIcon {
@@ -191,11 +215,11 @@ app-mainpage #mainBody {
   padding: 8px;
   margin: 0px;
   position:fixed;
-  top: 8px;
-  left: 15px;
+  top: 15px;
+  left: 17px;
   z-index: 3;
 
-  background-color: #d7d7d785;
+  /* background-color: #d7d7d785; */
   border-radius: 3px;
 }
 
@@ -203,7 +227,7 @@ app-mainpage #mainBody {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   margin: 5px 0;
   transition: 0.4s;
 }
@@ -236,7 +260,7 @@ footer {
   width: 100%;
   padding: 0 var(--g-side-separation);
   background-color: var(--c-barsColor);
-  box-shadow: -10px 0px 10px var(--c-barsColor);
+  box-shadow: inset 20px -50px 1000px #ffd3d33a;
   z-index: 1;
 }
 
@@ -246,6 +270,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 50px;
+  width: 100%;
 }
 
 .section  {
@@ -253,9 +278,10 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  margin: 10px;
+  margin: 0px 0.5%;
   padding: 10px;
   gap: 1rem;
+  width: 100%;
 
   border-right: 1px;
   border-right-style: solid;
@@ -269,11 +295,15 @@ footer {
   border-bottom: 0px;
 }
 
-#footbar > *:nth-child(4) {
+#footbar > *:nth-child(5) {
   border-style: none;
+  margin-left: 10%;
+  width:  150px;
+  height: 150px;
 }
 
 #footbar p {
+  color: white;
   font-weight: bold;
   width: 100%;
   padding: 0px 10px;
@@ -286,13 +316,14 @@ footer {
   position:relative;
   display:unset;
   z-index: 5;
-  bottom: -60px;
+  bottom: 0px;
   right: 0px;
   width: 220px;
   height: 220px;
 }
 
 .section a {
+  color: white;
   transition: var(--g-easeTime) ease-in-out;
 }
 
@@ -313,7 +344,11 @@ footer {
 }
 
 .velvet {
-  color: rgb(150, 0, 23);
+  color: rgb(243, 12, 47);
+}
+
+.rouge {
+  color: #ffdddd;
 }
 
 @media screen and (max-width: 960px) {
@@ -349,7 +384,7 @@ footer {
 
   #footbar {
     flex-direction: column;
-    font-size: 14px;
+    font-size: 18px;
     gap: 1rem;
   }
 

@@ -25,6 +25,8 @@ class AppProductos extends HTMLElement {
 // TODO: cookies popup
 // TODO: registering
 
+// FIX: product images and buttons sizes
+
 class AppProducto extends HTMLElement {
   constructor() {
     super();
@@ -44,14 +46,14 @@ class AppProducto extends HTMLElement {
     let rest = this.innerHTML
     let buttons = /*html*/`
       <div id="fragrancias">
-        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
-        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+        <button><app-tooltip data="Fragrancia Naranja"><img src="/PMD-Brisella/img/naranja.png"></app-tooltip></button>
+        <button><app-tooltip data="Fragrancia Menta"><img src="/PMD-Brisella/img/menta.png"></app-tooltip></button>
+        <button><app-tooltip data="Fragrancia Vainilla"><img src="/PMD-Brisella/img/vainilla.png"></app-tooltip></button>
+        <button><app-tooltip data="Fragrancia Rosa"><img src="/PMD-Brisella/img/rosa.png"></app-tooltip></button>
       </div>
       <div id="compras">
-        <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carito_white.png"></button>
-        <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+        <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
+        <button><app-tooltip data="Fragrancia Rosa"><img src="/PMD-Brisella/img/favoritos.png"></app-tooltip></button>
       </div>
     `
 
@@ -86,7 +88,7 @@ class AppProducto extends HTMLElement {
     } else {
       this.innerHTML = image.outerHTML + /*html*/`
         <div id="compras">
-          <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carito_white.png"></button>
+          <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
           <button><img src="/PMD-Brisella/img/favoritos.png"></button>
         </div>
       `
