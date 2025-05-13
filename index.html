@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
   <link rel="stylesheet" href="/PMD-Brisella/styles/index.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
   <link rel="shortcut icon" href="/PMD-Brisella/img/brisellaLogo.png" type="image/x-icon">
   <title>Brisella</title>
 
@@ -13,6 +14,7 @@
 
   <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
   <script defer src="/PMD-Brisella/components/app-loading.js"></script>
+  <script defer src="/PMD-Brisella/components/app-productos.js"></script>
   
 </head>
 
@@ -23,7 +25,70 @@
     </div>
     <main>
       <div class="mainBody mainTextArea">
-        <p class="rouge centerd mediumText">Siente el diseño. Respira el aroma</p>
+        <section>
+          <p class="rouge centerd mediumText">Siente el diseño. Respira el aroma</p>
+        </section>
+        <section>
+          <p class="rouge centerd miniText">Productos mas vendidos</p>
+        </section>
+        <section>
+          <app-productos type="list">
+            <app-producto>
+              <img src="/PMD-Brisella/img/Panuelos/PanueloBambu.jpg" alt="Test">
+              <h1>Title</h1>
+              <h2>Subtitle</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet cursus semper.
+                Vivamus dictum dui sit amet justo pretium imperdiet. Aliquam gravida lacinia orci, eget sodales velit
+                volutpat eget. Praesent sit amet convallis diam, eget pulvinar dui. Donec turpis ipsum, tincidunt dictum
+                ipsum nec, pharetra volutpat urna. Aenean sit amet rhoncus nibh. Duis ipsum lectus, ullamcorper id
+                imperdiet vel, convallis convallis neque. Nullam nec ante ac libero vulputate commodo. Phasellus ac nisl
+                scelerisque, eleifend risus vel, condimentum ante. Fusce ultrices nunc nec nunc aliquet pretium vel et
+                tellus. Maecenas sit amet felis libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                posuere cubilia curae; Duis erat elit, varius quis iaculis et, laoreet non libero. Phasellus dictum nisl
+                et lectus faucibus mattis. Aliquam id nibh a est bibendum sollicitudin. Mauris sodales magna nec neque
+                consectetur, quis mollis massa suscipit.
+              </p>
+            </app-producto>
+            <app-producto>
+              <img src="/PMD-Brisella/img/Panuelos/PanueloAurora.jpg" alt="Test">
+              <h1>Title</h1>
+              <h2>Subtitle</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet cursus semper.
+                Vivamus dictum dui sit amet justo pretium imperdiet. Aliquam gravida lacinia orci, eget sodales velit
+                volutpat eget. Praesent sit amet convallis diam, eget pulvinar dui. Donec turpis ipsum, tincidunt dictum
+                ipsum nec, pharetra volutpat urna. Aenean sit amet rhoncus nibh. Duis ipsum lectus, ullamcorper id
+                imperdiet vel, convallis convallis neque. Nullam nec ante ac libero vulputate commodo. Phasellus ac nisl
+                scelerisque, eleifend risus vel, condimentum ante. Fusce ultrices nunc nec nunc aliquet pretium vel et
+                tellus. Maecenas sit amet felis libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                posuere cubilia curae; Duis erat elit, varius quis iaculis et, laoreet non libero. Phasellus dictum nisl
+                et lectus faucibus mattis. Aliquam id nibh a est bibendum sollicitudin. Mauris sodales magna nec neque
+                consectetur, quis mollis massa suscipit.
+              </p>
+            </app-producto>
+            <app-producto>
+              <img src="/PMD-Brisella/img/Panuelos/PanueloMandala.jpg" alt="Test">
+              <h1>Title</h1>
+              <h2>Subtitle</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet cursus semper.
+                Vivamus dictum dui sit amet justo pretium imperdiet. Aliquam gravida lacinia orci, eget sodales velit
+                volutpat eget. Praesent sit amet convallis diam, eget pulvinar dui. Donec turpis ipsum, tincidunt dictum
+                ipsum nec, pharetra volutpat urna. Aenean sit amet rhoncus nibh. Duis ipsum lectus, ullamcorper id
+                imperdiet vel, convallis convallis neque. Nullam nec ante ac libero vulputate commodo. Phasellus ac nisl
+                scelerisque, eleifend risus vel, condimentum ante. Fusce ultrices nunc nec nunc aliquet pretium vel et
+                tellus. Maecenas sit amet felis libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                posuere cubilia curae; Duis erat elit, varius quis iaculis et, laoreet non libero. Phasellus dictum nisl
+                et lectus faucibus mattis. Aliquam id nibh a est bibendum sollicitudin. Mauris sodales magna nec neque
+                consectetur, quis mollis massa suscipit.
+              </p>
+            </app-producto>
+          </app-productos>
+        </section>
+        <section>
+          <h1 class="white centerd miniText">RESENAS</h1>
+        </section>
       </div>
     </main>
   </app-mainpage>
