@@ -45,14 +45,14 @@ class AppProducto extends HTMLElement {
     let rest = this.innerHTML
     let buttons = /*html*/`
       <div id="fragrancias">
-        <button><app-tooltip data="Fragrancia Naranja"><img src="/PMD-Brisella/img/naranja.png"></app-tooltip></button>
-        <button><app-tooltip data="Fragrancia Menta"><img src="/PMD-Brisella/img/menta.png"></app-tooltip></button>
-        <button><app-tooltip data="Fragrancia Vainilla"><img src="/PMD-Brisella/img/vainilla.png"></app-tooltip></button>
-        <button><app-tooltip data="Fragrancia Rosa"><img src="/PMD-Brisella/img/rosa.png"></app-tooltip></button>
+        <app-tooltip data="Fragrancia Naranja" v-offset="-70"><button><img src="/PMD-Brisella/img/naranja.png"></button></app-tooltip>
+        <app-tooltip data="Fragrancia Menta" v-offset="-70"><button><img src="/PMD-Brisella/img/menta.png"></button></app-tooltip>
+        <app-tooltip data="Fragrancia Vainilla" v-offset="-70"><button><img src="/PMD-Brisella/img/vainilla.png"></button></app-tooltip>
+        <app-tooltip data="Fragrancia Rosa" v-offset="-70"><button><img src="/PMD-Brisella/img/rosa.png"></button></app-tooltip>
       </div>
       <div id="compras">
         <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-        <button><app-tooltip data="Fragrancia Rosa"><img src="/PMD-Brisella/img/favoritos.png"></app-tooltip></button>
+        <app-tooltip data="Anadir a favoritos" v-offset="12"><button><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
       </div>
     `
 
@@ -88,7 +88,7 @@ class AppProducto extends HTMLElement {
       this.innerHTML = image.outerHTML + /*html*/`
         <div id="compras">
           <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-          <button><img src="/PMD-Brisella/img/favoritos.png"></button>
+          <app-tooltip data="Anadir a favoritos" v-offset="12"><button><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
         </div>
       `
     }

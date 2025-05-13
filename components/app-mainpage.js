@@ -22,21 +22,17 @@ class MainPage extends HTMLElement {
           </div>
         
           <div class="navOpts">
-            <app-tootlip data="Favoritos">
-              <a href="/PMD-Brisella/pages/header/favoritos.html">
-                <img src="/PMD-Brisella/img/favoritos_white.png" alt="fav">
-              </a>
-            </app-tootlip>
-            <app-tootlip data="Contactarnos">
-              <a href="/PMD-Brisella/pages/header/copntactarnos.html">
-                <img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con">
-              </a>
-            </app-tootlip>
-            <app-tootlip data="Carrito">
-              <a href="/PMD-Brisella/pages/header/carito.html">
-                <img src="/PMD-Brisella/img/carrito_white.png" alt="car">
-              </a>
-            </app-tootlip>
+            <a href="/PMD-Brisella/pages/header/favoritos.html">
+              <app-tooltip data="Favoritos"><img src="/PMD-Brisella/img/favoritos_white.png" alt="fav"></app-tootlip>
+            </a>
+            
+            <a href="/PMD-Brisella/pages/header/copntactarnos.html">
+              <app-tooltip data="Contactarnos"><img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con"></app-tootlip>
+            </a>
+
+            <a href="/PMD-Brisella/pages/header/carito.html">
+              <app-tooltip data="Carrito"><img src="/PMD-Brisella/img/carrito_white.png" alt="car"></app-tootlip>
+            </a>
           </div>
         </div>
 
@@ -50,21 +46,17 @@ class MainPage extends HTMLElement {
 
           <div>
             <div class="navOpts">
-              <app-tootlip data="Favoritos">
-                <a href="/PMD-Brisella/pages/header/favoritos.html">
-                  <img src="/PMD-Brisella/img/favoritos_white.png" alt="fav">
-                </a>
-              </app-tootlip>
-              <app-tootlip data="Contactarnos">
-                <a href="/PMD-Brisella/pages/header/copntactarnos.html">
-                  <img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con">
-                </a>
-              </app-tootlip>
-              <app-tootlip data="Carrito">
-                <a href="/PMD-Brisella/pages/header/carito.html">
-                  <img src="/PMD-Brisella/img/carrito_white.png" alt="car">
-                </a>
-              </app-tootlip>
+              <a href="/PMD-Brisella/pages/header/favoritos.html">
+                <app-tooltip data="Favoritos"><img src="/PMD-Brisella/img/favoritos_white.png" alt="fav"></app-tooltip>
+              </a>
+              
+              <a href="/PMD-Brisella/pages/header/copntactarnos.html">
+                <app-tooltip data="Contactarnos"><img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con"></app-tooltip>
+              </a>
+
+              <a href="/PMD-Brisella/pages/header/carito.html">
+                <app-tooltip data="Carrito"><img src="/PMD-Brisella/img/carrito_white.png" alt="car"></app-tooltip>
+              </a>
             </div>
             <div class="navPages">
               <a href="/PMD-Brisella/index.html">Inicio</a>
@@ -92,9 +84,9 @@ class MainPage extends HTMLElement {
           </div>
           <div class="section">
             <p>Redes Sociales</p>
-            <a href="#"><img src="/PMD-Brisella/img/instagram.png" alt="instagram"></a>
-            <a href="#"><img src="/PMD-Brisella/img/tiktok.png" alt="tiktok"></a>
-            <a href="#"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></a>
+            <a href="#"><app-tooltip data="Instagram"><img src="/PMD-Brisella/img/instagram.png" alt="instagram"></app-tooltip></a>
+            <a href="#"><app-tooltip data="TikTok"><img src="/PMD-Brisella/img/tiktok.png" alt="tiktok"></app-tooltip></a>
+            <a href="#"><app-tooltip data="Twitter"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></app-tooltip></a>
           </div>
           <div class="section">
             <p>Registrarse</p>

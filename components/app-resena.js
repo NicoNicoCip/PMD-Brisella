@@ -15,9 +15,17 @@ class AppResena extends HTMLElement {
 
     this.innerHTML = ''
 
+    let star = '☆';
+    let wholeScode = 0
+
+    let finalScode = 0
+
     this.innerHTML = /* html */`
     <div class="centered">
-      <>
+      <p>${nombre}</p>
+      <p>${fecha}</p>
+      <p>${finalScode}</p>
+      <p>${mensaje}</p>
     </div>
     `
   }

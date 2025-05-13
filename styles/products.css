@@ -1,20 +1,14 @@
 :root {
-  --g-width: 100%;
-  --g-side-separation: 0px;
-  --g-iconsize: 32px;
-  --g-easeTime: 0.1s;
+
+  --c-productBack: #ececece6;
+  --c-buttonBack: #000000;
+  --c-buttonHover: #505050;
+
+  --c-undershadow-p: #b2c7d516;
+  --c-underline-p: #c3c3c35f;
+
   --s-miniImageSize: 256px;
   --s-megaImageSize: 360px;
-  
-  --c-barsColor: #e3aaaa;
-  --c-undershadow: #c282bf56;
-  --c-sidelines: #e6e6e6c9;
-  --c-crimson: #ef536a;
-  --c-velvelt: #f41d3d;
-  --c-white: #FFFFFF;
-  --c-black: #000000;
-  --c-lightPink: #ffd3d3;
-  --c-linkHover: #ffd7fc5f;
 }
 
 /* list mode */
@@ -31,10 +25,10 @@ app-productos[type='list'] {
 
 app-productos[type='list'] app-producto {
   display: block;
-  background-color: rgba(236, 236, 236, 0.9);
-  box-shadow: inset 50px 30px 80px #e8ebeb;
+  background-color: var(--c-productBack);
+  box-shadow: inset 50px 30px 80px var(--c-undershadow-p);
   border-radius: 4px;
-  border-color: #ffffff;
+  border-color: var(--c-white);
   padding: 50px 10px;
   transition: 0.3s ease-in-out;
 }
@@ -81,62 +75,60 @@ app-productos[type='list'] #fragrancias {
   display: none;
 }
 
-app-productos[type='list'] #compras {
+#compras {
   display: flex;
-  float: right;
-  margin-top: 10px;
+  margin: 10px auto;
   justify-content: space-between;
   align-items: center;
   width: var(--s-miniImageSize);
 }
 
-app-productos[type='list'] #compras button {
+#compras button {
   display: inline-flex;
   padding: 5px;
-  background-color: #e8ebeb;
+  background-color: var(--c-productBack);
   border: 2px;
   border-style: solid;
-  border-color: #e8ebeb;
+  border-color: var(--c-productBack);
   transition: 0.3s ease-in-out;
 }
 
-app-productos[type='list'] #compras button:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
+#compras button:hover {
+  background-color: var(--c-white);
+  border-color: var(--c-white);
 }
 
-app-productos[type='list'] #compras button:first-child {
-  background-color: black;
+#compras > *:first-child {
+  background-color:  var(--c-black);
   border: 2px;
   border-style: solid;
-  border-color: black;
+  border-color: var(--c-black);
   justify-content: center;
   align-items: center;
 }
 
-app-productos[type='list'] #compras button:first-child:hover {
-  background-color: rgb(80, 80, 80);
-  border-color: rgb(80, 80, 80);
+#compras > *:first-child:hover {
+  background-color: var(--c-buttonHover);
+  border-color: var(--c-buttonHover);
 }
 
-app-productos[type='list'] #compras p {
+#compras p {
   display: inline-flex;
-  padding-right: 54px;
-  color: rgb(243, 243, 243);
-  float: left;
+  padding-right: 128px;
+  color: var(--c-white);
 }
 
 /* page mode */
 
 app-productos[type='page'] {
   display: flex;
-  width: 100%;
+  width: 80%;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
 app-productos[type='page'] app-producto {
-  background-color: rgb(236, 236, 236);
+  background-color: var(--c-productBack);
   padding: 10px;
   display: grid;
 }
@@ -153,21 +145,22 @@ app-productos[type='page'] app-producto h2 {
 
 app-productos[type='page'] app-producto .paragraph {
   text-wrap-mode: wrap;
+  display: flex;
   padding: 10px;
-  max-height: 91px;
+  max-height: 6rem;
   overflow: hidden;
   cursor: pointer;
   pointer-events: all;
 
   border-bottom: 1px;
   border-bottom-style: solid;
-  border-bottom-color: #a0a0a06a;
+  border-bottom-color: var(--c-underline-p);
 
   transition: max-height 0.3s ease-in;
 }
 
 app-productos[type='page'] app-producto .paragraph.expanded {
-  max-height: 380px;
+  max-height: 15rem;
 }
 
 app-productos[type='page'] app-producto img {
@@ -177,9 +170,8 @@ app-productos[type='page'] app-producto img {
 
 app-productos[type='page'] app-producto button {
   display: inline-flex;
-  background-color: #e8ebeb;
-  border: 1px;
-  border-color: #9ea3a3ba;
+  border: 0.5px;
+  border-color: var(--c-black);
   border-style: solid;
   padding: 10px;
 }
@@ -200,52 +192,13 @@ app-productos[type='page'] #fragrancias {
 app-productos[type='page'] #fragrancias button{
   display: flex;
   padding: 5px 20px;
-  background-color: #e8e8e7;
+  background-color: var(--c-productBack);
   transition: 0.3s ease-in-out;
 }
 
 app-productos[type='page'] #fragrancias button:hover{
   display: flex;
-  background-color: white;
-}
-
-app-productos[type='page'] #compras {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 10px;
-  margin: auto;
-}
-
-app-productos[type='page'] #compras button{
-  display: inline-flex;
-  gap: 10rem;
-  background-color: #e8e8e7;
-  transition: 0.3s ease-in-out;
-}
-
-app-productos[type='page'] #compras button:hover{
-  display: inline-flex;
-  gap: 10rem;
-  background-color: white;
-}
-
-
-app-productos[type='page'] #compras button:first-child{
-  background-color: #000000;
-}
-app-productos[type='page'] #compras button:first-child:hover{
-  background-color: #494949;
-}
-
-app-productos[type='page'] #compras button:first-child p{
-  color: white;
-}
-
-app-productos[type='page'] #compras p{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--c-white);
 }
 
 app-productos[type='page'] app-colorwheel {
