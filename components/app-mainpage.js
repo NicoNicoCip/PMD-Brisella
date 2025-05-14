@@ -84,11 +84,11 @@ class MainPage extends HTMLElement {
           </div>
           <div class="section">
             <p>Redes Sociales</p>
-            <a href="#"><app-tooltip data="Instagram"><img src="/PMD-Brisella/img/instagram.png" alt="instagram"></app-tooltip></a>
-            <a href="#"><app-tooltip data="TikTok"><img src="/PMD-Brisella/img/tiktok.png" alt="tiktok"></app-tooltip></a>
-            <a href="#"><app-tooltip data="Twitter"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></app-tooltip></a>
-          </div>
-          <div class="section">
+            <div class="inline">
+              <a href="#"><app-tooltip data="Instagram"><img src="/PMD-Brisella/img/instagram.png" alt="instagram"></app-tooltip></a>
+              <a href="#"><app-tooltip data="TikTok"><img src="/PMD-Brisella/img/tiktok.png" alt="tiktok"></app-tooltip></a>
+              <a href="#"><app-tooltip data="Twitter"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></app-tooltip></a>
+            </div>
             <p>Registrarse</p>
             <a href="#">Iniciar Sesion</a>
           </div>
@@ -119,7 +119,26 @@ function makeBurgerListeners() {
   });
 }
 
+function makeFaviconThemeChange() {
+  function setFavicon(theme = "") {
+    const favicon = document.getElementById("favicon")
+    if(!favicon) return
+
+    const isDark = theme === "dark"
+    //@ts-ignore
+    favicon.href = isDark ? "/PMD-Brisella/img/Brisella_logo_blanco.png" : "/PMD-Brisella/img/Brisella_logo_Negro.png"
+  }
+
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+  setFavicon(mediaQuery.matches ? "dark" : "light")
+
+  mediaQuery.addEventListener("change", (e) => {
+    setFavicon(e.matches ? "dark" : "light")
+  })
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  makeFaviconThemeChange()
   makeBurgerListeners()
 })
 

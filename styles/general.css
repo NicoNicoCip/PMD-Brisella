@@ -50,6 +50,8 @@ html {
   /* total path length */
   height: 30px;
   overflow: hidden;
+
+  color: rgba(255, 0, 0, 0.771);
 }
 
 .dot {

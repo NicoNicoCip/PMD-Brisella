@@ -1,7 +1,9 @@
 :root {
 
   --c-productBack: #ececece6;
+  --c-transparent: #FFFFFF00;
   --c-buttonBack: #000000;
+  --c-fragranceBorder: #00000042;
   --c-buttonHover: #505050;
 
   --c-undershadow-p: #b2c7d516;
@@ -11,85 +13,94 @@
   --s-megaImageSize: 360px;
 }
 
-/* list mode */
-app-productos[type='list'] {
+app-productos {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1rem;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  font-size: inherit;
 }
 
-app-productos[type='list'] app-producto {
+app-productos[type='oneline'] {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+/* list mode */
+app-producto[type='list'] {
   display: block;
   background-color: var(--c-productBack);
   box-shadow: inset 50px 30px 80px var(--c-undershadow-p);
   border-radius: 4px;
   border-color: var(--c-white);
-  padding: 50px 10px;
+  padding: 10px;
   transition: 0.3s ease-in-out;
 }
 
-app-productos[type='list'] app-producto:hover {
+app-producto[type='list']:hover {
   scale: 1.02;
 }
 
+app-producto[type='list'] h1 {
+  display: flex;
+  color: #959595;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 18px;
+}
 
-app-productos[type='list'] app-producto h1 {
+app-producto[type='list'] h2 {
   display: none;
 }
 
-app-productos[type='list'] app-producto h2 {
+app-producto[type='list']>p {
   display: none;
 }
 
-app-productos[type='list'] app-producto p {
-  display: none;
-}
-
-app-productos[type='list'] app-producto img {
+app-producto[type='list'] img {
   display: block;
   width: var(--s-miniImageSize);
   height: var(--s-miniImageSize);
 }
 
-app-productos[type='list'] app-producto button {
+app-producto[type='list'] button {
   display: inline-flex;
 }
 
-app-productos[type='list'] app-producto button img {
+app-producto[type='list'] button img {
   display: inline-flex;
   width: 28px;
   height: 28px;
   margin: 2px;
 }
 
-app-productos[type='list'] app-colorwheel {
+app-producto[type='list'] app-colorwheel {
   display: none;
 }
 
-app-productos[type='list'] #fragrancias {
+app-producto[type='list'] #fragrancias {
   display: none;
 }
 
 #compras {
-  display: flex;
-  margin: 10px auto;
-  justify-content: space-between;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  width: var(--s-miniImageSize);
+  width: 100%;
+  gap: 10px;
+  margin-top: 5px;
 }
 
 #compras button {
   display: inline-flex;
-  padding: 5px;
-  background-color: var(--c-productBack);
+  background-color: var(--c-transparent);
   border: 2px;
   border-style: solid;
-  border-color: var(--c-productBack);
+  border-color: var(--c-transparent);
+  padding: 5px;
   transition: 0.3s ease-in-out;
 }
 
@@ -98,52 +109,45 @@ app-productos[type='list'] #fragrancias {
   border-color: var(--c-white);
 }
 
-#compras > *:first-child {
-  background-color:  var(--c-black);
+#compras>*:first-child {
+  display: flex;
+  background-color: var(--c-black);
   border: 2px;
   border-style: solid;
   border-color: var(--c-black);
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-#compras > *:first-child:hover {
+#compras>*:first-child:hover {
   background-color: var(--c-buttonHover);
   border-color: var(--c-buttonHover);
 }
 
-#compras p {
-  display: inline-flex;
-  padding-right: 128px;
+#compras>*:first-child p {
   color: var(--c-white);
 }
 
 /* page mode */
 
-app-productos[type='page'] {
-  display: flex;
-  width: 80%;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-app-productos[type='page'] app-producto {
+app-producto[type='page'] {
   background-color: var(--c-productBack);
   padding: 10px;
   display: grid;
 }
 
-app-productos[type='page'] app-producto h1 {
+app-producto[type='page'] h1 {
   padding: 10px;
   font-size: 45px;
 }
 
-app-productos[type='page'] app-producto h2 {
+app-producto[type='page'] h2 {
   padding: 10px;
   font-size: 30px;
 }
 
-app-productos[type='page'] app-producto .paragraph {
+app-producto[type='page'] .paragraph {
   text-wrap-mode: wrap;
   display: flex;
   padding: 10px;
@@ -159,56 +163,53 @@ app-productos[type='page'] app-producto .paragraph {
   transition: max-height 0.3s ease-in;
 }
 
-app-productos[type='page'] app-producto .paragraph.expanded {
+app-producto[type='page'] .paragraph.expanded {
   max-height: 15rem;
 }
 
-app-productos[type='page'] app-producto img {
+app-producto[type='page'] img {
   display: flex;
   width: var(--s-megaImageSize)
 }
 
-app-productos[type='page'] app-producto button {
+app-producto[type='page'] button {
   display: inline-flex;
-  border: 0.5px;
-  border-color: var(--c-black);
-  border-style: solid;
+  border: 1px var(--c-fragranceBorder) solid;
   padding: 10px;
 }
 
-app-productos[type='page'] app-producto button img {
+app-producto[type='page'] button img {
   display: inline-flex;
   width: 28px;
   height: 28px;
 }
 
-app-productos[type='page'] #fragrancias {
+app-producto[type='page'] #fragrancias {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 10px;
 }
 
-app-productos[type='page'] #fragrancias button{
+app-producto[type='page'] #fragrancias button {
   display: flex;
   padding: 5px 20px;
-  background-color: var(--c-productBack);
+  background-color: var(--c-transparent);
   transition: 0.3s ease-in-out;
 }
 
-app-productos[type='page'] #fragrancias button:hover{
+app-producto[type='page'] #fragrancias button:hover {
   display: flex;
   background-color: var(--c-white);
 }
 
-app-productos[type='page'] app-colorwheel {
+app-producto[type='page'] app-colorwheel {
   display: flex;
 }
 
-
 /* responsive */
 @media screen and (max-width: 960px) {
-  app-productos[type='page'] app-producto>img {
+  app-producto[type='page']>img {
     display: flex;
     justify-self: center;
     width: 70%;

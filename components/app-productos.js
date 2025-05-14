@@ -1,3 +1,5 @@
+const { createElement } = require("react");
+
 //@ts-check
 class AppProductos extends HTMLElement {
   constructor() {
@@ -9,6 +11,30 @@ class AppProductos extends HTMLElement {
   }
 
   render() {
+    let type = this.getAttribute("type")
+    switch(type) {
+      case "oneline": 
+        this.onelineProductList() 
+        break
+
+      case "spotlight":
+        this.spotlightProductList()
+        break;
+
+    }
+  }
+
+  onelineProductList() {
+    let leftButton = createElement("button")
+    leftButton.setAttribute("leftbtn","")
+    let rightButton = createElement("button")
+    rightButton.setAttribute("rightbtn","")
+    let scrollbar = createElement("span")
+    scrollbar.setAttribute("scrollbar","")
+  }
+
+  wrappedProductList() {
+
   }
 }
 
@@ -61,7 +87,7 @@ class AppProducto extends HTMLElement {
   }
 
   setInner(image, rest, buttons) {
-    if(this.parentElement?.getAttribute("type") == "page") {
+    if(this.getAttribute("type") == "page") {
       this.innerHTML = ''
 
       if(window.innerWidth >= 960) {
@@ -85,7 +111,9 @@ class AppProducto extends HTMLElement {
         `
       }
     } else {
-      this.innerHTML = image.outerHTML + /*html*/`
+      this.innerHTML =/*html*/`
+        ${rest}
+        ${image.outerHTML}
         <div id="compras">
           <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
           <app-tooltip data="Anadir a favoritos" v-offset="12"><button><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>

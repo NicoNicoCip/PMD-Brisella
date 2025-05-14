@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
   <link rel="stylesheet" href="/PMD-Brisella/styles/index.css">
   <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
-  <link rel="shortcut icon" href="/PMD-Brisella/img/brisellaLogo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
   <title>Brisella</title>
 
   <script type="module" src="/PMD-Brisella/scripts/DOMLoader.js" defer></script>
@@ -16,6 +16,7 @@
   <script defer src="/PMD-Brisella/components/app-loading.js"></script>
   <script defer src="/PMD-Brisella/components/app-productos.js"></script>
   <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
+  <script defer src="/PMD-Brisella/components/app-resena.js"></script>
 </head>
 
 <body>
@@ -32,8 +33,8 @@
           <p class="rouge centerd miniText">Productos mas vendidos</p>
         </section>
         <section>
-          <app-productos type="page">
-            <app-producto>
+          <app-productos type="oneline">
+            <app-producto type="list">
               <img src="/PMD-Brisella/img/Panuelos/PanueloBambu.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>
@@ -50,7 +51,7 @@
                 consectetur, quis mollis massa suscipit.
               </p>
             </app-producto>
-            <app-producto>
+            <app-producto type="">
               <img src="/PMD-Brisella/img/Panuelos/PanueloAurora.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>
@@ -67,7 +68,7 @@
                 consectetur, quis mollis massa suscipit.
               </p>
             </app-producto>
-            <app-producto>
+            <app-producto type="page">
               <img src="/PMD-Brisella/img/Panuelos/PanueloMandala.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>
@@ -88,6 +89,45 @@
         </section>
         <section>
           <h1 class="white centerd miniText">RESENAS</h1>
+          <div class="bloqueResenas">
+            <app-resena class="centerd">
+              <nombre>Maria</nombre>
+              <fecha>Enviado el 19/12/24</fecha>
+              <puntos>4.85</puntos>
+              <mensaje>
+                Sorprendida con la calidad, la viveza de los colores y la duración del aroma. Así que estoy más
+                que contenta. Totalmente recomendable.
+              </mensaje>
+              <producto>Producto adquirido: pañuelo andrea. </producto>
+            </app-resena>
+
+            <app-resena class="centerd">
+              <nombre>Sofia</nombre>
+              <fecha>Enviado el 13/01/2025</fecha>
+              <puntos>4.5</puntos>
+              <mensaje>El tejido es una maravilla, de acuerdo con lo especificado, buen aspecto, dimensiones y bien
+                envuelto. Aroma de naranja muy acertado. </mensaje>
+              <producto>Producto adquirido: pañuelo escocia. </producto>
+            </app-resena>
+
+            <app-resena class="centerd">
+              <nombre>Carlota</nombre>
+              <fecha>Enviado el 04/02/2025</fecha>
+              <puntos>4.9</puntos>
+              <mensaje>Me encanta, exactamente lo que esperaba. </mensaje>
+              <producto>Producto adquirido: pañuelo leopardo. </producto>
+            </app-resena>
+
+            <app-resena class="centerd">
+              <nombre>Carmen</nombre>
+              <fecha>Enviado el 11/05/2025</fecha>
+              <puntos>4.8</puntos>
+              <mensaje>Un acierto total, escogí el pañuelo primavera y es exactamente igual que la foto , muy
+                recomendable.
+              </mensaje>
+              <producto>Producto adquirido: pañuelo primavera. </producto>
+            </app-resena>
+          </div>
         </section>
       </div>
     </main>
