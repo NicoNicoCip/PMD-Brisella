@@ -5,6 +5,8 @@ app-popup {
   width: 100%;
   pointer-events: none;
   padding: 0px 50px;
+
+  display: none;
 }
 
 app-popup.bottomer {

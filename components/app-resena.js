@@ -26,8 +26,10 @@ class AppResena extends HTMLElement {
       finalScode += `<p style="color: rgba(255, 255, 255, 1)">${star}</p>`
     }
 
-    if(restScore > 0)
-      finalScode += `<p style="color: rgba(255, 255, 255, ${restScore})">${star}</p>`
+    if(restScore > 0) {
+      restScore = restScore * 255;
+      finalScode += `<p style="color: rgba(${restScore}, ${restScore} , ${restScore}, 1.0)">${star}</p>`
+    }
 
     this.innerHTML = /* html */`
     <p>${nombre}</p>
