@@ -17,12 +17,13 @@ app-productos {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  overflow-x:auto;
+  overflow: hidden;
+  overflow-x: scroll;
   overflow-wrap: anywhere;
 
   overflow-y: visible;
   gap: 1rem;
-  width: 100vmax;
+  width: 100%;
   height:max-content;
   cursor: grab;
 }

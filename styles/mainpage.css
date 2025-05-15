@@ -75,6 +75,7 @@ main {
   width: 100%;
   /* background-color: red; */
   padding: 0 var(--g-side-separation);
+  overflow: hidden;
 }
 
 section {
