@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
   <link rel="stylesheet" href="/PMD-Brisella/styles/index.css">
   <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/popup.css">
   <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
   <title>Brisella</title>
 
@@ -17,10 +18,15 @@
   <script defer src="/PMD-Brisella/components/app-productos.js"></script>
   <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
   <script defer src="/PMD-Brisella/components/app-resena.js"></script>
+  <script defer src="/PMD-Brisella/components/app-popup.js"></script>
 </head>
 
 <body>
   <app-loading></app-loading>
+  <app-popup class="centerer">
+    <h1>This is a popup</h1>
+    
+  </app-popup>
   <app-mainpage>
     <div id="mainBgImage">
     </div>
@@ -33,7 +39,7 @@
           <p class="rouge centerd miniText">Productos mas vendidos</p>
         </section>
         <section>
-          <app-productos type="oneline">
+          <app-productos type="">
             <app-producto type="list">
               <img src="/PMD-Brisella/img/Panuelos/PanueloBambu.jpg" alt="Test">
               <h1>Title</h1>

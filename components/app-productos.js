@@ -10,15 +10,10 @@ class AppProductos extends HTMLElement {
 
   render() {
     let type = this.getAttribute("type")
-    switch(type) {
-      case "oneline": 
-        this.onelineProductList() 
-      break
-
-      case "spotlight":
-        this.spotlightProductList()
-      break
-
+    //@ts-ignore
+    if(type === null || type !== "oneline" || type !== "spotlight" || type !== "wrap") {
+      type = "wrap"
+      this.setAttribute("type",type)
     }
   }
 

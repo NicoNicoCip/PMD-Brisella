@@ -34,7 +34,7 @@
   display: inline-flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 100%;
+  width: 100vmax;
   padding: 200px 0px;
   margin: 32px;
   flex-wrap: wrap;

@@ -1,0 +1,30 @@
+app-popup {
+  display: flex;
+  position:fixed;
+  z-index: 1000;
+  width: 100%;
+  pointer-events: none;
+  padding: 0px 50px;
+}
+
+app-popup.bottomer {
+  justify-content:center;
+  margin-top: auto;
+  bottom: 0px;
+}
+
+app-popup.centerer {
+  justify-content:center;
+  margin-top: auto;
+  top: 50%;
+}
+
+app-popup *{
+  pointer-events: all;
+}
+
+app-popup >* {
+  background-color: red;
+  width: 100%;
+  padding: 10px;
+}
