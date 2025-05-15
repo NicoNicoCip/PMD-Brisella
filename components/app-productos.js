@@ -1,5 +1,3 @@
-const { createElement } = require("react");
-
 //@ts-check
 class AppProductos extends HTMLElement {
   constructor() {
@@ -15,25 +13,20 @@ class AppProductos extends HTMLElement {
     switch(type) {
       case "oneline": 
         this.onelineProductList() 
-        break
+      break
 
       case "spotlight":
         this.spotlightProductList()
-        break;
+      break
 
     }
   }
 
   onelineProductList() {
-    let leftButton = createElement("button")
-    leftButton.setAttribute("leftbtn","")
-    let rightButton = createElement("button")
-    rightButton.setAttribute("rightbtn","")
-    let scrollbar = createElement("span")
-    scrollbar.setAttribute("scrollbar","")
+    this.style.display = "inline-flexbox"
   }
 
-  wrappedProductList() {
+  spotlightProductList() {
 
   }
 }
