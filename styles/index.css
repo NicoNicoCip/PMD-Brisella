@@ -33,7 +33,7 @@
 .bloqueResenas {
   display: flex;
   justify-content: space-evenly;
-  width: 100vmax;
+  width: 100%;
   padding: 200px 0px;
   margin: 32px;
   flex-wrap: wrap;
@@ -41,13 +41,14 @@
   background-color: #ececece6;
 }
 
-app-resena *{
+app-resena > *{
   text-wrap-mode: wrap;
   text-align: center;
   text-shadow: 0px 0px 1px;
   width: 12rem;
   margin: 2px;
   height: 100%;
+  margin-bottom: auto;
 }
 
 app-resena > *:nth-child(1){
