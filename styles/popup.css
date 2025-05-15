@@ -6,7 +6,8 @@ app-popup {
   pointer-events: none;
   padding: 0px 50px;
 
-  display: none;
+  /* display: none; */
+  transition: opacity 0.2s;
 }
 
 app-popup.bottomer {
@@ -26,7 +27,5 @@ app-popup *{
 }
 
 app-popup >* {
-  background-color: red;
-  width: 100%;
-  padding: 10px;
+  width: 80%;
 }

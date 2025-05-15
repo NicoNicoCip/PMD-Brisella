@@ -11,21 +11,29 @@
   <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
   <title>Brisella</title>
 
-  <script type="module" src="/PMD-Brisella/scripts/DOMLoader.js" defer></script>
-
   <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
   <script defer src="/PMD-Brisella/components/app-loading.js"></script>
   <script defer src="/PMD-Brisella/components/app-productos.js"></script>
   <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
   <script defer src="/PMD-Brisella/components/app-resena.js"></script>
   <script defer src="/PMD-Brisella/components/app-popup.js"></script>
+  <script defer src="/PMD-Brisella/components/app-collector.js"></script>
+
+  <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
+  <script defer src="/PMD-Brisella/scripts/product.js"></script>
 </head>
 
-<body>
+<body onload="cookiesLoad()">
   <app-loading></app-loading>
-  <app-popup class="centerer">
-    <h1>This is a popup</h1>
-    
+  <app-popup class="bottomer">
+    <div id="cookiesPolicy">
+      <h2>Cookies Policy</h2>
+      <p>We use cookies to save browser data to better the experience of using our page. Do you accept?</p>
+      <div id="buttons">
+        <button onclick="cookiesAccept()">Accept</button>
+        <button onclick="cookiesDelete()">Declice</button>
+      </div>
+    </div>
   </app-popup>
   <app-mainpage>
     <div id="mainBgImage">
@@ -39,8 +47,8 @@
           <p class="rouge centerd miniText">Productos mas vendidos</p>
         </section>
         <section>
-          <app-productos type="">
-            <app-producto type="list">
+          <app-productos>
+            <app-producto type="page">
               <img src="/PMD-Brisella/img/Panuelos/PanueloBambu.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>
@@ -57,7 +65,7 @@
                 consectetur, quis mollis massa suscipit.
               </p>
             </app-producto>
-            <app-producto type="page">
+            <app-producto type="list">
               <img src="/PMD-Brisella/img/Panuelos/PanueloAurora.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>
@@ -74,7 +82,7 @@
                 consectetur, quis mollis massa suscipit.
               </p>
             </app-producto>
-            <app-producto type="page">
+            <app-producto type="list">
               <img src="/PMD-Brisella/img/Panuelos/PanueloMandala.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>
@@ -99,7 +107,7 @@
             <app-resena class="centerd">
               <nombre>Maria</nombre>
               <fecha>Enviado el 19/12/24</fecha>
-              <puntos>4.85</puntos>
+              <puntos>5</puntos>
               <mensaje>
                 Sorprendida con la calidad, la viveza de los colores y la duración del aroma. Así que estoy más
                 que contenta. Totalmente recomendable.
@@ -119,7 +127,7 @@
             <app-resena class="centerd">
               <nombre>Carlota</nombre>
               <fecha>Enviado el 04/02/2025</fecha>
-              <puntos>4.9</puntos>
+              <puntos>5</puntos>
               <mensaje>Me encanta, exactamente lo que esperaba. </mensaje>
               <producto>Producto adquirido: pañuelo leopardo. </producto>
             </app-resena>

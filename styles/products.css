@@ -21,6 +21,7 @@ app-productos[type='wrap'] {
   gap: 1rem;
   background-color: var(--c-panelBack);
   padding: 50px;
+  width: 100%;
 }
 
 app-productos[type='oneline'] {
@@ -37,6 +38,8 @@ app-productos[type='oneline'] {
   height:max-content;
   cursor: grab;
   background-color: var(--c-panelBack);
+
+  width: 100%;
 }
 
 app-productos[type='oneline']:active {
@@ -73,7 +76,7 @@ app-producto[type='list'] h2 {
   display: none;
 }
 
-app-producto[type='list']>p {
+app-producto[type='list'] p {
   display: none;
 }
 
@@ -99,20 +102,19 @@ app-producto[type='list'] app-colorwheel {
   display: none;
 }
 
-app-producto[type='list'] #fragrancias {
+app-producto[type='list'] .fragrancias {
   display: none;
 }
 
-#compras {
+.compras {
   display: inline-flex;
   justify-content: center;
-  align-items: center;
   gap: 10px;
   margin-top: 5px;
-  max-width: 100%;
+  width: 100%;
 }
 
-#compras button {
+.compras button {
   display: inline-flex;
   background-color: var(--c-transparent);
   border: 2px;
@@ -123,12 +125,12 @@ app-producto[type='list'] #fragrancias {
   transition: 0.3s ease-in-out;
 }
 
-#compras button:hover {
+.compras button:hover {
   background-color: var(--c-white);
   border-color: var(--c-white);
 }
 
-#compras>*:first-child {
+.compras >*:first-child {
   display: inline-flex;
   background-color: var(--c-black);
   border: 2px;
@@ -139,12 +141,12 @@ app-producto[type='list'] #fragrancias {
   width: 100%;
 }
 
-#compras>*:first-child:hover {
+.compras>*:first-child:hover {
   background-color: var(--c-buttonHover);
   border-color: var(--c-buttonHover);
 }
 
-#compras>*:first-child p {
+.compras>*:first-child p {
   color: var(--c-white);
 }
 
@@ -204,7 +206,7 @@ app-producto[type='page'] button img {
   height: 28px;
 }
 
-app-producto[type='page'] #fragrancias {
+app-producto[type='page'] .fragrancias {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -212,14 +214,14 @@ app-producto[type='page'] #fragrancias {
   padding: 10px;
 }
 
-app-producto[type='page'] #fragrancias button {
+app-producto[type='page'] .fragrancias button {
   display: flex;
   padding: 5px 20px;
   background-color: var(--c-transparent);
   transition: 0.3s ease-in-out;
 }
 
-app-producto[type='page'] #fragrancias button:hover {
+app-producto[type='page'] .fragrancias button:hover {
   display: flex;
   background-color: var(--c-white);
 }

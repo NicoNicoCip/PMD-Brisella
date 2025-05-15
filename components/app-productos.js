@@ -11,9 +11,9 @@ class AppProductos extends HTMLElement {
   render() {
     let type = this.getAttribute("type")
     //@ts-ignore
-    if(type === null || type !== "oneline" || type !== "spotlight" || type !== "wrap") {
+    if (type === null || type !== "oneline" || type !== "spotlight" || type !== "wrap") {
       type = "wrap"
-      this.setAttribute("type",type)
+      this.setAttribute("type", type)
     }
   }
 
@@ -50,62 +50,80 @@ class AppProducto extends HTMLElement {
   }
 
   render() {
+
     let image = this.getElementsByTagName("img")[0]
     let paragraph = this.getElementsByTagName("p")[0]
     paragraph.setAttribute("onclick", "this.classList.toggle('expanded')")
     paragraph.classList.add("paragraph")
     this.getElementsByTagName("img")[0].remove()
-
     let rest = this.innerHTML
     let buttons = /*html*/`
-      <div id="fragrancias">
-        <app-tooltip data="Fragrancia Naranja" v-offset="-70"><button><img src="/PMD-Brisella/img/naranja.png"></button></app-tooltip>
-        <app-tooltip data="Fragrancia Menta" v-offset="-70"><button><img src="/PMD-Brisella/img/menta.png"></button></app-tooltip>
-        <app-tooltip data="Fragrancia Vainilla" v-offset="-70"><button><img src="/PMD-Brisella/img/vainilla.png"></button></app-tooltip>
-        <app-tooltip data="Fragrancia Rosa" v-offset="-70"><button><img src="/PMD-Brisella/img/rosa.png"></button></app-tooltip>
-      </div>
-      <div id="compras">
-        <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-        <app-tooltip data="Anadir a favoritos" v-offset="12"><button><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
-      </div>
+        <div class="fragrancias">
+          <app-tooltip data="Fragrancia Naranja" v-offset="-70">
+            <button name="frag" value="0"><img src="/PMD-Brisella/img/naranja.png"></button>
+          </app-tooltip>
+          <app-tooltip data="Fragrancia Menta" v-offset="-70">
+            <button name="frag" value="1"><img src="/PMD-Brisella/img/menta.png"></button>
+          </app-tooltip>
+          <app-tooltip data="Fragrancia Vainilla" v-offset="-70">
+            <button name="frag" value="2"><img src="/PMD-Brisella/img/vainilla.png"></button>
+          </app-tooltip>
+          <app-tooltip data="Fragrancia Rosa" v-offset="-70">
+            <button name="frag" value="3"><img src="/PMD-Brisella/img/rosa.png"></button>
+          </app-tooltip>
+        </div>
+        <div class="compras">
+          <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
+          <app-tooltip data="Anadir a favoritos" v-offset="12"><button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
+        </div>
     `
 
-    window.addEventListener("load", () => {this.setInner(image,rest,buttons)})
-    window.addEventListener("resize", () => {this.setInner(image,rest,buttons)})
+    window.addEventListener("load", () => { this.setInner(image, rest, buttons) })
+    window.addEventListener("resize", () => { this.setInner(image, rest, buttons) })
   }
 
   setInner(image, rest, buttons) {
-    if(this.getAttribute("type") == "page") {
+    if (this.getAttribute("type") == "page") {
       this.innerHTML = ''
 
-      if(window.innerWidth >= 960) {
+      if (window.innerWidth >= 960) {
         this.innerHTML = /*html*/`
-        <table>
-          <td>`+ image.outerHTML + /*html*/`</td>
-          <td></td>
-          <td>
-            `+ rest + buttons + /*html*/`
-          </td>
-        </table>
+        <app-collector frag="0" incart="0" infavs="0" input="productUpdate()">
+          <table>
+            <td>${image.outerHTML}</td>
+            <td></td>
+            <td>
+              ${rest}
+              ${buttons}
+            </td>
+          </table>
+        </app-collector>
         `
       } else {
         this.innerHTML = /*html*/`
-        <table>
-          <tr>`+ image.outerHTML + /*html*/`</tr>
-          <tr>
-            `+ rest + buttons + /*html*/`
-          </tr>
-        </table>
+        <app-collector frag="0" incart="0" infavs="0" input="productUpdate()">
+          <table>
+            <tr>${image.outerHTML}</tr>
+            <tr>
+              ${rest}
+              ${buttons}
+            </tr>
+          </table>
+        </app-collector>
         `
       }
+
+
     } else {
       this.innerHTML =/*html*/`
+      <app-collector frag="0" incart="0" infavs="0" input="productUpdate()">
         ${rest}
         ${image.outerHTML}
-        <div id="compras">
-          <button><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-          <app-tooltip data="Anadir a favoritos" v-offset="12"><button><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
+        <div class="compras">
+          <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
+          <app-tooltip data="Anadir a favoritos" v-offset="12"><button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
         </div>
+      <app-collector>
       `
     }
   }

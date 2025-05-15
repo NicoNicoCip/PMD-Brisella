@@ -31,8 +31,6 @@ class AppResena extends HTMLElement {
       finalScode += `<p style="color: rgba(${restScore}, ${restScore} , ${restScore}, 1.0)">${star}</p>`
     }
 
-
-
     this.innerHTML = /* html */`
     <p>${nombre}</p>
     <p>${fecha}</p>
