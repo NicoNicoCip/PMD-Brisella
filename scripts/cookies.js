@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", cookiesLoad)
+
 function cookiesLoad() {
   let hasAcceptedCookies = localStorage.getItem("hasAcceptedCookies")
   if(hasAcceptedCookies) cookiesDelete();

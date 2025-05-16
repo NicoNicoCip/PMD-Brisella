@@ -1,4 +1,4 @@
 //@ts-check
-function productUpdate() {
-  alert("I changed!")
+function updateFragrance() {
+
 }

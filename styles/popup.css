@@ -29,3 +29,84 @@ app-popup *{
 app-popup >* {
   width: 80%;
 }
+
+#cookiesPolicy {
+  background-color: #eff7f8;
+  padding: 20px 50px;
+  border-left: 6px solid #8fd0da;
+  border-radius: 2px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: smaller;
+}
+
+#cookiesPolicy * {
+  text-wrap-mode: wrap;
+}
+
+#cookiesPolicy #buttons {
+  display: inline-flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#cookiesPolicy #buttons button {
+  background-color: #eff7f8;
+  padding: 5px 8px;
+  border: #000000 2px solid;
+  border-radius: 30px;
+  width: 128px;
+  transition: 0.1s ease-in-out;
+}
+
+#cookiesPolicy #buttons button:nth-child(1):hover {
+  background-color: #a7ffad;
+}
+
+#cookiesPolicy #buttons button:nth-child(2):hover {
+  background-color: #ffcca7;
+}
+
+#registerPopup {
+  background-color: #eff7f8;
+  padding: 15px;
+  border-radius: 2px;
+  border-left: 6px solid #8fd0da;
+
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+#registerPopup #oneline > * {
+  display: inline;
+  flex-direction: row;
+}
+
+#registerPopup #multiline {
+  display: flex;
+  flex-direction: column;
+}
+
+#registerPopup > :nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#registerPopup > :nth-child(1) > button{
+  background-color: #00000000;
+  border: 0px;
+  width: 32px;
+  height: 32px;
+}
+
+#registerPopup > :nth-child(1) > button:hover{
+  background-color: #50505056;
+  border: 0px;
+}

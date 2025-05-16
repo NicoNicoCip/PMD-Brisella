@@ -10,8 +10,8 @@
   --c-underline-p: #c3c3c35f;
   --c-panelBack: #ececece6;
 
-  --s-miniImageSize: 256px;
-  --s-megaImageSize: 360px;
+  --s-miniImageSize: 100%;
+  --s-megaImageSize: 100%;
 }
 
 app-productos[type='wrap'] {
@@ -35,7 +35,7 @@ app-productos[type='oneline'] {
   overflow-y: visible;
   gap: 1rem;
   padding: 50px 100px;
-  height:max-content;
+  height: max-content;
   cursor: grab;
   background-color: var(--c-panelBack);
 
@@ -55,6 +55,7 @@ app-producto[type='list'] {
   border-color: var(--c-white);
   padding: 10px;
   transition: 0.3s ease-in-out;
+  max-width: 20rem;
 }
 
 app-producto[type='list']:hover {
@@ -76,19 +77,13 @@ app-producto[type='list'] h2 {
   display: none;
 }
 
-app-producto[type='list'] p {
+app-producto[type='list'] .paragraph {
   display: none;
 }
 
 app-producto[type='list'] img {
   display: block;
   width: var(--s-miniImageSize);
-  height: var(--s-miniImageSize);
-}
-
-app-producto[type='list'] button {
-  display: inline-flex;
-  cursor: pointer;
 }
 
 app-producto[type='list'] button img {
@@ -98,56 +93,8 @@ app-producto[type='list'] button img {
   margin: 2px;
 }
 
-app-producto[type='list'] app-colorwheel {
+app-producto[type='list'] #fragrancias {
   display: none;
-}
-
-app-producto[type='list'] .fragrancias {
-  display: none;
-}
-
-.compras {
-  display: inline-flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 5px;
-  width: 100%;
-}
-
-.compras button {
-  display: inline-flex;
-  background-color: var(--c-transparent);
-  border: 2px;
-  border-style: solid;
-  border-color: var(--c-transparent);
-  padding: 5px;
-  flex-wrap: wrap;
-  transition: 0.3s ease-in-out;
-}
-
-.compras button:hover {
-  background-color: var(--c-white);
-  border-color: var(--c-white);
-}
-
-.compras >*:first-child {
-  display: inline-flex;
-  background-color: var(--c-black);
-  border: 2px;
-  border-style: solid;
-  border-color: var(--c-black);
-  justify-content:space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.compras>*:first-child:hover {
-  background-color: var(--c-buttonHover);
-  border-color: var(--c-buttonHover);
-}
-
-.compras>*:first-child p {
-  color: var(--c-white);
 }
 
 /* page mode */
@@ -170,71 +117,133 @@ app-producto[type='page'] h2 {
 
 app-producto[type='page'] .paragraph {
   text-wrap-mode: wrap;
-  display: flex;
   padding: 10px;
-  max-height: 6rem;
   overflow: hidden;
+  max-height: 6rem;
   cursor: pointer;
   pointer-events: all;
 
-  border-bottom: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--c-underline-p);
+  border-bottom: 1px solid var(--c-underline-p);
 
-  transition: max-height 0.3s ease-in;
+  transition: max-height 0.3s linear;
 }
 
 app-producto[type='page'] .paragraph.expanded {
-  max-height: 15rem;
+  max-height: 10rem;
 }
 
-app-producto[type='page'] img {
+app-producto[type='page'] tbody>tr> :first-child {
+  width: 30%;
+}
+
+app-producto[type='page'] tbody>tr> :first-child img {
   display: flex;
-  width: var(--s-megaImageSize)
+  width: 100%;
 }
 
-app-producto[type='page'] button {
-  display: inline-flex;
-  border: 1px var(--c-fragranceBorder) solid;
-  padding: 10px;
-  cursor: pointer;
-}
-
-app-producto[type='page'] button img {
-  display: inline-flex;
-  width: 28px;
-  height: 28px;
-}
-
-app-producto[type='page'] .fragrancias {
+app-producto[type='page'] #fragrancias {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   padding: 10px;
 }
 
-app-producto[type='page'] .fragrancias button {
+app-producto[type='page'] #fragrancias button {
   display: flex;
   padding: 5px 20px;
   background-color: var(--c-transparent);
   transition: 0.3s ease-in-out;
+  border: 2px solid var(--c-fragranceBorder);
 }
 
-app-producto[type='page'] .fragrancias button:hover {
+app-producto[type='page'] #fragrancias button img {
+  width: 32px;
+  height: 32px;
+}
+
+app-producto[type='page'] #fragrancias button:hover {
   display: flex;
   background-color: var(--c-white);
 }
 
-app-producto[type='page'] app-colorwheel {
+/* common */
+
+#compras {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#compras button img {
   display: flex;
+  flex-direction: row;
+  width: 32px;
+  height: 32px;
+}
+
+#compras button {
+  display: inline-flex;
+  background-color: var(--c-transparent);
+  border: 0px;
+  padding: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+#compras button:hover {
+  background-color: var(--c-white);
+  border-color: var(--c-white);
+}
+
+#addRemove {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-self:left;
+}
+
+#addRemove input {
+  width: 40px;
+  text-align: center;
+  background-color: var(--c-transparent);
+  border: 1px solid var(--c-fragranceBorder);
+}
+
+#compras>*:first-child {
+  display: inline-flex;
+  background-color: var(--c-black);
+  border: 2px;
+  border-style: solid;
+  border-color: var(--c-black);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#compras>*:first-child:hover {
+  background-color: var(--c-buttonHover);
+  border-color: var(--c-buttonHover);
+}
+
+#compras>*:first-child p {
+  color: var(--c-white);
 }
 
 /* responsive */
 @media screen and (max-width: 960px) {
-  app-producto[type='page']>img {
+  app-producto[type='page'] tr:first-child > td {
     display: flex;
-    justify-self: center;
-    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  app-producto[type='page'] tr:first-child > td >img {
+    min-height: auto;
+    min-width: auto;
   }
 }

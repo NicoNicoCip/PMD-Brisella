@@ -17,13 +17,12 @@
   <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
   <script defer src="/PMD-Brisella/components/app-resena.js"></script>
   <script defer src="/PMD-Brisella/components/app-popup.js"></script>
-  <script defer src="/PMD-Brisella/components/app-collector.js"></script>
 
   <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
   <script defer src="/PMD-Brisella/scripts/product.js"></script>
 </head>
 
-<body onload="cookiesLoad()">
+<body>
   <app-loading></app-loading>
   <app-popup class="bottomer">
     <div id="cookiesPolicy">
@@ -33,6 +32,30 @@
         <button onclick="cookiesAccept()">Accept</button>
         <button onclick="cookiesDelete()">Declice</button>
       </div>
+    </div>
+  </app-popup>
+  <app-popup class="centerer">
+    <div id="registerPopup">
+      <div id="oneline">
+        <h2>Register</h2>
+        <button>X</button>
+      </div>
+      <div id="textinputs">
+        <p>¿Quieres recibir descuentos y ofertas especiales?</p>
+        <div id="multiline">
+          <input type="email" name="email" id="email" placeholder="Correo ELectorico">
+          <input type="password" name="password" id="password" placeholder="Contrasena">
+        </div>
+      </div>
+      <div id="oneline">
+        <input type="checkbox" name="politicaDePrivacidad" id="pdp">
+        <p>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></p>
+      </div>
+      <div id="oneline">
+        <input type="checkbox" name="comunicacionesComerciales" id="cc">
+        <p>Accepto recibir comunicaciones comerciales.</p>
+      </div>
+      <button>Suscribirme</button>
     </div>
   </app-popup>
   <app-mainpage>

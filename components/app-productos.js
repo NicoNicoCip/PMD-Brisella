@@ -11,14 +11,14 @@ class AppProductos extends HTMLElement {
   render() {
     let type = this.getAttribute("type")
     //@ts-ignore
-    if (type === null || type !== "oneline" || type !== "spotlight" || type !== "wrap") {
-      type = "wrap"
-      this.setAttribute("type", type)
+    if (!["oneline", "spotlight", "wrap"].includes(type)) {
+      type = "wrap";
+      this.setAttribute("type", type);
     }
   }
 
   onelineProductList() {
-    this.style.display = "inline-flexbox"
+    this.style.display = "inline-flex";
   }
 
   spotlightProductList() {
@@ -26,16 +26,8 @@ class AppProductos extends HTMLElement {
   }
 }
 
-// /\ Easy-er
-// | to
-//\/ HARD
-// TODO: Footer elements
-// TODO: src atribute funccionalaty and loading from json
-// TODO: html to json parser
-// TODO: cookies
 // TODO: cart area
 // TODO: favourites area
-// TODO: cookies popup
 // TODO: registering
 
 // FIX: product images and buttons sizes
@@ -56,11 +48,15 @@ class AppProducto extends HTMLElement {
     paragraph.setAttribute("onclick", "this.classList.toggle('expanded')")
     paragraph.classList.add("paragraph")
     this.getElementsByTagName("img")[0].remove()
-    let rest = this.innerHTML
+    let rest = new String(this.innerHTML)
     let buttons = /*html*/`
-        <div class="fragrancias">
+
+        <div id="fragrancias">
+          <app-tooltip data="Añadir a favoritos" v-offset="12">
+            <button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button>
+          </app-tooltip>
           <app-tooltip data="Fragrancia Naranja" v-offset="-70">
-            <button name="frag" value="0"><img src="/PMD-Brisella/img/naranja.png"></button>
+            <button><img src="/PMD-Brisella/img/naranja.png"></button>
           </app-tooltip>
           <app-tooltip data="Fragrancia Menta" v-offset="-70">
             <button name="frag" value="1"><img src="/PMD-Brisella/img/menta.png"></button>
@@ -72,9 +68,13 @@ class AppProducto extends HTMLElement {
             <button name="frag" value="3"><img src="/PMD-Brisella/img/rosa.png"></button>
           </app-tooltip>
         </div>
-        <div class="compras">
+        <div id="compras">
           <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-          <app-tooltip data="Anadir a favoritos" v-offset="12"><button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
+          <div id="addRemove">
+            <app-tooltip data="Quitar"><button name="remove" value="1"><img src="/PMD-Brisella/img/minus.png"></button></app-tooltip>
+            <input type="text" name="count" value="0" maxlength="2">
+            <app-tooltip data="Añadir"><button name="add" value="1"><img src="/PMD-Brisella/img/plus.png"></button></app-tooltip>
+          </div>
         </div>
     `
 
@@ -84,64 +84,42 @@ class AppProducto extends HTMLElement {
 
   setInner(image, rest, buttons) {
     if (this.getAttribute("type") == "page") {
-      this.innerHTML = ''
-
       if (window.innerWidth >= 960) {
+        this.innerHTML = ''
         this.innerHTML = /*html*/`
-        <app-collector frag="0" incart="0" infavs="0" input="productUpdate()">
-          <table>
-            <td>${image.outerHTML}</td>
-            <td></td>
-            <td>
-              ${rest}
-              ${buttons}
-            </td>
-          </table>
-        </app-collector>
+        <table>
+          <tr>
+          <td>${image.outerHTML}</td>
+          <td>${rest}${buttons}</td>
+          </tr>
+        </table>
         `
       } else {
+        this.innerHTML = ''
         this.innerHTML = /*html*/`
-        <app-collector frag="0" incart="0" infavs="0" input="productUpdate()">
-          <table>
-            <tr>${image.outerHTML}</tr>
-            <tr>
-              ${rest}
-              ${buttons}
-            </tr>
-          </table>
-        </app-collector>
+        <table>
+          <tr><td>${image.outerHTML}</td></tr>
+          <tr><td>${rest}${buttons}</td></tr>
+        </table>
         `
       }
-
-
     } else {
       this.innerHTML =/*html*/`
-      <app-collector frag="0" incart="0" infavs="0" input="productUpdate()">
-        ${rest}
-        ${image.outerHTML}
-        <div class="compras">
-          <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-          <app-tooltip data="Anadir a favoritos" v-offset="12"><button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
-        </div>
-      <app-collector>
+      ${rest}
+      <app-tooltip data="Añadir a favoritos" v-offset="12"><button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
+      ${image.outerHTML}
+      <div class="compras">
+        <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
+        <div id="addRemove">
+          <app-tooltip data="Quitar"><button name="remove" value="1"><img src="/PMD-Brisella/img/minus.png"></button></app-tooltip>
+          <input type="text" name="count" value="0" maxlength="2">
+          <app-tooltip data="Añadir"><button name="add" value="1"><img src="/PMD-Brisella/img/plus.png"></button></app-tooltip>
+        </div>         
+      </div>
       `
     }
   }
 }
 
-class AppColorwheel extends HTMLElement {
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.render();
-  }
-
-  render() {
-  }
-}
-
 customElements.define("app-producto", AppProducto);
-customElements.define("app-colorwheel", AppColorwheel);
 customElements.define("app-productos", AppProductos);
