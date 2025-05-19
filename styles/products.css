@@ -54,7 +54,7 @@ app-producto[type='list'] {
   border-radius: 4px;
   border-color: var(--c-white);
   padding: 10px;
-  transition: 0.3s ease-in-out;
+  transition: scale 0.3s ease-in-out;
   max-width: 20rem;
 }
 
@@ -102,7 +102,9 @@ app-producto[type='list'] #fragrancias {
 app-producto[type='page'] {
   background-color: var(--c-productBack);
   padding: 10px;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 app-producto[type='page'] h1 {
@@ -132,21 +134,11 @@ app-producto[type='page'] .paragraph.expanded {
   max-height: 10rem;
 }
 
-app-producto[type='page'] tbody>tr> :first-child {
-  width: 30%;
-}
-
-app-producto[type='page'] tbody>tr> :first-child img {
-  display: flex;
-  width: 100%;
-}
-
 app-producto[type='page'] #fragrancias {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
   padding: 10px;
 }
 
@@ -166,6 +158,19 @@ app-producto[type='page'] #fragrancias button img {
 app-producto[type='page'] #fragrancias button:hover {
   display: flex;
   background-color: var(--c-white);
+}
+
+#prodImage {
+  width: 40%;
+}
+
+#prodImage img{
+  width: 100%;
+}
+
+
+#prodContent {
+  width: 60%;
 }
 
 /* common */
@@ -221,6 +226,7 @@ app-producto[type='page'] #fragrancias button:hover {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin: 0px 30px;
 }
 
 #compras >*:first-child:hover {
@@ -235,7 +241,7 @@ app-producto[type='page'] #fragrancias button:hover {
 #favs {
   width: 32px;
   height: 32px;
-  background-color: #d4d4d4cd;
+  background-color: var(--c-productBack);
   border: none;
   justify-content: center;
   align-items: center;
@@ -258,16 +264,22 @@ app-producto[type='page'] #fragrancias button:hover {
 
 /* responsive */
 @media screen and (max-width: 960px) {
-  app-producto[type='page'] tr:first-child > td {
+
+  app-producto[type='page'] {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    height: 100%;
+  } 
+
+  #prodImage {
+    height: 40%;
+  }
+
+  #prodImage img{
     width: 100%;
   }
 
-  app-producto[type='page'] tr:first-child > td >img {
-    min-height: auto;
-    min-width: auto;
+  #prodContent {
+    width: 100%;
   }
 }
