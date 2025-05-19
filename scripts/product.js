@@ -1,4 +1,4 @@
 //@ts-check
-function updateFragrance() {
+function updateProduct(productID) {
 
 }

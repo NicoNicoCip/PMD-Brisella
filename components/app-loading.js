@@ -10,17 +10,19 @@ class AppLoading extends HTMLElement {
   render() {
     this.innerHTML = /* html */`
     <div id="loadingScreen">
-      <div id="loadingContent">
-        <div class="dot-loader">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
     </div>
     `;
+
+    window.addEventListener("load", () => {
+      
+      setTimeout(() => {
+        this.remove()
+      }, 200);
+    })
   }
 }
+
+
 
 customElements.define("app-loading", AppLoading);
 

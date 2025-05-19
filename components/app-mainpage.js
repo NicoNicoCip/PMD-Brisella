@@ -13,7 +13,7 @@ class MainPage extends HTMLElement {
     /*html*/`
       <header>
         <div id="navbar">
-          <p id="navName"><b><a href="/PMD-Brisella/pages/header/sobreBrisella.html">BRISELLA</a></b></p>
+          <p id="navName"><b><a href="/PMD-Brisella/index.html">BRISELLA</a></b></p>
         
           <div class="navPages">
             <a href="/PMD-Brisella/pages/header/productos.html">Productos</a>

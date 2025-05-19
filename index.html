@@ -16,10 +16,10 @@
   <script defer src="/PMD-Brisella/components/app-productos.js"></script>
   <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
   <script defer src="/PMD-Brisella/components/app-resena.js"></script>
-  <script defer src="/PMD-Brisella/components/app-popup.js"></script>
 
   <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
   <script defer src="/PMD-Brisella/scripts/product.js"></script>
+  <script defer src="/PMD-Brisella/scripts/register.js"></script>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
     <div id="registerPopup">
       <div id="oneline">
         <h2>Register</h2>
-        <button>X</button>
+        <button onclick="closeRegisterPopup()">X</button>
       </div>
       <div id="textinputs">
         <p>¿Quieres recibir descuentos y ofertas especiales?</p>
@@ -48,14 +48,15 @@
         </div>
       </div>
       <div id="oneline">
-        <input type="checkbox" name="politicaDePrivacidad" id="pdp">
+        <input type="checkbox" name="pdp" id="pdp" value="1">
         <p>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></p>
       </div>
       <div id="oneline">
-        <input type="checkbox" name="comunicacionesComerciales" id="cc">
+        <input type="checkbox" name="cc" id="cc" value="1">
         <p>Accepto recibir comunicaciones comerciales.</p>
       </div>
-      <button>Suscribirme</button>
+      <div id="warnings"></div>
+      <button onclick="confirmaDatos()">Suscribirme</button>
     </div>
   </app-popup>
   <app-mainpage>

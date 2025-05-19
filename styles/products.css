@@ -200,7 +200,7 @@ app-producto[type='page'] #fragrancias button:hover {
 
 #addRemove {
   margin-top: 8px;
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-self:left;
 }
@@ -212,7 +212,7 @@ app-producto[type='page'] #fragrancias button:hover {
   border: 1px solid var(--c-fragranceBorder);
 }
 
-#compras>*:first-child {
+#compras >*:first-child {
   display: inline-flex;
   background-color: var(--c-black);
   border: 2px;
@@ -223,14 +223,38 @@ app-producto[type='page'] #fragrancias button:hover {
   width: 100%;
 }
 
-#compras>*:first-child:hover {
+#compras >*:first-child:hover {
   background-color: var(--c-buttonHover);
   border-color: var(--c-buttonHover);
 }
 
-#compras>*:first-child p {
+#compras >*:first-child p {
   color: var(--c-white);
 }
+
+#favs {
+  width: 32px;
+  height: 32px;
+  background-color: #d4d4d4cd;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  float: right;
+  position: relative;
+  right: 0px;
+  top: -32px;
+}
+
+#favs img{
+  width: 100%;
+  height: 100%;
+}
+
+#favs:hover {
+  background-color: #FFFFFF;
+}
+
 
 /* responsive */
 @media screen and (max-width: 960px) {

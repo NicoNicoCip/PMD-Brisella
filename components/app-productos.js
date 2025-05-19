@@ -50,36 +50,35 @@ class AppProducto extends HTMLElement {
     this.getElementsByTagName("img")[0].remove()
     let rest = new String(this.innerHTML)
     let buttons = /*html*/`
-
-        <div id="fragrancias">
-          <app-tooltip data="Añadir a favoritos" v-offset="12">
-            <button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button>
-          </app-tooltip>
-          <app-tooltip data="Fragrancia Naranja" v-offset="-70">
-            <button><img src="/PMD-Brisella/img/naranja.png"></button>
-          </app-tooltip>
-          <app-tooltip data="Fragrancia Menta" v-offset="-70">
-            <button name="frag" value="1"><img src="/PMD-Brisella/img/menta.png"></button>
-          </app-tooltip>
-          <app-tooltip data="Fragrancia Vainilla" v-offset="-70">
-            <button name="frag" value="2"><img src="/PMD-Brisella/img/vainilla.png"></button>
-          </app-tooltip>
-          <app-tooltip data="Fragrancia Rosa" v-offset="-70">
-            <button name="frag" value="3"><img src="/PMD-Brisella/img/rosa.png"></button>
-          </app-tooltip>
-        </div>
-        <div id="compras">
-          <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-          <div id="addRemove">
-            <app-tooltip data="Quitar"><button name="remove" value="1"><img src="/PMD-Brisella/img/minus.png"></button></app-tooltip>
-            <input type="text" name="count" value="0" maxlength="2">
-            <app-tooltip data="Añadir"><button name="add" value="1"><img src="/PMD-Brisella/img/plus.png"></button></app-tooltip>
-          </div>
-        </div>
+    <div id="fragrancias">
+      <app-tooltip data="Fragrancia Naranja" v-offset="-70">
+        <button><img src="/PMD-Brisella/img/naranja.png"></button>
+      </app-tooltip>
+      <app-tooltip data="Fragrancia Menta" v-offset="-70">
+        <button><img src="/PMD-Brisella/img/menta.png"></button>
+      </app-tooltip>
+      <app-tooltip data="Fragrancia Vainilla" v-offset="-70">
+        <button><img src="/PMD-Brisella/img/vainilla.png"></button>
+      </app-tooltip>
+      <app-tooltip data="Fragrancia Rosa" v-offset="-70">
+        <button><img src="/PMD-Brisella/img/rosa.png"></button>
+      </app-tooltip>
+    </div>
+    <div id="compras">
+      <button name="incart"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
+      <div id="addRemove">
+        <app-tooltip data="Quitar"><button name="remove"><img src="/PMD-Brisella/img/minus.png"></button></app-tooltip>
+        <input type="text" name="count" value="0" maxlength="2">
+        <app-tooltip data="Añadir"><button name="add"><img src="/PMD-Brisella/img/plus.png"></button></app-tooltip>
+      </div>
+    </div>
     `
-
     window.addEventListener("load", () => { this.setInner(image, rest, buttons) })
     window.addEventListener("resize", () => { this.setInner(image, rest, buttons) })
+  }
+
+  addToCart() {
+    console.log("ADDED TO CART!")
   }
 
   setInner(image, rest, buttons) {
@@ -89,16 +88,26 @@ class AppProducto extends HTMLElement {
         this.innerHTML = /*html*/`
         <table>
           <tr>
-          <td>${image.outerHTML}</td>
-          <td>${rest}${buttons}</td>
-          </tr>
+            <td>
+              ${image.outerHTML}
+              <app-tooltip data="Añadir a favoritos" v-offset="-70">
+                <button id="favs"><img src="/PMD-Brisella/img/favoritos.png"></button>
+              </app-tooltip>
+            </td>
+          <tr>
+          </td><td>${rest}${buttons}</td></tr>
         </table>
         `
       } else {
         this.innerHTML = ''
         this.innerHTML = /*html*/`
         <table>
-          <tr><td>${image.outerHTML}</td></tr>
+          <tr><td>
+          ${image.outerHTML}
+          <app-tooltip data="Añadir a favoritos" v-offset="-70">
+            <button id="favs"><img src="/PMD-Brisella/img/favoritos.png"></button>
+          </app-tooltip>
+          </td></tr>
           <tr><td>${rest}${buttons}</td></tr>
         </table>
         `
@@ -106,15 +115,17 @@ class AppProducto extends HTMLElement {
     } else {
       this.innerHTML =/*html*/`
       ${rest}
-      <app-tooltip data="Añadir a favoritos" v-offset="12"><button name="infavs" value="1"><img src="/PMD-Brisella/img/favoritos.png"></button></app-tooltip>
       ${image.outerHTML}
-      <div class="compras">
+      <app-tooltip data="Añadir a favoritos" v-offset="-70">
+        <button id="favs"><img src="/PMD-Brisella/img/favoritos.png"></button>
+      </app-tooltip>
+      <div id="compras">
         <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
         <div id="addRemove">
           <app-tooltip data="Quitar"><button name="remove" value="1"><img src="/PMD-Brisella/img/minus.png"></button></app-tooltip>
           <input type="text" name="count" value="0" maxlength="2">
           <app-tooltip data="Añadir"><button name="add" value="1"><img src="/PMD-Brisella/img/plus.png"></button></app-tooltip>
-        </div>         
+        </div>
       </div>
       `
     }
