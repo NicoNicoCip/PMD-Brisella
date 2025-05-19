@@ -9,21 +9,20 @@ class AppLoading extends HTMLElement {
 
   render() {
     this.innerHTML = /* html */`
-    <div id="loadingScreen">
-    </div>
+      <div id="loadingScreen">
+        <div class="spinner"></div>
+      </div>
     `;
 
     window.addEventListener("load", () => {
-      
+      const loader = this;
+      loader.style.opacity = "0";
       setTimeout(() => {
-        this.remove()
+        loader.remove();
       }, 200);
-    })
+    });
+
   }
 }
 
-
-
 customElements.define("app-loading", AppLoading);
-
-

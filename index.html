@@ -18,47 +18,24 @@
   <script defer src="/PMD-Brisella/components/app-resena.js"></script>
 
   <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
-  <script defer src="/PMD-Brisella/scripts/product.js"></script>
   <script defer src="/PMD-Brisella/scripts/register.js"></script>
 </head>
 
 <body>
   <app-loading></app-loading>
-  <app-popup class="bottomer">
-    <div id="cookiesPolicy">
-      <h2>Cookies Policy</h2>
-      <p>We use cookies to save browser data to better the experience of using our page. Do you accept?</p>
-      <div id="buttons">
-        <button onclick="cookiesAccept()">Accept</button>
-        <button onclick="cookiesDelete()">Declice</button>
-      </div>
-    </div>
-  </app-popup>
-  <app-popup class="centerer">
-    <div id="registerPopup">
-      <div id="oneline">
-        <h2>Register</h2>
-        <button onclick="closeRegisterPopup()">X</button>
-      </div>
-      <div id="textinputs">
-        <p>¿Quieres recibir descuentos y ofertas especiales?</p>
-        <div id="multiline">
-          <input type="email" name="email" id="email" placeholder="Correo ELectorico">
-          <input type="password" name="password" id="password" placeholder="Contrasena">
+  <div id="popups">
+    <app-popup class="bottomer">
+      <div id="cookiesPolicy">
+        <h2>Cookies Policy</h2>
+        <p>We use cookies to save browser data to better the experience of using our page. Do you accept?</p>
+        <div id="buttons">
+          <button onclick="cookiesAccept()">Accept</button>
+          <button onclick="cookiesDelete()">Declice</button>
         </div>
       </div>
-      <div id="oneline">
-        <input type="checkbox" name="pdp" id="pdp" value="1">
-        <p>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></p>
-      </div>
-      <div id="oneline">
-        <input type="checkbox" name="cc" id="cc" value="1">
-        <p>Accepto recibir comunicaciones comerciales.</p>
-      </div>
-      <div id="warnings"></div>
-      <button onclick="confirmaDatos()">Suscribirme</button>
-    </div>
-  </app-popup>
+    </app-popup>
+  </div>
+
   <app-mainpage>
     <div id="mainBgImage">
     </div>
@@ -71,7 +48,7 @@
           <p class="rouge centerd miniText">Productos mas vendidos</p>
         </section>
         <section>
-          <app-productos>
+          <app-productos type="">
             <app-producto type="page" name="product1">
               <img src="/PMD-Brisella/img/Panuelos/PanueloBambu.jpg" alt="Test">
               <h1>Title</h1>
@@ -89,7 +66,7 @@
                 consectetur, quis mollis massa suscipit.
               </p>
             </app-producto>
-            <app-producto type="list" name="product2">
+            <app-producto type="page" name="product2">
               <img src="/PMD-Brisella/img/Panuelos/PanueloAurora.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>
@@ -106,7 +83,7 @@
                 consectetur, quis mollis massa suscipit.
               </p>
             </app-producto>
-            <app-producto type="list" name="product3">
+            <app-producto type="page" name="product3">
               <img src="/PMD-Brisella/img/Panuelos/PanueloMandala.jpg" alt="Test">
               <h1>Title</h1>
               <h2>Subtitle</h2>

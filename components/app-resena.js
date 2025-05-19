@@ -23,18 +23,18 @@ class AppResena extends HTMLElement {
 
     let finalScode = ''
     for(let i = 0; i < wholeScode; i++) {
-      finalScode += `<p style="color: rgba(255, 255, 255, 1)">${star}</p>`
+      finalScode += `<p style="color: rgb(255, 255, 255)">${star}</p>`
     }
 
     if(restScore > 0) {
-      restScore = restScore * 255;
+      restScore = (restScore * 255);
       finalScode += `<p style="color: rgba(${restScore}, ${restScore} , ${restScore}, 1.0)">${star}</p>`
     }
 
     this.innerHTML = /* html */`
     <p>${nombre}</p>
     <p>${fecha}</p>
-    <div class="inline" dir="rtl">${finalScode}</div>
+    <div class="inline">${finalScode}</div>
     <p>${mensaje}</p>
     <p>${producto}</p>
     `

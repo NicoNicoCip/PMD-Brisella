@@ -16,7 +16,7 @@ class MainPage extends HTMLElement {
           <p id="navName"><b><a href="/PMD-Brisella/index.html">BRISELLA</a></b></p>
         
           <div class="navPages">
-            <a href="/PMD-Brisella/pages/header/productos.html">Productos</a>
+            <a href="/PMD-Brisella/pages/productos.html">Productos</a>
             <a href="/PMD-Brisella/pages/header/novedades.html">Novedades</a>
             <a href="/PMD-Brisella/pages/header/specialPrices.html" class="velvet">Special Prices</a>
           </div>
@@ -90,12 +90,53 @@ class MainPage extends HTMLElement {
               <a href="#"><app-tooltip data="Twitter"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></app-tooltip></a>
             </div>
             <p>Registrarse</p>
-            <a href="#">Iniciar Sesion</a>
+            <a name="session">Iniciar Sesion</a>
           </div>
           <img src="/PMD-Brisella/img/Brisella_logo_blanco.png">
         </div>
       </footer>
     `
+
+    let registerPopup = this.querySelector('a[name="session"]')
+    //@ts-ignore
+    registerPopup.style.cursor = "pointer"
+    if (registerPopup) registerPopup.addEventListener("click", () => {
+      this.registerPopup()
+    })
+  }
+
+  registerPopup() {
+    let popup =  /* html */`
+    <app-popup class="centerer">
+      <div id="registerPopup">
+        <div id="oneline">
+          <h2>Register</h2>
+          <button onclick="closeRegisterPopup()">X</button>
+        </div>
+        <div id="textinputs">
+          <p>¿Quieres recibir descuentos y ofertas especiales?</p>
+          <div id="multiline">
+            <input type="email" name="email" id="email" placeholder="Correo ELectorico">
+            <input type="password" name="password" id="password" placeholder="Contrasena">
+          </div>
+        </div>
+        <div id="oneline">
+          <input type="checkbox" name="pdp" id="pdp" value="1">
+          <p>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></p>
+        </div>
+        <div id="oneline">
+          <input type="checkbox" name="cc" id="cc" value="1">
+          <p>Accepto recibir comunicaciones comerciales.</p>
+        </div>
+        <div id="warnings"></div>
+        <button onclick="confirmaDatos()">Suscribirme</button>
+      </div>
+    </app-popup>
+    `
+    let popups = document.getElementById("popups")
+    if (popups && !popups.querySelector('#registerPopup')) {
+      popups.insertAdjacentHTML("beforeend", popup);
+    }
   }
 }
 
@@ -122,7 +163,7 @@ function makeBurgerListeners() {
 function makeFaviconThemeChange() {
   function setFavicon(theme = "") {
     const favicon = document.getElementById("favicon")
-    if(!favicon) return
+    if (!favicon) return
 
     const isDark = theme === "dark"
     //@ts-ignore

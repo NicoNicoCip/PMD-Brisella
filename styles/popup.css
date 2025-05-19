@@ -5,10 +5,9 @@ app-popup {
   width: 100%;
   pointer-events: none;
   padding: 0px 50px;
-
-  /* display: none; */
-  transition: opacity 0.2s;
+  opacity: 1;
   height: 100%;
+  /* display: none; */
 }
 
 app-popup.bottomer {
@@ -26,9 +25,9 @@ app-popup * {
 }
 
 #cookiesPolicy {
-  background-color: #eff7f8;
+  background-color: #ebe2e2;
   padding: 20px 50px;
-  border-left: 6px solid #8fd0da;
+  border-left: 6px solid #e3aaaa;
   border-radius: 2px;
 
   display: flex;
@@ -36,6 +35,8 @@ app-popup * {
   gap: 1rem;
   font-size: smaller;
   width: 100%;
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 #cookiesPolicy * {
@@ -49,7 +50,7 @@ app-popup * {
 }
 
 #cookiesPolicy #buttons button {
-  background-color: #eff7f8;
+  background-color: #eff7f800;
   padding: 5px 8px;
   border: #000000 2px solid;
   border-radius: 30px;
@@ -58,18 +59,18 @@ app-popup * {
 }
 
 #cookiesPolicy #buttons button:nth-child(1):hover {
-  background-color: #a7ffad;
+  background-color: #a7ffad6a;
 }
 
 #cookiesPolicy #buttons button:nth-child(2):hover {
-  background-color: #ffcca7;
+  background-color: #ffcca76a;
 }
 
 #registerPopup {
-  background-color: #eff7f8;
+  background-color: #ebe2e2;
   padding: 15px;
   border-radius: 2px;
-  border-left: 6px solid #8fd0da;
+  border-left: 6px solid #e3aaaa;
 
   display: flex;
   font-size: 130%;
@@ -77,6 +78,7 @@ app-popup * {
   gap: 0.8rem;
   width: 100%;
 }
+
 
 #registerPopup * {
   text-wrap-mode: wrap;

@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", cookiesLoad)
 function cookiesLoad() {
   let hasAcceptedCookies = localStorage.getItem("hasAcceptedCookies")
   if(hasAcceptedCookies) cookiesDelete();
+  document.querySelectorAll('a').forEach((element) => {
+    element.setAttribute("onmousedown", "event.preventDefault()")
+  })
 }
 
 function cookiesDelete() {
@@ -12,6 +15,7 @@ function cookiesDelete() {
 }
 
 function cookiesAccept() {
-  localStorage.setItem("hasAcceptedCookies", true);
-  cookiesDelete();
+  localStorage.setItem("hasAcceptedCookies", true)
+  cookiesDelete()
+  window.location.reload()
 }

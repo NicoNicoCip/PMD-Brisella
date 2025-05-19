@@ -11,18 +11,10 @@ class AppProductos extends HTMLElement {
   render() {
     let type = this.getAttribute("type")
     //@ts-ignore
-    if (!["oneline", "spotlight", "wrap"].includes(type)) {
+    if (!["oneline", "cart", "favos", "wrap"].includes(type)) {
       type = "wrap";
       this.setAttribute("type", type);
     }
-  }
-
-  onelineProductList() {
-    this.style.display = "inline-flex";
-  }
-
-  spotlightProductList() {
-
   }
 }
 
@@ -42,8 +34,11 @@ class AppProducto extends HTMLElement {
   }
 
   render() {
-    let identifier = this.getAttribute("name")
+    let identifier = "" + this.getAttribute("name")
     // name, isInCart, isInFavourites, fragrance, ammount.
+
+    let globalData = JSON.parse("" + localStorage.getItem(identifier))
+
     this._data = {
       isInCart: false,
       isInFavourites: false,
@@ -53,9 +48,17 @@ class AppProducto extends HTMLElement {
 
     let image = this.getElementsByTagName("img")[0]
     let paragraph = this.getElementsByTagName("p")[0]
+    let price = this.querySelector("price")
+
+    if (price) {
+      this._onePrice = Number(price.innerHTML)
+      this.querySelector("price")?.remove()
+    }
+
     paragraph.setAttribute("onclick", "this.classList.toggle('expanded')")
     paragraph.classList.add("paragraph")
     this.getElementsByTagName("img")[0].remove()
+
     let rest = new String(this.innerHTML)
     let buttons = /*html*/`
         <div id="fragrancias">
@@ -73,10 +76,14 @@ class AppProducto extends HTMLElement {
           </app-tooltip>
         </div>
         <div id="compras" name="compras">
-          <button name="incart"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
+          <button name="incart" value="1">
+            <p>Anadir a la cesta</p>
+            <p id="totalPrice"></p>
+            <img src="/PMD-Brisella/img/carrito_white.png">
+          </button>
           <div id="addRemove">
             <app-tooltip data="Quitar"><button name="remove"><img src="/PMD-Brisella/img/minus.png"></button></app-tooltip>
-            <input type="text" name="count" value="0" maxlength="2">
+            <input type="text" name="count" value="1" maxlength="2">
             <app-tooltip data="Añadir"><button name="add"><img src="/PMD-Brisella/img/plus.png"></button></app-tooltip>
           </div>
         </div>
@@ -86,55 +93,72 @@ class AppProducto extends HTMLElement {
       this.innerHTML = /*html*/`
         <div id="prodImage">
           ${image.outerHTML}
-          <app-tooltip data="Añadir a favoritos" v-offset="-70">
-            <button id="favs" name="favoritos"><img src="/PMD-Brisella/img/favoritos.png"></button>
-          </app-tooltip>
+          <button id="favs" name="favoritos"><img src="/PMD-Brisella/img/favoritos.png"></button>
         </div>
         <div id="prodContent">
           ${rest}
           ${buttons}
         </div>
       `
-
     } else {
       this.innerHTML =/*html*/`
+        <div id="prodImage">
           ${rest}
           ${image.outerHTML}
-          <app-tooltip data="Añadir a favoritos" v-offset="-70">
-            <button id="favs"><img src="/PMD-Brisella/img/favoritos.png"></button>
-          </app-tooltip>
-          <div id="compras" name="compras">
-            <button name="incart" value="1"><p>Anadir a la cesta</p><img src="/PMD-Brisella/img/carrito_white.png"></button>
-            <div id="addRemove">
-              <app-tooltip data="Quitar">
-                <button name="remove"><img src="/PMD-Brisella/img/minus.png"></button>
-              </app-tooltip>
-              <input type="text" name="count" value="0" maxlength="2">
-              <app-tooltip data="Añadir">
-                <button name="add"><img src="/PMD-Brisella/img/plus.png"></button>
-              </app-tooltip>
-            </div>
+          <button id="favs"><img src="/PMD-Brisella/img/favoritos.png"></button>
+        </div>
+        <div id="compras" name="compras">
+          <button name="incart" value="1">
+            <p>Anadir a la cesta</p>
+            <p id="totalPrice"></p>
+            <img src="/PMD-Brisella/img/carrito_white.png">
+          </button>
+          <div id="addRemove">
+            <app-tooltip data="Quitar">
+              <button name="remove"><img src="/PMD-Brisella/img/minus.png"></button>
+            </app-tooltip>
+            <input type="number" name="count" value="1" maxlength="2">
+            <app-tooltip data="Añadir">
+              <button name="add"><img src="/PMD-Brisella/img/plus.png"></button>
+            </app-tooltip>
           </div>
+        </div>
         `
       this._data.fragrance = -1
     }
-    let cartBtn = this.querySelector('button[name="incart"]')
 
-    if (cartBtn) cartBtn.addEventListener("click", () => this.addToCart())
+    let fragrances = this.querySelectorAll('button[name="frag"]')
+    let cartBtn = this.querySelector('button[name="incart"]')
+    if (cartBtn) {
+      cartBtn.addEventListener("click", () => {
+        this.addToCart()
+        this.updateGlobalData(identifier)
+      })
+    }
 
     if (this._data.fragrance != -1) {
-      let fragrances = this.querySelectorAll('button[name="frag"]')
       if (fragrances) {
         for (let btn of fragrances) {
           btn.addEventListener("click", () => {
 
             if (this._data) //@ts-ignore
               this._data.fragrance = btn.value
-            this.changeFragrance(fragrances)
+
+            for (let btn of fragrances) {
+              //@ts-ignore
+              btn.style.backgroundColor = "#FFFFFF00"
+            }
+
+            if (this._data) {
+              //@ts-ignore
+              fragrances[this._data.fragrance].style.backgroundColor = "#FFFFFF"
+              //@ts-ignore
+              this._data.ammount = input.value;
+            }
+
+            this.updateGlobalData(identifier)
           })
         }
-
-        this.changeFragrance(fragrances)
       }
     }
 
@@ -146,21 +170,30 @@ class AppProducto extends HTMLElement {
     let remove = this.querySelector('button[name="remove"]')
     if (add && input) add.addEventListener("click", () => {
       //@ts-ignore
-      if (input.value < 99)
+      if (input.value < 99) {
         //@ts-ignore
         input.value++
+        if (this._data)
+          //@ts-ignore
+          this._data.ammount = input.value;
+        this.updateGlobalData(identifier)
+      }
     })
 
     if (remove && input) remove.addEventListener("click", () => {
       //@ts-ignore
-      if (input.value > 0)
+      if (input.value > 1) {
         //@ts-ignore
         input.value--
+        if (this._data) //@ts-ignore
+          this._data.ammount = input.value;
+        this.updateGlobalData(identifier)
+      }
     })
 
     if (input) {
       // Optional: set step size and limits
-      const min = 0;
+      const min = 1;
       const max = 99;
 
       input.addEventListener("wheel", (event) => {
@@ -168,36 +201,71 @@ class AppProducto extends HTMLElement {
 
         // Convert to number and fallback to 0 if not valid
         //@ts-ignore
-        let currentValue = parseInt(input.value) || 0;
+        let currentValue = parseInt(input.value) || 0
 
         // Check scroll direction
         //@ts-ignore
-        if ((event.deltaY > 0 || event.deltaX < 0) && currentValue < max) {
+        if ((event.deltaY < 0 || event.deltaX > 0) && currentValue < max) {
           //@ts-ignore
-          input.value = currentValue + 1;
-        } 
+          input.value = currentValue + 1
+        }
         //@ts-ignore
-        else if ((event.deltaY < 0 || event.deltaX > 0) && currentValue > min) {
+        else if ((event.deltaY > 0 || event.deltaX < 0) && currentValue > min) {
 
           //@ts-ignore
-          input.value = currentValue - 1;
+          input.value = currentValue - 1
         }
 
         //@ts-ignore
-        this._data.ammount = input.value;
-      });
-
-      this.addEventListener("mouseover", () => {
-        let productData = localStorage.getItem(`${identifier}`)
-        if(productData) {
-          productData = JSON.parse(productData)
-          if(JSON.stringify(this._data) !== productData) {
-            localStorage.setItem(`${identifier}`, JSON.stringify(this._data))
-          }
-        } else {
-          localStorage.setItem(`${identifier}`, JSON.stringify(this._data))
-        }
+        this._data.ammount = input.value
+        this.updateGlobalData(identifier)
       })
+
+      input.addEventListener("focusout", () => {
+        //@ts-ignore
+        this._data.ammount = input.value
+        this.updateGlobalData(identifier)
+      })
+    }
+
+    if (globalData) {
+      this._data = {
+        isInCart: globalData.isInCart,
+        isInFavourites: globalData.isInFavourites,
+        fragrance: globalData.fragrance,
+        ammount: globalData.ammount
+      }
+
+      if (this._data.fragrance != -1) {
+        for (let btn of fragrances) {
+          //@ts-ignore
+          btn.style.backgroundColor = "#FFFFFF00"
+        }
+
+        if (this._data) {
+          //@ts-ignore
+          fragrances[this._data.fragrance].style.backgroundColor = "#FFFFFF"
+        }
+      }
+
+      if (this._data.isInCart == true) {
+        let arm = this.querySelector('div[id="addRemove"]')
+
+        //@ts-ignore
+        arm.style.display = "flex"
+        //@ts-ignore
+        input.value = Number(this._data.ammount)
+        this.updatePrice()
+      }
+    }
+  }
+
+  updatePrice() {
+    let ptp = this.querySelector('p[id="totalPrice"]')
+
+    if (this._onePrice && ptp && this._data && this._data.isInCart) {
+      if (!this._data) return
+      ptp.innerHTML = `${String(this._onePrice * this._data.ammount)}€`
     }
   }
 
@@ -210,12 +278,20 @@ class AppProducto extends HTMLElement {
     }
   }
 
-  changeFragrance(frags) {
-    for (let btn of frags) {
-      btn.style.backgroundColor = "#FFFFFF00"
+  updateGlobalData(identifier) {
+    let hasAcceptedCookies = localStorage.getItem("hasAcceptedCookies")
+    if (hasAcceptedCookies) {
+      let productData = localStorage.getItem(identifier)
+      if (productData) {
+        productData = JSON.parse(productData)
+        if (JSON.stringify(this._data) !== productData) {
+          localStorage.setItem(identifier, JSON.stringify(this._data))
+          this.updatePrice()
+        }
+      } else {
+        localStorage.setItem(identifier, JSON.stringify(this._data))
+      }
     }
-    if (this._data)
-      frags[this._data.fragrance].style.backgroundColor = "#FFFFFF"
   }
 }
 
