@@ -45,6 +45,8 @@ app-productos[type='oneline']:active {
 app-producto[type='list'] {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--c-productBack);
   box-shadow: inset 50px 30px 80px var(--c-undershadow-p);
   border-radius: 4px;
@@ -52,7 +54,6 @@ app-producto[type='list'] {
   padding: 10px;
   transition: scale 0.3s ease-in-out;
   max-width: min-content;
-
 }
 
 app-producto[type='list']:hover {
@@ -69,8 +70,6 @@ app-producto[type='list'] h1 {
   margin-bottom: 20px;
   margin-top: 5px;
   font-size: 18px;
-  width: 80%;
-  height: 10%;
 }
 
 app-producto[type='list'] h2 {
@@ -184,7 +183,6 @@ app-producto[type='page'] #fragrancias button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
   width: 100%;
 }
 
