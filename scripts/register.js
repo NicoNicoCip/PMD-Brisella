@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if(!localStorage.getItem("hasAcceptedCookies"))
+  if (!localStorage.getItem("hasAcceptedCookies"))
     return
 
   let userdata = JSON.parse(String(localStorage.getItem("usuario")))
-  if(!userdata)
+  if (!userdata)
     return
   else
     closeRegisterPopup()
@@ -34,23 +34,23 @@ function confirmaDatos() {
     warnings.innerHTML += "<p> * El email no es valido. </p>"
 
   let password = document.getElementById("password")
-  if(!password) return
+  if (!password) return
 
-  if(password.value === "")
+  if (password.value === "")
     warnings.innerHTML += "<p> * La contrasena es vacia.</p>"
-  else if(password.value.length < 8)
+  else if (password.value.length < 8)
     warnings.innerHTML += "<p> * La contrasena no es suficientamente larga. Tiene que tener minimo 8 caracteres.</p>"
 
   let pdp = document.getElementById("pdp")
-  if(!pdp) return
+  if (!pdp) return
 
-  if(!pdp.checked)
+  if (!pdp.checked)
     warnings.innerHTML += "<p> * Tienes que acceptar nuestra politica de privacidad.</p>"
 
   let cc = document.getElementById("cc")
-  if(!cc) return
+  if (!cc) return
 
-  if(!localStorage.getItem("hasAcceptedCookies")) {
+  if (!localStorage.getItem("hasAcceptedCookies")) {
     warnings.innerHTML += "<p> * Si no acceptas los cookies, estos datos se van a perder.</p>"
     return
   }
@@ -62,7 +62,7 @@ function confirmaDatos() {
     newsletter: cc.checked
   }
 
-  if(!usuario.correo || !usuario.contrasena || !usuario.privacidad)
+  if (!usuario.correo || !usuario.contrasena || !usuario.privacidad)
     return;
   else {
     localStorage.setItem("usuario", JSON.stringify(usuario));

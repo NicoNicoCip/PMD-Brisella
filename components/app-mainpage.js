@@ -22,16 +22,16 @@ class MainPage extends HTMLElement {
           </div>
         
           <div class="navOpts">
-            <a href="/PMD-Brisella/pages/header/favoritos.html">
-              <app-tooltip data="Favoritos"><img src="/PMD-Brisella/img/favoritos_white.png" alt="fav"></app-tootlip>
-            </a>
-            
-            <a href="/PMD-Brisella/pages/header/copntactarnos.html">
-              <app-tooltip data="Contactarnos"><img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con"></app-tootlip>
+            <a href="/PMD-Brisella/pages/copntactarnos.html">
+              <app-tooltip data="Contactarnos"><img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con"></app-tooltip>
             </a>
 
-            <a href="/PMD-Brisella/pages/header/carito.html">
-              <app-tooltip data="Carrito"><img src="/PMD-Brisella/img/carrito_white.png" alt="car"></app-tootlip>
+            <a href="/PMD-Brisella/pages/favoritos.html">
+              <app-tooltip data="Favoritos"><img src="/PMD-Brisella/img/favoritos_white.png" alt="fav"></app-tooltip>
+            </a>
+
+            <a href="/PMD-Brisella/pages/carrito.html">
+              <app-tooltip data="Carrito"><img src="/PMD-Brisella/img/carrito_white.png" alt="car"></app-tooltip>
             </a>
           </div>
         </div>
@@ -46,15 +46,15 @@ class MainPage extends HTMLElement {
 
           <div>
             <div class="navOpts">
-              <a href="/PMD-Brisella/pages/header/favoritos.html">
-                <app-tooltip data="Favoritos"><img src="/PMD-Brisella/img/favoritos_white.png" alt="fav"></app-tooltip>
-              </a>
-              
-              <a href="/PMD-Brisella/pages/header/copntactarnos.html">
+              <a href="/PMD-Brisella/pages/copntactarnos.html">
                 <app-tooltip data="Contactarnos"><img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con"></app-tooltip>
               </a>
 
-              <a href="/PMD-Brisella/pages/header/carito.html">
+              <a href="/PMD-Brisella/pages/favoritos.html">
+                <app-tooltip data="Favoritos"><img src="/PMD-Brisella/img/favoritos_white.png" alt="fav"></app-tooltip>
+              </a>
+
+              <a href="/PMD-Brisella/pages/carrito.html">
                 <app-tooltip data="Carrito"><img src="/PMD-Brisella/img/carrito_white.png" alt="car"></app-tooltip>
               </a>
             </div>
@@ -73,7 +73,7 @@ class MainPage extends HTMLElement {
           <div class="section">
             <p>Ayuda</p>
             <a href="#">Aviso legal</a>
-            <a href="/PMD-Brisella/pages/footer/politicaPrivacidad.html">Politica de privacidad</a>
+            <a href="#">Politica de privacidad</a>
             <a href="#">Politica de cookies</a>
             <a href="#">Terminos y condiciones</a>
           </div>
@@ -85,9 +85,9 @@ class MainPage extends HTMLElement {
           <div class="section">
             <p>Redes Sociales</p>
             <div class="inline">
-              <a href="#"><app-tooltip data="Instagram"><img src="/PMD-Brisella/img/instagram.png" alt="instagram"></app-tooltip></a>
-              <a href="#"><app-tooltip data="TikTok"><img src="/PMD-Brisella/img/tiktok.png" alt="tiktok"></app-tooltip></a>
-              <a href="#"><app-tooltip data="Twitter"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></app-tooltip></a>
+              <a href="https://www.instagram.com/brisella.panuelos?igsh=dTAwc2E2bzIzYThs&utm_source=qr"><app-tooltip data="Instagram"><img src="/PMD-Brisella/img/instagram.png" alt="instagram"></app-tooltip></a>
+              <a href="https://www.tiktok.com/@brisella.panuelos?_t=ZN-8wUiuCkKtUs&_r=1"><app-tooltip data="TikTok"><img src="/PMD-Brisella/img/tiktok.png" alt="tiktok"></app-tooltip></a>
+              <a href="https://x.com/brisellaoficial?s=21"><app-tooltip data="Twitter"><img src="/PMD-Brisella/img/twitter.png" alt="twitter"></app-tooltip></a>
             </div>
             <p>Registrarse</p>
             <a name="session">Iniciar Sesion</a>
@@ -109,33 +109,82 @@ class MainPage extends HTMLElement {
     let popup =  /* html */`
     <app-popup class="centerer">
       <div id="registerPopup">
-        <div id="oneline">
-          <h2>Register</h2>
-          <button onclick="closeRegisterPopup()">X</button>
-        </div>
-        <div id="textinputs">
-          <p>¿Quieres recibir descuentos y ofertas especiales?</p>
-          <div id="multiline">
-            <input type="email" name="email" id="email" placeholder="Correo ELectorico">
-            <input type="password" name="password" id="password" placeholder="Contrasena">
+        <div id="registerPopupheader">
+          <div id="oneline">
+            <h2>Register</h2>
+            <button onclick="closeRegisterPopup()">X</button>
           </div>
         </div>
-        <div id="oneline">
-          <input type="checkbox" name="pdp" id="pdp" value="1">
-          <p>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></p>
+        <div id=registerPopupBody>
+          <div id="textinputs">
+            <p>¿Quieres recibir descuentos y ofertas especiales?</p>
+            <div id="multiline">
+              <input type="email" name="email" id="email" placeholder="Correo ELectorico">
+              <input type="password" name="password" id="password" placeholder="Contrasena">
+            </div>
+          </div>
+          <div id="oneline">
+            <input type="checkbox" name="pdp" id="pdp" value="1">
+            <p>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></p>
+          </div>
+          <div id="oneline">
+            <input type="checkbox" name="cc" id="cc" value="1">
+            <p>Accepto recibir comunicaciones comerciales.</p>
+          </div>
+          <div id="warnings"></div>
+          <button onclick="confirmaDatos()">Suscribirme</button>
         </div>
-        <div id="oneline">
-          <input type="checkbox" name="cc" id="cc" value="1">
-          <p>Accepto recibir comunicaciones comerciales.</p>
-        </div>
-        <div id="warnings"></div>
-        <button onclick="confirmaDatos()">Suscribirme</button>
       </div>
     </app-popup>
     `
     let popups = document.getElementById("popups")
     if (popups && !popups.querySelector('#registerPopup')) {
       popups.insertAdjacentHTML("beforeend", popup);
+      this.dragElement(document.getElementById("registerPopup"))
+    } else {
+      closeRegisterPopup()
+    }
+  }
+
+  dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      // if present, the header is where you move the DIV from:
+      //@ts-ignore
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      // otherwise, move the DIV from anywhere inside the DIV:
+      elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+      // stop moving when mouse button is released:
+      document.onmouseup = null;
+      document.onmousemove = null;
     }
   }
 }

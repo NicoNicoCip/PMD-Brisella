@@ -1,0 +1,102 @@
+{
+  "products": {
+    "panueloMandala": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloMandala.jpg",
+      "title": "PAÑUELO MANDALA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Un estampado que irradia armonía y energía positiva. Ofreciendo un toque de bienestar en cada pañuelo. Cada fibra de este pañuelo ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 30
+    },
+    "panueloParis": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloParis.jpg",
+      "title": "PAÑUELO PARIS",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Este estampado inspira la elegancia y el romanticismo de la ciudad de Paris. Estilo clásico, neutro y elegante. Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 35
+    },
+    "panueloEscocia": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloEscocia.jpg",
+      "title": "PAÑUELO ESCOCIA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 50
+    },
+    "panueloAndrea": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloAndrea.jpg",
+      "title": "PAÑUELO ANDREA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Pañuelo con personalidad propia que refleja mi esencia interior. La pasión por lo que hago. Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 65
+    },
+    "panueloZodiac": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloZodiac.jpg",
+      "title": "PAÑUELO ZODIAC",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Este pañuelo de seda negra y azul oscuro celebra el misterio y la fuerza del signo zodiacal. Perfecto para aquellos que quieren expresar su conexión con las estrellas y una personalidad única.<br><br>Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 50
+    },
+    "panueloLeopardo": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloLeopardo.jpg",
+      "title": "PAÑUELO LEOPARDO",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Con su estampado de leopardo capta la energía salvaje de la naturaleza. Fuerza y estilo en cada look.<br><br>Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 38
+    },
+    "panueloGranVilla": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloGranVilla.jpg",
+      "title": "PAÑUELO GRAN VILLA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Pañuelo de algodón que evoca la elegancia y el encanto de épocas pasadas. Para un estilo romántico y vintage.<br><br>Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 35
+    },
+    "panueloNocheEstrellada": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloNocheEstrellada.jpg",
+      "title": "PAÑUELO NOCHE ESTRELLADA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Pañuelo de algodón que evoca la elegancia y el encanto de épocas pasadas. Para un estilo romántico y vintage.<br><br>Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 35
+    },
+    "panueloPrimavera": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloPrimavera.jpg",
+      "title": "PAÑUELO PRIMAVERA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Este pañuelo presenta el estampado Primavera, un diseño compuesto por delicadas flores, mariposas y libélulas. Representa la esencia fresca y vibrante de la estación. Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 52
+    },
+    "panueloFloral": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloFloral.jpg",
+      "title": "PAÑUELO FLORAL",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Este pañuelo presenta un estampado Floral, un diseño de flores silvestres. Inspirado en paisajes espontáneos y campestres. Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 50
+    },
+    "panueloAurora": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloAurora.jpg",
+      "title": "PAÑUELO AURORA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Este pañuelo presenta un estampado que combina la naturaleza y la fantasía con flores en tonos vivos y la figura del unicornio. Ideal para los que buscan una fusión entre lo natural y lo fantástico. Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 50
+    },
+    "panueloAmour": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloAmour.jpg",
+      "title": "PAÑUELO AMOUR",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Su estampado nos habla de amor, conexión y sensibilidad. Estilos románticos que trasmiten ternura y fuerza interior. <br><br>Este pañuelo presenta un estampado que combina flores y la esencia del corazón Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 50
+    },
+    "panueloEstrella": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloEstrella.jpg",
+      "title": "PAÑUELO ESTRELLA",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Pañuelo con mucha fuerza con un estampado botánico que fusiona la fuerza con el símbolo del león. Una estrella central que conecta con el carácter y equilibrio interior. <br><br>Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 50
+    },
+    "panueloBambu": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloBambu.jpg",
+      "title": "PAÑUELO BAMBÚ",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Estampado con toques asiáticos. La figura del bambú trasmite calma y bienestar. Sencillez en estado puro. <br><br>Cada fibra ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 50
+    }
+  }
+}

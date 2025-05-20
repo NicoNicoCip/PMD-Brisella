@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/popup.css">
+  <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
+  <title>Brisella</title>
+
+  <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
+  <script defer src="/PMD-Brisella/components/app-loading.js"></script>
+  <script defer src="/PMD-Brisella/components/app-productos.js"></script>
+  <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
+
+  <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
+  <script defer src="/PMD-Brisella/scripts/register.js"></script>
+</head>
+
+<body>
+  <app-loading></app-loading>
+  <div id="popups">
+    <app-popup class="bottomer">
+      <div id="cookiesPolicy">
+        <h2>Cookies Policy</h2>
+        <p>We use cookies to save browser data to better the experience of using our page. Do you accept?</p>
+        <div id="buttons">
+          <button onclick="cookiesAccept()">Accept</button>
+          <button onclick="cookiesDelete()">Declice</button>
+        </div>
+      </div>
+    </app-popup>
+  </div>
+
+  <app-mainpage>
+    <main>
+      <div class="mainBody mainTextArea">
+        <br><br><br>
+        <br><br><br>
+        <!-- This page will lock at the products and add the ones that are in the favorites list. -->
+      </div>
+    </main>
+  </app-mainpage>
+</body>
+
+</html>

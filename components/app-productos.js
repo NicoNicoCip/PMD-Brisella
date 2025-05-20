@@ -1,11 +1,51 @@
 //@ts-check
+
+const PRODUCTS_KEY = 'brisella_products';
+
+function getProductsArray() {
+  const products = localStorage.getItem(PRODUCTS_KEY);
+  return products ? JSON.parse(products) : [];
+}
+
+function updateProductInArray(identifier, newData) {
+  const products = getProductsArray();
+  const index = products.findIndex(p => p.identifier === identifier);
+
+  if (index > -1) {
+    products[index] = { ...products[index], ...newData };
+  } else {
+    products.push({ identifier, ...newData });
+  }
+
+  localStorage.setItem(PRODUCTS_KEY, JSON.stringify(products));
+  return products[index] || newData;
+}
+
 class AppProductos extends HTMLElement {
   constructor() {
     super();
+    this.products = getProductsArray();
   }
 
   connectedCallback() {
     this.render();
+    this.addEventListener('product-updated', this.handleProductUpdate);
+  }
+
+  handleProductUpdate = (event) => {
+    this.products = getProductsArray();
+    this.updateProductDisplay(event.detail.identifier);
+  };
+
+  updateProductDisplay(identifier) {
+    const productElement = this.querySelector(
+      `app-producto[name="${identifier}"]`);
+    if (productElement) {
+      //@ts-ignore
+      productElement._data = productElement.loadProductData();
+      //@ts-ignore
+      productElement.updatePriceDisplay();
+    }
   }
 
   render() {
@@ -14,6 +54,24 @@ class AppProductos extends HTMLElement {
     if (!["oneline", "cart", "favos", "wrap"].includes(type)) {
       type = "wrap";
       this.setAttribute("type", type);
+    } else if (type == "cart") {
+      if (localStorage.getItem("hasAcceptedCookies")) {
+        let products = getProductsArray()
+        fetch('/PMD-Brisella/scripts/json/productList.json')
+          .then((response) => {
+            if (!response.ok)
+              throw new Error("file not loaded cusscesfully")
+            return response.json()
+          })
+          .then((data) => {
+            products.forEach((element) => {
+              console.log(data["products"][element.identifier])
+            })
+          })
+          .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error)
+          })
+      }
     }
   }
 }
@@ -24,13 +82,28 @@ class AppProductos extends HTMLElement {
 class AppProducto extends HTMLElement {
   constructor() {
     super();
+    this._defaultData = {
+      isInCart: false,
+      isInFavourites: false,
+      fragrance: 0,
+      quantity: 1
+    };
   }
 
   connectedCallback() {
+    this.identifier = this.getAttribute("name");
+    this._data = this.loadProductData();
     this.render();
   }
 
+  loadProductData() {
+    const products = getProductsArray();
+    const stored = products.find(p => p.identifier === this.identifier);
+    return { ...this._defaultData, ...stored };
+  }
+
   render() {
+
     let identifier = "" + this.getAttribute("name")
     // name, isInCart, isInFavourites, fragrance, ammount.
 
@@ -129,7 +202,7 @@ class AppProducto extends HTMLElement {
     if (cartBtn) {
       cartBtn.addEventListener("click", () => {
         this.addToCart()
-        this.updateGlobalData(identifier)
+        this.updateGlobalData()
       })
     }
 
@@ -153,7 +226,7 @@ class AppProducto extends HTMLElement {
               this._data.ammount = input.value;
             }
 
-            this.updateGlobalData(identifier)
+            this.updateGlobalData()
           })
         }
       }
@@ -173,7 +246,7 @@ class AppProducto extends HTMLElement {
         if (this._data)
           //@ts-ignore
           this._data.ammount = input.value;
-        this.updateGlobalData(identifier)
+        this.updateGlobalData()
       }
     })
 
@@ -184,7 +257,7 @@ class AppProducto extends HTMLElement {
         input.value--
         if (this._data) //@ts-ignore
           this._data.ammount = input.value;
-        this.updateGlobalData(identifier)
+        this.updateGlobalData()
       }
     })
 
@@ -215,13 +288,13 @@ class AppProducto extends HTMLElement {
 
         //@ts-ignore
         this._data.ammount = input.value
-        this.updateGlobalData(identifier)
+        this.updateGlobalData()
       })
 
       input.addEventListener("focusout", () => {
         //@ts-ignore
         this._data.ammount = input.value
-        this.updateGlobalData(identifier)
+        this.updateGlobalData()
       })
     }
 
@@ -252,12 +325,12 @@ class AppProducto extends HTMLElement {
         arm.style.display = "flex"
         //@ts-ignore
         input.value = Number(this._data.ammount)
-        this.updatePrice()
+        this.updatePriceDisplay()
       }
     }
   }
 
-  updatePrice() {
+  updatePriceDisplay() {
     let ptp = this.querySelector('p[id="totalPrice"]')
 
     if (this._onePrice && ptp && this._data && this._data.isInCart) {
@@ -275,21 +348,29 @@ class AppProducto extends HTMLElement {
     }
   }
 
-  updateGlobalData(identifier) {
-    let hasAcceptedCookies = localStorage.getItem("hasAcceptedCookies")
-    if (hasAcceptedCookies) {
-      let productData = localStorage.getItem(identifier)
-      if (productData) {
-        productData = JSON.parse(productData)
-        if (JSON.stringify(this._data) !== productData) {
-          localStorage.setItem(identifier, JSON.stringify(this._data))
-          this.updatePrice()
-        }
-      } else {
-        localStorage.setItem(identifier, JSON.stringify(this._data))
-      }
-    }
+  updateGlobalData() {
+    updateProductInArray(this.identifier, this._data);
+    this.dispatchEvent(new CustomEvent('product-updated', {
+      bubbles: true,
+      detail: { identifier: this.identifier }
+    }));
   }
+
+  handleQuantityChange(delta) {
+    this._data.quantity = Math.max(1,
+      Math.min(99, this._data.quantity + delta));
+    this.updateGlobalData();
+    this.updatePriceDisplay();
+  }
+
+  handleFragranceChange(value) {
+    this._data.fragrance = value;
+    this.updateGlobalData();
+  }
+}
+
+if (!localStorage.getItem(PRODUCTS_KEY)) {
+  localStorage.setItem(PRODUCTS_KEY, JSON.stringify([]));
 }
 
 customElements.define("app-producto", AppProducto);
