@@ -52,7 +52,7 @@ app-producto[type='list'] {
   padding: 10px;
   transition: scale 0.3s ease-in-out;
   max-width: min-content;
-  
+
 }
 
 app-producto[type='list']:hover {
@@ -70,6 +70,7 @@ app-producto[type='list'] h1 {
   margin-top: 5px;
   font-size: 18px;
   width: 80%;
+  height: 10%;
 }
 
 app-producto[type='list'] h2 {
