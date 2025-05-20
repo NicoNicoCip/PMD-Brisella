@@ -29,7 +29,7 @@ app-productos[type='oneline'] {
   overflow-x: scroll;
   overflow-wrap: anywhere;
   overflow-y: visible;
-  padding: 50px 100px;
+  padding: 50px 1rem;
   height: max-content;
   cursor: grab;
   background-color: var(--c-panelBack);
