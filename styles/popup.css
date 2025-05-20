@@ -103,11 +103,12 @@ app-popup * {
 
 #registerPopupBody * {
   text-wrap-mode: wrap;
+  margin: 3px 0px;
 }
 
-#registerPopupBody #oneline>* {
+#registerPopupBody #oneline {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
 }
@@ -145,6 +146,11 @@ app-popup * {
   transition: 0.1s linear;
   padding: 10px;
   font-size: medium;
+
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
 }
 
 #registerPopupBody>button:hover {

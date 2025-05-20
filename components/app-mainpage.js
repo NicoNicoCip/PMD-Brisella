@@ -125,7 +125,7 @@ class MainPage extends HTMLElement {
           </div>
           <div id="oneline">
             <input type="checkbox" name="pdp" id="pdp" value="1">
-            <p>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></p>
+            <pre>He leido y accepto la <i><a href="#">politica de privacidad.</a></i></pre>
           </div>
           <div id="oneline">
             <input type="checkbox" name="cc" id="cc" value="1">

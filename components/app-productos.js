@@ -65,7 +65,7 @@ class AppProductos extends HTMLElement {
           })
           .then((data) => {
             products.forEach((element) => {
-              console.log(data["products"][element.identifier])
+              console.log(data.products[element.identifier])
             })
           })
           .catch((error) => {
