@@ -17,8 +17,8 @@ class MainPage extends HTMLElement {
         
           <div class="navPages">
             <a href="/PMD-Brisella/pages/productos.html">Productos</a>
-            <a href="/PMD-Brisella/pages/header/novedades.html">Novedades</a>
-            <a href="/PMD-Brisella/pages/header/specialPrices.html" class="velvet">Special Prices</a>
+            <a href="/PMD-Brisella/pages/novedades.html">Novedades</a>
+            <a href="/PMD-Brisella/pages/specialPrices.html" class="velvet">Special Prices</a>
           </div>
         
           <div class="navOpts">
@@ -60,9 +60,9 @@ class MainPage extends HTMLElement {
             </div>
             <div class="navPages">
               <a href="/PMD-Brisella/index.html">Inicio</a>
-              <a href="/PMD-Brisella/pages/header/productos.html">Productos</a>
-              <a href="/PMD-Brisella/pages/header/novedades.html">Novedades</a>
-              <a href="/PMD-Brisella/pages/header/specialPrices.html" class="velvet">Special Prices</a>
+              <a href="/PMD-Brisella/pages/productos.html">Productos</a>
+              <a href="/PMD-Brisella/pages/novedades.html">Novedades</a>
+              <a href="/PMD-Brisella/pages/specialPrices.html" class="velvet">Special Prices</a>
             </div>
           </div>
         </div>

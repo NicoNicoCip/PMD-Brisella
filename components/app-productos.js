@@ -20,9 +20,6 @@ class AppProductos extends HTMLElement {
 
 // TODO: cart area
 // TODO: favourites area
-// TODO: registering
-
-// FIX: product images and buttons sizes
 
 class AppProducto extends HTMLElement {
   constructor() {
