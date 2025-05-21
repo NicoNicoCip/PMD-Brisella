@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/popup.css">
+  <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
+  <title>Brisella</title>
+
+  <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
+  <script defer src="/PMD-Brisella/components/app-loading.js"></script>
+  <script defer src="/PMD-Brisella/components/app-productos.js"></script>
+  <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
+
+  <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
+  <script defer src="/PMD-Brisella/scripts/register.js"></script>
+</head>
+
+<body>
+  <app-loading></app-loading>
+  <div id="popups">
+    <app-popup class="bottomer">
+      <div id="cookiesPolicy">
+        <h2>Politica de cookies</h2>
+        <p>Usamos cookies para guardar infomacion de productos en tu equipo. Estas de acuerdo?</p>
+        <div id="buttons">
+          <button onclick="cookiesAccept()">Aceptar</button>
+          <button onclick="cookiesDelete()">Denegar</button>
+        </div>
+      </div>
+    </app-popup>
+  </div>
+
+  <app-mainpage>
+    <main>
+      <div class="mainBody mainTextArea">
+        <br><br><br>
+        <br><br><br>
+        <section>
+          <pre style="font-size:larger; text-wrap-mode: wrap;">
+<h2>AVISO LEGAL - PROYECTO ACADÉMICO</h2>
+
+Esta plataforma de comercio electrónico constituye un PROYECTO ACADÉMICO desarrollado por estudiantes de primer curso del Grado Superior en Desarrollo de Aplicaciones Multiplataforma y Marketing y Publicidad de MEDAC durante el curso 2024/2025.
+
+<h2>DECLARACIÓN DE CARÁCTER FICTICIO:</h2>
+- La marca, productos, servicios y entidad comercial presentados en este sitio web son completamente FICTICIOS y han sido creados con fines exclusivamente educativos.
+- Esta web NO representa una empresa real ni realiza actividad comercial alguna.
+- No se efectúan transacciones económicas reales ni se recopilan datos personales con fines comerciales.
+ 
+<h2>PROPIEDAD INTELECTUAL:</h2>
+- Los elementos visuales, textuales y audiovisuales utilizados en este proyecto tienen un propósito EXCLUSIVAMENTE ACADÉMICO y DIDÁCTICO, amparado bajo el derecho de cita con fines educativos. 
+- Este sitio web no tiene finalidad comercial y se utiliza únicamente como ejercicio práctico en un entorno educativo controlado.
+- Se reconoce la propiedad intelectual original de todos los recursos utilizados. Los titulares de derechos que identifiquen contenido de su propiedad pueden contactar con cir.ciprian.nicolae@gmail.com
+/ andreaandrexa@gmailcom  solicitar su retirada inmediata. 
+- Este uso limitado y con fines estrictamente académicos se realiza sin ánimo de lucro ni de perjudicar los intereses de los titulares originales.
+
+<h2>EXENCIÓN DE RESPONSABILIDAD:</h2>
+- Ni los estudiantes creadores, ni el profesorado, ni la institución educativa asumen responsabilidad alguna por el uso indebido o interpretación errónea del contenido de este sitio.
+
+En caso de duda o consulta relacionada con este proyecto académico, o para solicitar la retirada de cualquier contenido, puede contactar con cir.ciprian.nicolae@gmail.com
+/ andreaandrexa@gmailcom
+          </pre>
+        </section>
+      </div>
+    </main>
+  </app-mainpage>
+</body>
+
+</html>

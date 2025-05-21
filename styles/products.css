@@ -112,14 +112,21 @@ app-producto[type='page'] h1 {
   text-wrap-mode: wrap;
 }
 
-app-producto[type='page'] img:first-child {
-  max-width: 100%;
-  max-height: 100%;
+app-producto[type='page'] #prodImage{
+  padding-top: 32px;
+  width: 100%;
+}
+
+app-producto[type='page'] #prodImage > img {
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
 }
 
 app-producto[type='page'] h2 {
   padding: 10px;
   font-size: 30px;
+  text-wrap-mode: wrap;
 }
 
 app-producto[type='page'] .paragraph {
@@ -171,7 +178,14 @@ app-producto[type='page'] #fragrancias button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+#prodImage #favs{
+  align-self: flex-end;
 }
 
 #prodContent {
@@ -267,9 +281,7 @@ app-producto[type='page'] #fragrancias button:hover {
   border: none;
   transition: 0.2s ease-in-out;
   position: relative;
-
-  bottom: 32px;
-  left: 5.3rem;
+  top: -32px;
 }
 
 #favs img {
@@ -286,7 +298,11 @@ app-producto[type='page'] #fragrancias button:hover {
 }
 
 /* responsive */
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 553px) {
+
+  app-producto[type='page'] {
+    max-width: 300px;
+  }
 
   app-producto[type='page'] {
     display: flex;

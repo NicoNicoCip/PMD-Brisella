@@ -1,4 +1,4 @@
-//@ts-check
+
 class MainPage extends HTMLElement {
   constructor() {
     super()
@@ -72,7 +72,7 @@ class MainPage extends HTMLElement {
         <div id="footbar">
           <div class="section">
             <p>Ayuda</p>
-            <a href="#">Aviso legal</a>
+            <a href="/PMD-Brisella/pages/extras/avisoLegal.html">Aviso legal</a>
             <a href="#">Politica de privacidad</a>
             <a href="#">Politica de cookies</a>
             <a href="#">Terminos y condiciones</a>
@@ -111,7 +111,7 @@ class MainPage extends HTMLElement {
       <div id="registerPopup">
         <div id="registerPopupheader">
           <div id="oneline">
-            <h2>Register</h2>
+            <h2>Registrar</h2>
             <button onclick="closeRegisterPopup()">X</button>
           </div>
         </div>
@@ -119,8 +119,8 @@ class MainPage extends HTMLElement {
           <div id="textinputs">
             <p>¿Quieres recibir descuentos y ofertas especiales?</p>
             <div id="multiline">
-              <input type="email" name="email" id="email" placeholder="Correo ELectorico">
-              <input type="password" name="password" id="password" placeholder="Contrasena">
+              <input type="email" name="email" id="email" placeholder="Correo Electorico">
+              <input type="password" name="password" id="password" placeholder="Contrasenna">
             </div>
           </div>
           <div id="oneline">
@@ -129,10 +129,10 @@ class MainPage extends HTMLElement {
           </div>
           <div id="oneline">
             <input type="checkbox" name="cc" id="cc" value="1">
-            <p>Accepto recibir comunicaciones comerciales.</p>
+            <p>Acepto recibir comunicaciones comerciales.</p>
           </div>
           <div id="warnings"></div>
-          <button onclick="confirmaDatos()">Suscribirme</button>
+          <button onclick="confirmaDatos()">Aceptar</button>
         </div>
       </div>
     </app-popup>
