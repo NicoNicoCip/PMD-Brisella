@@ -79,8 +79,35 @@
 
         const data = await response.json();
         this.products.forEach(product => {
-          if (data.products?.[product.identifier]) {
-            console.log('Cart product:', data.products[product.identifier]);
+          if (localStorage.getItem("hasAcceptedCookies")) {
+            let products = getProductsArray()
+            fetch('/PMD-Brisella/scripts/json/productList.json')
+              .then((response) => {
+                if (!response.ok)
+                  throw new Error("file not loaded cusscesfully")
+                return response.json()
+              })
+              .then((data) => {
+                products.forEach((element) => {
+                  const eid = data.products[element.identifier]
+                  this.innerHTML += /*html*/`
+              <app-producto type="list" name="${element.identifier}">
+                <img src="${eid.img}" alt="${element.identifier}">
+                <h1>${eid.title}</h1>
+                <h2>${eid.subtitle}</h2>
+                <p>${eid.description}</p>
+                <price>${eid.price}</price>
+              </app-producto>
+              `
+                })
+              })
+              .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error)
+              })
+            type = "wrap";
+            this.setAttribute("type", type);
+          } else {
+            this.innerHTML = /* html */`<p class="rouge centerd miniText">Cookies son desactivados. No se puede guardar nada.</p>`
           }
         });
       } catch (error) {
