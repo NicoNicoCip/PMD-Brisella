@@ -103,7 +103,8 @@ section {
   font-size: 200%;
   text-wrap-mode: wrap;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
   background-color: #d99fafa5;
   padding: 15px;
   border-radius: 8px;

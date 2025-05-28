@@ -108,15 +108,18 @@ app-popup * {
 
 #registerPopupBody #oneline {
   display: flex;
-  justify-content: space-between;
+  justify-content:left;
+  gap: 1%;
   align-items: center;
   flex-direction: row;
+  width: 100%;
 }
 
 #registerPopupBody #multiline {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 #registerPopupheader> :nth-child(1) {
@@ -158,6 +161,125 @@ app-popup * {
 }
 
 #registerPopupBody input {
+  background-color: #00000000;
+  border: #0000003d solid 1px;
+  border-radius: 100px;
+  transition: 0.1s linear;
+  padding: 10px;
+  font-size: medium;
+}
+
+/* contactarnos */
+#contactarnosPopup {
+  background-color: #ebe2e2;
+  border-radius: 2px;
+  border-left: 6px solid #e3aaaa;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px #ebe2e2;
+
+  display: flex;
+  font-size: 130%;
+  flex-direction: column;
+
+  position: absolute;
+}
+
+#contactarnosPopupheader {
+  cursor:move;
+  background-color: #e2bcbc;
+  width: 100%;
+  height: 48px;
+  padding: 10px;
+}
+
+#contactarnosPopupheader h2{
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contactarnosPopupBody {
+  padding: 30px;
+  padding-top: 8px;
+  width: 100%;
+}
+
+#contactarnosPopupBody * {
+  text-wrap-mode: wrap;
+  margin: 3px 0px;
+}
+
+#contactarnosPopupBody #oneline {
+  display: flex;
+  justify-content:left;
+  gap: 1%;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+#contactarnosPopupBody #multiline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+#contactarnosPopupBody textarea {
+  min-width: 400px;
+  max-width: 500px;
+  min-height: 50px;
+  max-height: 270px;
+
+  background-color: #00000000;
+  border: 1px solid #00000033;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  padding: 10px;
+  transition: background-color 0.1s ease-in;
+}
+
+#contactarnosPopupBody textarea:focus {
+  background-color: #ffffff;
+  border: 1px solid #00000033;
+}
+
+#contactarnosPopupheader> :nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#contactarnosPopupheader> :nth-child(1)>button {
+  background-color: #00000000;
+  border: 0px;
+  width: 32px;
+  height: 32px;
+  border-radius: 1000px;
+  transition: 0.1s linear;
+}
+
+#contactarnosPopupheader> :nth-child(1)>button:hover {
+  background-color: #c1c1c156;
+  border: 0px;
+}
+
+#contactarnosPopupBody>button {
+  background-color: #00000000;
+  border: #0000003d solid 1px;
+  border-radius: 1000px;
+  transition: 0.1s linear;
+  padding: 10px;
+  font-size: medium;
+  width: 100%;
+}
+
+#contactarnosPopupBody>button:hover {
+  background-color: #9e9e9e56;
+}
+
+#contactarnosPopupBody input {
   background-color: #00000000;
   border: #0000003d solid 1px;
   border-radius: 100px;

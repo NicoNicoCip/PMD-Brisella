@@ -22,7 +22,7 @@ class MainPage extends HTMLElement {
           </div>
         
           <div class="navOpts">
-            <a href="/PMD-Brisella/pages/copntactarnos.html">
+            <a name="contactarnos">
               <app-tooltip data="Contactarnos"><img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con"></app-tooltip>
             </a>
 
@@ -46,7 +46,7 @@ class MainPage extends HTMLElement {
 
           <div>
             <div class="navOpts">
-              <a href="/PMD-Brisella/pages/copntactarnos.html">
+              <a name="contactarnos">
                 <app-tooltip data="Contactarnos"><img src="/PMD-Brisella/img/contactoarnos_white.png" alt="con"></app-tooltip>
               </a>
 
@@ -79,8 +79,8 @@ class MainPage extends HTMLElement {
           </div>
           <div class="section">
             <p>Empresa</p>
-            <a href="#">Blog</a>
-            <a href="#">Contactarnos</a>
+            <a href="/PMD-Brisella/pages/extras/blog.html">Blog</a>
+            <a name="contactarnos">Contactarnos</a>
           </div>
           <div class="section">
             <p>Redes Sociales</p>
@@ -103,6 +103,15 @@ class MainPage extends HTMLElement {
     if (registerPopup) registerPopup.addEventListener("click", () => {
       this.registerPopup()
     })
+
+    let contactarnosPopups = this.querySelectorAll('a[name="contactarnos"]')
+    contactarnosPopups.forEach((contactarnosPopup) => {
+      //@ts-ignore
+      contactarnosPopup.style.cursor = "pointer"
+      if (contactarnosPopup) contactarnosPopup.addEventListener("click", () => {
+        this.contactarnosPopup()
+      })
+    })
   }
 
   registerPopup() {
@@ -115,12 +124,12 @@ class MainPage extends HTMLElement {
             <button onclick="closeRegisterPopup()">X</button>
           </div>
         </div>
-        <div id=registerPopupBody>
+        <div id="registerPopupBody">
           <div id="textinputs">
             <p>¿Quieres recibir descuentos y ofertas especiales?</p>
             <div id="multiline">
               <input type="email" name="email" id="email" placeholder="Correo Electorico">
-              <input type="password" name="password" id="password" placeholder="Contrasenna">
+              <input type="password" name="password" id="password" placeholder="Contraseña">
             </div>
           </div>
           <div id="oneline">
@@ -143,6 +152,40 @@ class MainPage extends HTMLElement {
       this.dragElement(document.getElementById("registerPopup"))
     } else {
       closeRegisterPopup()
+    }
+  }
+
+  contactarnosPopup() {
+    let popup =  /* html */`
+    <app-popup class="centerer">
+      <div id="contactarnosPopup">
+        <div id="contactarnosPopupheader">
+          <div id="oneline">
+            <h2>Contactarnos</h2>
+            <button onclick="closeContactarnosPopup()">X</button>
+          </div>
+        </div>
+        <div id="contactarnosPopupBody">
+          <div id="textinputs">
+            <p>Introduce tu informacion.</p>
+            <div id="multiline">
+              <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
+              <input type="email" name="contactEmail" id="contactEmail" placeholder="Correo Electorico">
+              <textarea id="textarea" placeholder="Mensaje de enviar."></textarea>
+            </div>
+          </div>
+          <div id="warnings"></div>
+          <button onclick="confirmaDatosContactarnos()">Aceptar</button>
+        </div>
+      </div>
+    </app-popup>
+    `
+    let popups = document.getElementById("popups")
+    if (popups && !popups.querySelector('#contactarnosPopup')) {
+      popups.insertAdjacentHTML("beforeend", popup);
+      this.dragElement(document.getElementById("contactarnosPopup"))
+    } else {
+      closeContactarnosPopup()
     }
   }
 
