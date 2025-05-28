@@ -1,0 +1,13 @@
+pre {
+  font-size: medium;
+  text-wrap-mode: wrap;
+  background-color: rgba(255, 255, 255, 0.545);
+  width: 100dvw;
+  height: 100%;
+  padding: 10px 3%;
+}
+
+pre * {
+  text-wrap-mode: wrap;
+  display: inline;
+}
