@@ -1,10 +1,10 @@
 class AppLoading extends HTMLElement {
   constructor() {
-    super();
+    super()
   }
 
   connectedCallback() {
-    this.render();
+    this.render()
   }
 
   render() {
@@ -12,17 +12,17 @@ class AppLoading extends HTMLElement {
       <div id="loadingScreen">
         <div class="spinner"></div>
       </div>
-    `;
+    `
 
     window.addEventListener("load", () => {
-      const loader = this;
-      loader.style.opacity = "0";
+      const loader = this
+      loader.style.opacity = "0"
       setTimeout(() => {
-        loader.remove();
-      }, 200);
-    });
+        loader.remove()
+      }, 200)
+    })
 
   }
 }
 
-customElements.define("app-loading", AppLoading);
+customElements.define("app-loading", AppLoading)
