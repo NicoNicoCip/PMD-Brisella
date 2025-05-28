@@ -282,6 +282,7 @@ app-producto[type='page'] #fragrancias button:hover {
   transition: 0.2s ease-in-out;
   position: relative;
   top: -32px;
+  border-radius: 3px;
 }
 
 #favs img {

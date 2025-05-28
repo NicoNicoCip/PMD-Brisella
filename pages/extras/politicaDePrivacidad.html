@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/popup.css">
+  <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
+  <title>Brisella</title>
+
+  <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
+  <script defer src="/PMD-Brisella/components/app-loading.js"></script>
+  <script defer src="/PMD-Brisella/components/app-productos.js"></script>
+  <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
+
+  <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
+  <script defer src="/PMD-Brisella/scripts/register.js"></script>
+
+  <style>
+    pre {
+      font-size: large;
+      text-wrap-mode: wrap;
+      background-color: rgba(255, 255, 255, 0.545);
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+    }
+
+    pre * {
+      text-wrap-mode: wrap;
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <app-loading></app-loading>
+  <div id="popups">
+    <app-popup class="bottomer">
+      <div id="cookiesPolicy">
+        <h2>Politica de cookies</h2>
+        <p>Usamos cookies para guardar infomacion de productos en tu equipo. Estas de acuerdo?</p>
+        <div id="buttons">
+          <button onclick="cookiesAccept()">Aceptar</button>
+          <button onclick="cookiesDelete()">Denegar</button>
+        </div>
+      </div>
+    </app-popup>
+  </div>
+
+  <app-mainpage>
+    <main>
+      <div class="mainBody mainTextArea">
+        <br><br><br>
+        <br><br><br>
+        <section>
+          <pre>
+<h2>POLITICA DE PRIVACIDAD</h2>
+
+<h3>¿Quién es el responsable del tratamiento de los datos ?</h3>
+La visita a este sitio web no implica que el usuario esté obligado a facilitar ninguna información. En el caso de que el usuario facilite alguna información de carácter personal, los datos recogidos en este sitio web serán tratados de forma legal y lícita con sujeción en todo momento a los principio y derechos recogidos en el Reglamento ( UE ) 2016/679, de 27 de abril, General de Protección de Datos ( RGPD ) y demás normativa aplicable.
+El responsable del tratamiento de tus datos és:
+
+<h2>Brisella<h2>
+<h3>C/ de Isabel Católica, 6 - 46007 - Valencía</h3>
+<h4>Teléfono de contacto:</h4> 678 95 74 03
+<h4>Email:</h4> brisellaoficial@gmail.com
+
+<h2>¿ Para qué vamos a usar tus datos ?</h2>
+Algunas de las finalidades del tratamientos de tus datos son:
+1. Para gestionar tu registro e identificación como usuario de la Plataforma.
+2. Para el desarrollo, cumplimiento y ejecución del contrato de compraventa que hayas contratado con nosotros en la Plataforma.
+3. Para atender las solicitudes o peticiones que realices a través de los canales de Atención al Cliente.
+4. Para fines de marketing.
+5. En caso de que lo desees, enviarte nuestras comunicaciones personalizadas.
+6. Análisis de usabilidad y de calidad para la mejora de nuestros servicios.
+
+<h3>¿ Cuánto tiempo se guardarán estos datos ?</h3>
+Cookies de sesión: Se eliminan automáticamente cuando cierras el navegador.
+Cookies de analítica y publicidad: se conservarán entre 12 y 24 meses.
+Cookies propias: se conservarán entre 6 y 24 meses.
+Cookies de terceros: se conservarán entre 6 meses y varios años.
+
+<h2>Derechos de ARCO ( Acceso, Rectificación, Cancelación y Oposición )</h2>
+<h3>Acceso:</h3> permite a los usuarios obtener confirmación de si sus datos personales están siendo tratados y poder acceder a ellos.
+<h3>Rectificación:</h3> tienes el derecho a corregir los datos que tenemos sobre usted.
+<h3>Cancelación:</h3> te da la posibilidad de solicitar la eliminación de tus datos personales.
+<h3>Oposición:</h3> este derecho te permite oponerse al uso de tus datos personales, en caso de que el tratamiento se base en el interés legítimo de Brisella o en el cumplimiento de una misión de interés público.
+Puedes ejercer tus derechos enviando un correo electrónico a <h3>brisellaoficial@gmail.com,</h3> indicando claramente el derecho que deseas ejercer.
+          </pre>
+        </section>
+      </div>
+    </main>
+  </app-mainpage>
+</body>
+
+</html>

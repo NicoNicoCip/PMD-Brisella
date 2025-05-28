@@ -73,9 +73,9 @@ class MainPage extends HTMLElement {
           <div class="section">
             <p>Ayuda</p>
             <a href="/PMD-Brisella/pages/extras/avisoLegal.html">Aviso legal</a>
-            <a href="#">Politica de privacidad</a>
-            <a href="#">Politica de cookies</a>
-            <a href="#">Terminos y condiciones</a>
+            <a href="/PMD-Brisella/pages/extras/politicaDePrivacidad.html">Politica de privacidad</a>
+            <a href="/PMD-Brisella/pages/extras/politicaDeCookies.html">Politica de cookies</a>
+            <a href="/PMD-Brisella/pages/extras/terminosYCondiciones.html">Terminos y condiciones</a>
           </div>
           <div class="section">
             <p>Empresa</p>

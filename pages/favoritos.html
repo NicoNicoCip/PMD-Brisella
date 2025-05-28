@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/index.css">
   <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
   <link rel="stylesheet" href="/PMD-Brisella/styles/popup.css">
   <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
@@ -14,6 +15,7 @@
   <script defer src="/PMD-Brisella/components/app-loading.js"></script>
   <script defer src="/PMD-Brisella/components/app-productos.js"></script>
   <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
+  <script defer src="/PMD-Brisella/components/app-resena.js"></script>
 
   <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
   <script defer src="/PMD-Brisella/scripts/register.js"></script>
@@ -39,7 +41,11 @@
       <div class="mainBody mainTextArea">
         <br><br><br>
         <br><br><br>
-        <!-- This page will lock at the products and add the ones that are in the favorites list. -->
+        <section>
+          <p class="rouge centerd miniText">Productos</p>
+          <app-productos type="favourites">
+          </app-productos>
+        </section>
       </div>
     </main>
   </app-mainpage>

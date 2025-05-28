@@ -1,5 +1,12 @@
 {
   "products": {
+    "panueloLiso": {
+      "img": "/PMD-Brisella/img/Panuelos/PanueloLiso.png",
+      "title": "PAÑUELO LISO",
+      "subtitle": "100 % Algodón orgánico",
+      "description": "Sencillez que inspira. Elegancia y sutileza auténtica que combina fácilmente con cualquier estilo. Cada fibra de este pañuelo ha sido cuidadosamente seleccionada para asegurar una textura suave, transpirable y resistente, ideal para el contacto directo con la piel. Además, el proceso de teñido utiliza pigmentos naturales y métodos de bajo impacto ambiental, lo que garantiza que cada pieza sea completamente sostenible y respetuosa con el medio ambiente. El pañuelo puede anudarse al cuello o a la cabeza para completar un look.<br><br>Dimensiones: 90X90 (largo x ancho)<br><br>Fabricado en España",
+      "price": 30
+    },
     "panueloMandala": {
       "img": "/PMD-Brisella/img/Panuelos/PanueloMandala.jpg",
       "title": "PAÑUELO MANDALA",

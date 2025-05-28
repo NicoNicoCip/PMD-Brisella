@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/popup.css">
+  <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
+  <title>Brisella</title>
+
+  <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
+  <script defer src="/PMD-Brisella/components/app-loading.js"></script>
+  <script defer src="/PMD-Brisella/components/app-productos.js"></script>
+  <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
+
+  <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
+  <script defer src="/PMD-Brisella/scripts/register.js"></script>
+
+  <style>
+    pre {
+      font-size: large;
+      text-wrap-mode: wrap;
+      background-color: rgba(255, 255, 255, 0.545);
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+    }
+
+    pre * {
+      text-wrap-mode: wrap;
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <app-loading></app-loading>
+  <div id="popups">
+    <app-popup class="bottomer">
+      <div id="cookiesPolicy">
+        <h2>Politica de cookies</h2>
+        <p>Usamos cookies para guardar infomacion de productos en tu equipo. Estas de acuerdo?</p>
+        <div id="buttons">
+          <button onclick="cookiesAccept()">Aceptar</button>
+          <button onclick="cookiesDelete()">Denegar</button>
+        </div>
+      </div>
+    </app-popup>
+  </div>
+
+  <app-mainpage>
+    <main>
+      <div class="mainBody mainTextArea">
+        <br><br><br>
+        <br><br><br>
+        <section>
+          <pre>
+<h2>TERMINOS Y CONDICIONES</h2>
+
+<h3>Proceso de compra</h3>
+Para realizar una compra, selecciona los productos y agrégales al carrito. Luego, sigue el proceso de pago proporcionando la información requerida. Tras realizar el pago, recibirás un correo electrónico acusando recibo de tu pedido (la "Confirmación de Pedido"). Asimismo, le informaremos mediante correo electrónico de que el producto está siendo enviado (la "Confirmación de Envío").
+
+<h3>Formas de pago:</h3>
+- Tarjeta de crédito/débito
+- PayPal
+- Apple pay
+- Financiación
+
+<h3>Plazos y costes de envío:</h3>
+
+<h3>Envío estándar</h3>
+- Plazo de entrega: De 3 a 7 días hábiles, tendrá un coste de 3,5 €.
+
+<h3>Envío exprés</h3>
+- Plazo de entrega: De 1 a 3 días hábiles, tendrá un coste de 7 €.
+Todos los productos ya tienen el IVA incluido.
+
+<h3>Política de devolución:</h3>
+- Producto defectuoso o dañado - El artículo recibido presenta fallas de fábrica o daños sufridos durante el transporte.
+- Error en el envío - Se ha recibido un producto incorrecto, diferente al solicitado en el pedido.
+- Producto incompleto - Falta algún accesorio o componente esencial del producto.
+- No cumple con las expectativas - El artículo no satisface sus necesidades o no es como se esperaba.
+- Fecha de entrega incumplida - La compra llegó fuera del tiempo estipulado y ya no es requerida.
+(Los productos personalizados no se podrán devolver, excepto que sean defectuosos o haya un error en el envío o fecha de entrega).
+Habrá un plazo máximo para comunicar el error de hasta 14 días para devolver el producto. El cliente no correrá con ningún gasto de envío. La recogida de este artículo, deberá ser en el mismo lugar donde se entregó, con todo el embalaje y accesorios originales.
+
+<h2>Garantía:</h2>
+Todos nuestros productos tienen una garantía de hasta 2 años, desde que se recibe el producto, en conformidad con la legislación vigente.
+<h3>La garantía no cubre:</h3>
+- Daños ocasionados por un uso indebido del producto.
+- Daños derivados de accidentes.
+- Desgaste natural del producto debido a su uso habitual.
+- Productos que hayan sido alterados o reparados por terceros no autorizados.
+          </pre>
+        </section>
+      </div>
+    </main>
+  </app-mainpage>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/mainpage.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/products.css">
+  <link rel="stylesheet" href="/PMD-Brisella/styles/popup.css">
+  <link rel="shortcut icon" href="/PMD-Brisella/img/Brisella_logo_Negro.png" type="image/x-icon" id="favicon">
+  <title>Brisella</title>
+
+  <script defer src="/PMD-Brisella/components/app-mainpage.js"></script>
+  <script defer src="/PMD-Brisella/components/app-loading.js"></script>
+  <script defer src="/PMD-Brisella/components/app-productos.js"></script>
+  <script defer src="/PMD-Brisella/components/app-tooltip.js"></script>
+
+  <script defer src="/PMD-Brisella/scripts/cookies.js"></script>
+  <script defer src="/PMD-Brisella/scripts/register.js"></script>
+
+  <style>
+    pre {
+      font-size: large;
+      text-wrap-mode: wrap;
+      background-color: rgba(255, 255, 255, 0.545);
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+    }
+
+    pre * {
+      text-wrap-mode: wrap;
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <app-loading></app-loading>
+  <div id="popups">
+    <app-popup class="bottomer">
+      <div id="cookiesPolicy">
+        <h2>Politica de cookies</h2>
+        <p>Usamos cookies para guardar infomacion de productos en tu equipo. Estas de acuerdo?</p>
+        <div id="buttons">
+          <button onclick="cookiesAccept()">Aceptar</button>
+          <button onclick="cookiesDelete()">Denegar</button>
+        </div>
+      </div>
+    </app-popup>
+  </div>
+
+  <app-mainpage>
+    <main>
+      <div class="mainBody mainTextArea">
+        <br><br><br>
+        <br><br><br>
+        <section>
+          <pre>
+<h2>POLITICA DE COOKIES</h2>
+
+<h3>¿Qué es una cookie?</h3>
+Las cookies son pequeños archivos de información que un servidor web genera y envía a tu navegador. Los navegadores web almacenan las cookies que reciben durante un periodo de tiempo predeterminado, o durante la duración de la sesión de un usuario en un sitio web. Contienen todo tipo de información que los sitios web utilizan para recordar ciertos datos sobre ti y tus interacciones anteriores con el sitio.
+<h4>TIpos de cookie:</h4>
+<strong>Cookies propias:</strong> son aquellas que se envían al dispositivo del usuario desde un equipo o dominio gestionado por el propio editor, y desde el que se presta el servicio solicitado por el usuario.
+<strong>Cookies a terceros:</strong> son aquellas que se envían al dispositivo del usuario desde un equipo o dominio que no es gestionado por el editor, sino por otra entidad que trata los datos obtenidos a través de las cookies.
+<strong>Cookies de análisis:</strong> son aquellas que sirven para estudiar el comportamiento de los usuarios de forma anónima al navegar por la web. Información que utilizaremos para mejorar la experiencia de navegación y optimizar nuestros servicios.
+<strong>Cookies de sesión:</strong> son aquellas diseñadas para recabar y almacenar datos mientras el usuario accede a una página web. Se suelen emplear para almacenar información que solo interesa conservar para la prestación del servicio solicitado por el usuario en una sola ocasión (por ejemplo, una lista de productos adquiridos) y desaparecen al terminar la sesión.
+<strong>Cookies publicitarias:</strong> son aquéllas que permiten la gestión, de la forma más eficaz posible, de los espacios publicitarios que, en su caso, el editor haya incluido en una página web, aplicación o plataforma desde la que presta el servicio solicitado en base a criterios como el contenido editado o la frecuencia en la que se muestran los anuncio.
+
+<h3>¿Cómo desactivar las cookies?</h3>
+Puedes activar o desactivar las cookies a través del configurador que aparece en el aviso de uso de cookies, al acceder a nuestra página principal. Ten en cuenta que, si aceptas las cookies de terceros, deberás eliminarlas desde las opciones del navegador o desde el sistema ofrecido por el propio tercero.
+
+<h3>¿Cuáles son las consecuencias de desactivarlas?</h3>
+El bloqueo o desactivación de todas las cookies ayuda a proteger la privacidad, pero también puede limitar la experiencia en algunos sitios web, así como limitar funcionalidades o, incluso, no permitir la correcta navegación o utilización de algunos de sus servicios.
+          </pre>
+        </section>
+      </div>
+    </main>
+  </app-mainpage>
+</body>
+
+</html>
