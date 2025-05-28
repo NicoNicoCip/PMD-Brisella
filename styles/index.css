@@ -11,25 +11,6 @@
   top: -700px;
 }
 
-.mediumText {
-  position: relative;
-  font-size: 200%;
-  text-wrap-mode: wrap;
-  text-align: center;
-  width: 100%;
-  height: 90dvh;
-  margin-bottom: 30dvh;
-}
-
-.miniText {
-  position: relative;
-  font-size: 200%;
-  text-wrap-mode: wrap;
-  text-align: center;
-  width: 100%;
-  height: 15dvh;
-}
-
 .bloqueResenas {
   display: flex;
   justify-content: space-evenly;

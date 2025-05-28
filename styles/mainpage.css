@@ -3,7 +3,7 @@
   --g-side-separation: 0px;
   --g-iconsize: 32px;
   --g-easeTime: 0.1s;
-  
+
   --c-barsColor: #e3aaaa;
   --c-undershadow: #c282bf56;
   --c-greishBeige: #b8b8b85e;
@@ -59,7 +59,7 @@ header {
   box-shadow: inset 20px 50px 1000px var(--c-undershadow);
   z-index: 1;
   display: block;
-  position:fixed;
+  position: fixed;
   top: 0px;
 }
 
@@ -88,6 +88,27 @@ section {
   padding: 0px 50px;
 }
 
+.mediumText {
+  position: relative;
+  font-size: 200%;
+  text-wrap-mode: wrap;
+  text-align: center;
+  width: 100%;
+  height: 90dvh;
+  margin-bottom: 30dvh;
+}
+
+.miniText {
+  position: relative;
+  font-size: 200%;
+  text-wrap-mode: wrap;
+  text-align: center;
+  margin-bottom: 3rem;
+  background-color: #d99fafa5;
+  padding: 15px;
+  border-radius: 8px;
+}
+
 .mainBody {
   min-height: 1000px;
   padding: 10px 50px;
@@ -99,10 +120,10 @@ section {
   padding: 16px 10px;
   font-size: 25px;
   z-index: 101;
-  width:fit-content;
+  width: fit-content;
 }
 
-#navbar #navName a{
+#navbar #navName a {
   color: var(--c-white);
   letter-spacing: 5px;
   padding: 10px;
@@ -110,7 +131,7 @@ section {
 
 #navbar .navPages {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 20px;
   width: 100%;
@@ -232,7 +253,7 @@ section {
   cursor: pointer;
   padding: 8px;
   margin: 0px;
-  position:fixed;
+  position: fixed;
   top: 12px;
   left: 17px;
   z-index: 3;
@@ -291,7 +312,7 @@ footer {
   padding: 50px;
 }
 
-.section  {
+.section {
   display: flex;
   flex-direction: column;
   width: 256px;
@@ -315,7 +336,7 @@ footer {
   border-bottom: 1px var(--c-underline) solid;
 }
 
-#footbar > img {
+#footbar>img {
   z-index: 5;
   width: 150px;
   height: 150px;
@@ -349,13 +370,13 @@ footer {
   height: 48px;
 }
 
-.section:nth-child(3) .inline a img{
+.section:nth-child(3) .inline a img {
   width: 32px;
   height: 32px;
   margin: 8px 8px;
 }
 
-.section:nth-child(3) .inline a:hover{
+.section:nth-child(3) .inline a:hover {
   background-color: var(--c-linkHover);
 }
 
@@ -406,7 +427,7 @@ app-loading {
 .spinner {
   width: 48px;
   height: 48px;
-  border: 4px solid #f0b0b0;   
+  border: 4px solid #f0b0b0;
   border-top: 4px solid #f16666;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -414,8 +435,13 @@ app-loading {
 
 /* Animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -429,7 +455,7 @@ app-loading {
     align-items: center;
   }
 
-  #navbar .navPages  {
+  #navbar .navPages {
     display: none;
   }
 
@@ -445,7 +471,7 @@ app-loading {
     position: relative;
   }
 
-  #navbar .navOpts  {
+  #navbar .navOpts {
     display: none;
   }
 
@@ -457,19 +483,19 @@ app-loading {
     align-items: center;
   }
 
-  #footbar > img{
+  #footbar>img {
     margin-left: 0rem;
     margin-top: 3rem;
   }
 
-  #footbar > * {
+  #footbar>* {
     border-top: 1px var(--c-underline) solid;
     border-bottom: 1px var(--c-underline) solid;
     border-left: 0px;
     border-right: 0px;
   }
 
-  .section > *{
+  .section>* {
     text-align: center;
     justify-content: center;
   }
