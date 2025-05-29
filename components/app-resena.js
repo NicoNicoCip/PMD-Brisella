@@ -16,7 +16,7 @@ class AppResena extends HTMLElement {
 
     this.innerHTML = ''
 
-    let star = '★'
+    let star = '★';
     puntos = puntos < 0 ? 0 : puntos > 5 ? 5 : puntos
     let wholeScode = parseInt(puntos)
     let restScore = puntos % 1
@@ -40,5 +40,15 @@ class AppResena extends HTMLElement {
     `
   }
 }
+
+/*
+
+<resena>
+  <nombre>
+  <fecha>
+  <puntos>
+  <mensaje>
+<resena>
+*/
 
 customElements.define("app-resena", AppResena);
